@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".presentation.ui.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Welcome back -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/welcomeBackTextView"
+        android:layout_width="199dp"
+        android:layout_height="34dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="129dp"
+        android:text="@string/welcome_back"
+        style="@style/TextAppearance.OnlineShop.WelcomeBack"
+        android:gravity="center_horizontal|top"
+        />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/firstNameViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView"
+        android:background="@drawable/rectangle_2"
+        android:layout_marginTop="106dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="207dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="41dp"
+            android:gravity="center"
+            android:hint="@string/first_name_hint"
+            style="@style/TextAppearance.OnlineShop.Hint"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:background="@null"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/passwordViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstNameViewContainer"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/rectangle_2"
+        android:orientation="horizontal">
+        
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="207dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="41dp"
+            android:gravity="center"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:ellipsize="start"
+            android:singleLine="true"
+            style="@style/TextAppearance.OnlineShop.Hint"
+            android:background="@null"/>
+        
+        <View
+            android:id="@+id/passwordConditionButton"
+            android:layout_width="14.75dp"
+            android:layout_height="14.75dp"
+            android:layout_marginTop="7.62dp"
+            android:layout_marginBottom="7.62dp"
+            android:layout_marginEnd="15.63dp"
+            android:layout_marginStart="9.63dp"
+            android:background="@drawable/ic_password_view_disable"
+            />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/loginViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="46dp"
+        android:orientation="vertical"
+        android:layout_marginTop="99dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button"
+        app:layout_constraintTop_toBottomOf="@id/passwordViewContainer">
+
+        <TextView
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/login"
+            style="@style/TextAppearance.OnlineShop.Login"/>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
