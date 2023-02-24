@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context=".presentation.ui.LoginFragment">
 
     <TextView
@@ -15,7 +14,7 @@
         android:layout_height="34dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="129dp"
+        android:layout_marginTop="123dp"
         android:gravity="center_horizontal|top"
         android:text="@string/welcome_back"
         android:textAppearance="@style/TextAppearance.OnlineShop.Login"
@@ -31,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView"
         android:background="@drawable/rectangle_2"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="72dp"
         android:orientation="horizontal">
 
         <EditText
@@ -45,7 +44,8 @@
             android:ellipsize="start"
             android:singleLine="true"
             android:inputType="textPersonName"
-            android:background="@null"/>
+            android:background="@null"
+            android:importantForAutofill="no" />
 
     </LinearLayout>
     
@@ -71,7 +71,8 @@
             android:ellipsize="start"
             android:singleLine="true"
             style="@style/TextAppearance.OnlineShop.Hint"
-            android:background="@null"/>
+            android:background="@null"
+            android:importantForAutofill="no" />
         
         <View
             android:id="@+id/passwordConditionButton"
