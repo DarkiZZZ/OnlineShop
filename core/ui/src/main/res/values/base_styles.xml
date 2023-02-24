@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.OnlineShop" parent="TextAppearance.MaterialComponents.Headline1"/>
+</resources>
