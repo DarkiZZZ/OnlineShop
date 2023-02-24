@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Online Shop"
 include ':app'
+include ':core:ui'
+include ':feature:sign_in'
+include ':feature:login'
+include ':feature:profile'
