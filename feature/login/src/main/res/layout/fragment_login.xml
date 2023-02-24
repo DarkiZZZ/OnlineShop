@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,21 +8,20 @@
     android:orientation="vertical"
     tools:context=".presentation.ui.LoginFragment">
 
-    <!-- Welcome back -->
     <TextView
         android:id="@+id/welcomeBackTextView"
+        style="@style/TextAppearance.OnlineShop.WelcomeBack"
         android:layout_width="199dp"
         android:layout_height="34dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="129dp"
-        android:text="@string/welcome_back"
-        style="@style/TextAppearance.OnlineShop.WelcomeBack"
         android:gravity="center_horizontal|top"
-        />
+        android:text="@string/welcome_back"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/firstNameViewContainer"
