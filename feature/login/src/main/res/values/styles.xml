@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="TextAppearance.OnlineShop" parent="TextAppearance.MaterialComponents.Headline1"/>
-
     <style name="TextAppearance.OnlineShop.WelcomeBack" parent="TextAppearance.OnlineShop">
         <item name="android:textSize">26sp</item>
         <item name="android:fontFamily">@font/montserrat_600</item>
