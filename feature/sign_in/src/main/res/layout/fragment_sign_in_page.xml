@@ -1,14 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.SignInPageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/welcomeBackTextView"
+        style="@style/TextAppearance.OnlineShop.SignInLogo"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="121dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/sign_in"
+        android:textAppearance="@style/TextAppearance.OnlineShop.SignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/firstNameViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView"
+        android:background="@drawable/rectangle_2"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="207dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="41dp"
+            android:gravity="center"
+            android:hint="@string/first_name_hint"
+            style="@style/TextAppearance.OnlineShop.Hint"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:background="@null"
+            android:importantForAutofill="no" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lastNameViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstNameViewContainer"
+        android:background="@drawable/rectangle_2"
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="207dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="41dp"
+            android:gravity="center"
+            android:hint="@string/last_name_hint"
+            style="@style/TextAppearance.OnlineShop.Hint"
+            android:ellipsize="start"
+            android:singleLine="true"
+            android:inputType="textPersonName"
+            android:background="@null"
+            android:importantForAutofill="no" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passwordViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="29dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastNameViewContainer"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/rectangle_2"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="207dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="41dp"
+            android:gravity="center"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress"
+            android:ellipsize="start"
+            android:singleLine="true"
+            style="@style/TextAppearance.OnlineShop.Hint"
+            android:background="@null"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loginViewContainer"
+        android:layout_width="289dp"
+        android:layout_height="46dp"
+        android:orientation="vertical"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button"
+        app:layout_constraintTop_toBottomOf="@id/passwordViewContainer">
+
+        <TextView
+            android:id="@+id/signInButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            style="@style/TextAppearance.OnlineShop.SignIn"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/haveAccountTextView"
+        android:layout_width="129dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/have_account_text"
+        style="@style/TextAppearance.OnlineShop.HaveAccount"
+        app:layout_constraintStart_toStartOf="@+id/loginViewContainer"
+        app:layout_constraintTop_toBottomOf="@id/loginViewContainer" />
+
+    <TextView
+        android:id="@+id/loginButton"
+        android:layout_width="35dp"
+        android:layout_height="16dp"
+        android:text="@string/log_in"
+        style="@style/TextAppearance.OnlineShop.LogIn"
+        app:layout_constraintBottom_toBottomOf="@+id/haveAccountTextView"
+        app:layout_constraintStart_toEndOf="@id/haveAccountTextView"
+        app:layout_constraintTop_toTopOf="@+id/haveAccountTextView" />
+
+    <ImageView
+        android:id="@+id/googleImageView"
+        android:layout_width="22dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/ic_google"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/haveAccountTextView"
+        android:contentDescription="@string/google_logo" />
+
+    <TextView
+        android:id="@+id/signInWithGoogleTextView"
+        style="@style/TextAppearance.OnlineShop.SignInWith"
+        android:layout_width="117dp"
+        android:layout_height="16dp"
+        android:text="@string/sign_in_with_google"
+        android:layout_marginStart="11.17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/googleImageView"
+        app:layout_constraintStart_toEndOf="@id/googleImageView"
+        app:layout_constraintTop_toTopOf="@+id/googleImageView" />
+
+    <ImageView
+        android:id="@+id/appleImageView"
+        android:layout_width="18.38dp"
+        android:layout_height="21.87dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="38dp"
+        android:src="@drawable/ic_apple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/googleImageView"
+        android:contentDescription="@string/apple_logo" />
+
+    <TextView
+        android:id="@+id/signInWithAppleTextView"
+        style="@style/TextAppearance.OnlineShop.SignInWith"
+        android:layout_width="117dp"
+        android:layout_height="16dp"
+        android:text="@string/sign_in_with_apple"
+        android:layout_marginStart="11.17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appleImageView"
+        app:layout_constraintStart_toEndOf="@id/appleImageView"
+        app:layout_constraintTop_toTopOf="@+id/appleImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
