@@ -43,3 +43,12 @@ object Dagger {
     const val daggerProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
     const val daggerInject = "javax.inject:javax.inject:1"
 }
+
+object Network {
+    private const val retrofitVersion = "2.9.0"
+    private const val picassoVersion = "2.71828"
+
+    const val retrofitCore = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    const val retrofitGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    const val picasso = "com.squareup.picasso:picasso:$picassoVersion"
+}
