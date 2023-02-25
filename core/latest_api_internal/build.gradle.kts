@@ -41,4 +41,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    api(project(":core:latest_api"))
+
+    implementation(Network.retrofitCore)
+    implementation(Network.retrofitGson)
 }

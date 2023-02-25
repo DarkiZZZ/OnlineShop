@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/dagger" />
+            <option value="$PROJECT_DIR$/core/latest_api" />
             <option value="$PROJECT_DIR$/core/latest_api_internal" />
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/ui" />
