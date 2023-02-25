@@ -33,3 +33,13 @@ object TestLibs {
     const val androidJUnit = "androidx.test.ext:junit:$androidJUnitVersion"
     const val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
 }
+
+object Dagger {
+    private const val daggerVersion = "2.44"
+
+    const val daggerCore = "com.google.dagger:dagger:$daggerVersion"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+    const val daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
+    const val daggerProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    const val daggerInject = "javax.inject:javax.inject:1"
+}
