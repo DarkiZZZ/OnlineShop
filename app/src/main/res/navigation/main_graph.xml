@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/signInPageFragment"
+        android:name="ru.msokolov.onlineshop.sign_in.presentation.ui.SignInPageFragment"
+        android:label="SignInPageFragment"
+        tools:layout="@layout/fragment_sign_in_page">
+        <action
+            android:id="@+id/action_signInPageFragment_to_pageOneFragment"
+            app:destination="@id/pageOneFragment"
+            app:popUpTo="@id/pageOneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signInPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.msokolov.onlineshop.login.presentation.ui.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_pageOneFragment"
+            app:destination="@id/pageOneFragment"
+            app:popUpTo="@id/pageOneFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageOneFragment"
+        android:name="ru.msokolov.onlineshop.page_one.presentation.ui.PageOneFragment"
+        android:label="PageOneFragment"
+        tools:layout="@layout/fragment_page_one">
+
+        <action
+            android:id="@+id/action_pageOneFragment_to_pageTwoFragment"
+            app:destination="@id/pageTwoFragment" />
+        <action
+            android:id="@+id/action_pageOneFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <action android:id="@+id/action_feature_page_one"
+        app:destination="@+id/pageOneFragment"/>
+    <action android:id="@+id/action_feature_profile"
+        app:destination="@+id/profileFragment"/>
+
+    <fragment
+        android:id="@+id/pageTwoFragment"
+        android:name="ru.msokolov.onlineshop.page_two.presentation.ui.PageTwoFragment"
+        android:label="PageTwoFragment"
+        tools:layout="@layout/fragment_page_two"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.msokolov.onlineshop.profile.presentation.ui.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_signInPageFragment"
+            app:destination="@id/signInPageFragment"
+            app:popUpTo="@id/signInPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_pageOneFragment"
+            app:destination="@id/pageOneFragment"
+            app:popUpTo="@id/pageOneFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
