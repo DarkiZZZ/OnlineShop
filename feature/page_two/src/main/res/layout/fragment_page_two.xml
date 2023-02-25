@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.ui.PageTwoFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="287dp"
+        android:layout_marginTop="34dp">
+
+        <ImageView
+            android:id="@+id/goBackButton"
+            android:layout_width="6dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="11dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/imageSwitcherLayout"
+            layout="@layout/image_switcher_layout"
+            android:layout_width="match_parent"
+            android:layout_height="279dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="75dp"
+        tools:itemCount="1"
+        tools:listitem="@layout/photo_item" />
+
+    <include
+        layout="@layout/name_and_price_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp" />
+
+    <include
+        layout="@layout/description_rating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/color"
+        style="@style/TextAppearance.OnlineShop.ColorText"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="24dp"/>
+
+    <include
+        layout="@layout/colors_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="@dimen/margin_start_component_dimen"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bg"
+        android:layout_marginTop="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/quantityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                style="@style/TextAppearance.OnlineShop.QuantityText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="24dp"/>
+            
+            <LinearLayout
+                android:id="@+id/minusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/product_number_button_background"
+                app:layout_constraintTop_toBottomOf="@id/quantityTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="24dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="7dp"
+                    android:layout_height="1dp"
+                    android:src="@drawable/ic_minus"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/plusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/product_number_button_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/minusButton"
+                app:layout_constraintTop_toTopOf="@+id/minusButton"
+                android:layout_marginStart="20.79dp">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_plus" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/addToCartButton"
+                android:layout_width="170dp"
+                android:layout_height="44dp"
+                android:background="@drawable/add_to_cart_button"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="23dp">
+
+                <TextView
+                    android:id="@+id/addToCartTextView"
+                    style="@style/TextAppearance.OnlineShop.GeneralSum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general_sum_value"
+                    android:layout_marginStart="@dimen/cart_text_dimen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                <TextView
+                    android:id="@+id/generalSumTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_to_chart"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/cart_text_to_car_button_dimen"
+                    style="@style/TextAppearance.OnlineShop.AddToChartText"
+                    android:layout_marginStart="@dimen/cart_text_dimen"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

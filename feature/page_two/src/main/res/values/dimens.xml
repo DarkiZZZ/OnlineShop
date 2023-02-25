@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_start_component_dimen">24dp</dimen>
+    <dimen name="cart_text_dimen">28dp</dimen>
+    <dimen name="cart_text_to_car_button_dimen">30dp</dimen>
+</resources>
