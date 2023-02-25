@@ -1,4 +1,4 @@
-package ru.msokolov.latest_api_internal
+package ru.msokolov.onlineshop.latest_api_internal
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
