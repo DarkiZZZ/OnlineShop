@@ -35,6 +35,7 @@
         android:name="ru.msokolov.onlineshop.page_one.presentation.ui.PageOneFragment"
         android:label="PageOneFragment"
         tools:layout="@layout/fragment_page_one">
+
         <action
             android:id="@+id/action_pageOneFragment_to_pageTwoFragment"
             app:destination="@id/pageTwoFragment" />
@@ -42,6 +43,12 @@
             android:id="@+id/action_pageOneFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+
+    <action android:id="@+id/action_feature_page_one"
+        app:destination="@+id/pageOneFragment"/>
+    <action android:id="@+id/action_feature_profile"
+        app:destination="@+id/profileFragment"/>
+
     <fragment
         android:id="@+id/pageTwoFragment"
         android:name="ru.msokolov.onlineshop.page_two.presentation.ui.PageTwoFragment"
@@ -56,6 +63,11 @@
             android:id="@+id/action_profileFragment_to_signInPageFragment"
             app:destination="@id/signInPageFragment"
             app:popUpTo="@id/signInPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_profileFragment_to_pageOneFragment"
+            app:destination="@id/pageOneFragment"
+            app:popUpTo="@id/pageOneFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>
