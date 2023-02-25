@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_background_view_dimen">35dp</dimen>
+    <dimen name="margin_cost_value_dimen">7dp</dimen>
+    <dimen name="margin_top_cost_value_dimen">1dp</dimen>
+    <dimen name="margin_top_item_name_dimen">3dp</dimen>
+    <dimen name="margin_bottom_category_background_dimen">46dp</dimen>
+    <dimen name="margin_latest_add_button_dimen">5dp</dimen>
+    <dimen name="margin_from_corners_text_layout_dimen">11dp</dimen>
+    <dimen name="margin_top_latest_text_dimen">20dp</dimen>
+    <dimen name="margin_top_from_latest_item_dimen">8dp</dimen>
+    <dimen name="margin_between_items_dimen">10dp</dimen>
+</resources>
