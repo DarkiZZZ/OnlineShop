@@ -52,3 +52,18 @@ object Network {
     const val retrofitGson = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     const val picasso = "com.squareup.picasso:picasso:$picassoVersion"
 }
+
+object Lifecycle {
+    private const val lifecycleVersion = "2.5.1"
+
+    const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+}
+
+object FragmentKtx{ /*test name*/
+
+    private const val fragment_version = "1.6.0-alpha05"
+
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
+
+}
