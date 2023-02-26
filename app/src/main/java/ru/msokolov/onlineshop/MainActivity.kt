@@ -6,15 +6,23 @@ import android.view.View
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
+import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.databinding.ActivityMainBinding
+import ru.msokolov.onlineshop.di.DaggerMainActivityComponent
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     private lateinit var binding: ActivityMainBinding
 
+    @Inject
     lateinit var bottomNavigation: BottomNavigation
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        DaggerMainActivityComponent.builder()
+            .deps(findDependencies())
+            .build()
+            .inject(this)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
