@@ -40,6 +40,7 @@ dependencies {
     implementation(project(":core:latest_api"))
     implementation(project(":core:sale_api"))
     implementation(project(":core:dagger"))
+    implementation(project(":core:navigation"))
 
     implementation(Dagger.daggerCore)
     kapt(Dagger.daggerCompiler)
