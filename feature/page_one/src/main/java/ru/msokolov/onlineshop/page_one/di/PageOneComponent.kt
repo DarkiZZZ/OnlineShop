@@ -11,6 +11,7 @@ internal interface PageOneComponent {
 
     fun inject(pageOneFragment: PageOneFragment)
 
+    @Component.Builder
     interface Builder{
 
         fun build():PageOneComponent

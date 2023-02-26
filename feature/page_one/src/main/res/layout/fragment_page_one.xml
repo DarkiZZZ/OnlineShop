@@ -27,7 +27,7 @@
             layout="@layout/latest_layout"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/latestItemsLayout"
+            android:id="@+id/latestItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="149dp"
             android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
@@ -39,7 +39,7 @@
             layout="@layout/flash_sale_layout"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/flashSaleItemsLayout"
+            android:id="@+id/flashSaleItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="221dp"
             android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
@@ -51,7 +51,7 @@
             layout="@layout/brands_layout"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/brandItemsLayout"
+            android:id="@+id/brandItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="221dp"
             android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
