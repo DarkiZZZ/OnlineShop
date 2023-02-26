@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -38,6 +39,11 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:latest_api"))
     implementation(project(":core:sale_api"))
+    implementation(project(":core:dagger"))
+
+    implementation(Dagger.daggerCore)
+    kapt(Dagger.daggerCompiler)
+    kapt(Dagger.daggerProcessor)
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
