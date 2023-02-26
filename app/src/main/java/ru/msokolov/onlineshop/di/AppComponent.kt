@@ -3,15 +3,16 @@ package ru.msokolov.onlineshop.di
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Module
 import ru.msokolov.onlineshop.OnlineShopApplication
 import ru.msokolov.onlineshop.di.api.ApiModules
 import ru.msokolov.onlineshop.di.feature.FeatureDepsModule
 import ru.msokolov.onlineshop.page_one.di.PageOneDependencies
 
-@Component(modules = [FeatureDepsModule::class, ApiModules::class, MainDepsModule::class])
-interface AppComponent : PageOneDependencies {
+@Component(modules = [AppModule::class, FeatureDepsModule::class, ApiModules::class])
+interface AppComponent : PageOneDependencies, MainActivityDeps {
 
-    fun inject(app: OnlineShopApplication)
+    fun inject(onlineShopApplication: OnlineShopApplication)
 
     @Component.Builder
     interface Builder{
@@ -23,3 +24,6 @@ interface AppComponent : PageOneDependencies {
     }
 
 }
+
+@Module
+class AppModule
