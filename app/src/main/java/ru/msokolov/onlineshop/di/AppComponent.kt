@@ -8,7 +8,7 @@ import ru.msokolov.onlineshop.di.api.ApiModules
 import ru.msokolov.onlineshop.di.feature.FeatureDepsModule
 import ru.msokolov.onlineshop.page_one.di.PageOneDependencies
 
-@Component(modules = [/*FeatureDepsModule::class, ApiModules::class,*/ MainDepsModule::class])
+@Component(modules = [FeatureDepsModule::class, ApiModules::class, MainDepsModule::class])
 interface AppComponent : PageOneDependencies {
 
     fun inject(app: OnlineShopApplication)
