@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'ru.msokolov.onlineshop'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.msokolov.onlineshop"
         minSdk 23
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -44,6 +44,9 @@ dependencies {
     implementation(project(":feature:page_two"))
     implementation(project(":feature:profile"))
     implementation(project(":core:navigation"))
+    implementation(project(":core:dagger"))
+    implementation(project(":core:latest_api_internal"))
+    implementation(project(":core:sale_api_internal"))
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
