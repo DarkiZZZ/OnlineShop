@@ -1,8 +1,8 @@
 package ru.msokolov.onlineshop
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
