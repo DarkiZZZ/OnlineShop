@@ -1,8 +1,8 @@
 package ru.msokolov.onlineshop
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
@@ -11,7 +11,7 @@ import ru.msokolov.onlineshop.databinding.ActivityMainBinding
 import ru.msokolov.onlineshop.di.DaggerMainActivityComponent
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
