@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
-            android:id="@+id/homeButton"
+            android:id="@+id/pageOneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -54,7 +54,7 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/cartButton"
-            app:layout_constraintStart_toEndOf="@id/homeButton"
+            app:layout_constraintStart_toEndOf="@id/pageOneButton"
             app:layout_constraintTop_toTopOf="parent"
             tools:background="@drawable/bottom_item_background">
 
@@ -127,7 +127,4 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

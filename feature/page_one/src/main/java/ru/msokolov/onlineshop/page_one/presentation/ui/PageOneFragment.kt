@@ -50,8 +50,6 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         lifecycleScope.launchWhenStarted {
             viewModel.getLatestData().collect{
                 when(it.status){
@@ -61,5 +59,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
                 }
             }
         }
+        super.onViewCreated(view, savedInstanceState)
+
     }
 }
