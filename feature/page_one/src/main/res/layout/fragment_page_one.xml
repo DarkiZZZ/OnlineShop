@@ -18,6 +18,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoryRecView"
             android:layout_width="match_parent"
+            android:layout_marginTop="17dp"
             android:layout_height="59dp"
             tools:listitem="@layout/category_item"
             tools:itemCount="1" />
