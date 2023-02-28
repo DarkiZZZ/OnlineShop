@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.data.repository.latest
+package ru.msokolov.onlineshop.page_one.domain.repository
 
 import ru.msokolov.onlineshop.latest_api.models.LatestResponseDto
 
