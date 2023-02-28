@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.latest
+package ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
