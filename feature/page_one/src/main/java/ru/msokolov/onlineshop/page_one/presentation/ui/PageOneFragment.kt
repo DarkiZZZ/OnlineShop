@@ -18,9 +18,12 @@ import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleListEntity
 import ru.msokolov.onlineshop.page_one.data.entity.LatestListEntity
 import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
+import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.BrandDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.BrandModel
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.CompositeAdapter
-import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.latest.FlashSaleDelegateAdapter
-import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.latest.LatestDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale.FlashSaleDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.latest.LatestDelegateAdapter
 import javax.inject.Inject
 
 class PageOneFragment : Fragment(R.layout.fragment_page_one) {
@@ -37,11 +40,16 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
             .add(LatestDelegateAdapter())
             .build()
     }
+    private val brandCompositeAdapter by lazy {
+        CompositeAdapter.Builder()
+            .add(BrandDelegateAdapter())
+            .build()
+    }
 
 
     @Inject
-    lateinit var viewModelFactory : Lazy<PageOneViewModel.Companion.PageOneViewModelFactory>
-    private val viewModel : PageOneViewModel by viewModels{ viewModelFactory.get() }
+    lateinit var viewModelFactory: Lazy<PageOneViewModel.Companion.PageOneViewModelFactory>
+    private val viewModel: PageOneViewModel by viewModels { viewModelFactory.get() }
 
     @Inject
     lateinit var pageOneCommandProvider: PageOneCommandProvider
@@ -64,29 +72,51 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        with(binding.flashSaleItemsRecyclerView){
+        with(binding.flashSaleItemsRecyclerView) {
             adapter = flashSaleCompositeAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
-        with(binding.latestItemsRecyclerView){
+        with(binding.latestItemsRecyclerView) {
             adapter = latestCompositeAdapter
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
+        with(binding.brandItemsRecyclerView) {
+            adapter = brandCompositeAdapter
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        val brandList =
+            listOf(
+                BrandModel(0, "content0"),
+                BrandModel(1, "content1"),
+                BrandModel(2, "content2"),
+                BrandModel(3, "content3"),
+                BrandModel(4, "content4"),
+            )
+        brandCompositeAdapter.submitList(brandList)
         lifecycleScope.launchWhenStarted {
-            viewModel.getData().collect{
-                when(it.status){
-                    Status.SUCCESS -> {
-                        when(it.data){
+            viewModel.getData().collect {
+                when (it.status) {
+                    ru.msokolov.onlineshop.network.Status.SUCCESS -> {
+                        when (it.data) {
                             is LatestListEntity -> {
-                                latestCompositeAdapter.submitList(it.data.latestList)
+                                latestCompositeAdapter.submitList((it.data as LatestListEntity).latestList)
                             }
                             is FlashSaleListEntity -> {
-                                flashSaleCompositeAdapter.submitList(it.data.flashSaleList)
+                                flashSaleCompositeAdapter.submitList((it.data as FlashSaleListEntity).flashSaleList)
                             }
                         }
                     }
-                    Status.ERROR -> Log.d("TAGTAGTAG", "error: ${it.message.toString()}")
-                    Status.LOADING -> Log.d("TAGTAGTAG", it.message.toString())
+                    ru.msokolov.onlineshop.network.Status.ERROR -> Log.d(
+                        "TAGTAGTAG",
+                        "error: ${it.message.toString()}"
+                    )
+                    ru.msokolov.onlineshop.network.Status.LOADING -> Log.d(
+                        "TAGTAGTAG",
+                        it.message.toString()
+                    )
                 }
             }
         }

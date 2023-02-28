@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.presentation.ui
+package ru.msokolov.onlineshop.page_one.presentation.navigation
 
 import ru.msokolov.onlineshop.navigation.NavCommand
 

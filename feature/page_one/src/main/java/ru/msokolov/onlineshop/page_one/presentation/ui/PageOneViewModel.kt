@@ -16,16 +16,16 @@ class PageOneViewModel(
 
     fun getData() = flow {
         try {
-            emit(Resource.success(data = latestUseCase()))
-            emit(Resource.success(data = saleUseCase()))
+            emit(ru.msokolov.onlineshop.network.Resource.success(data = latestUseCase()))
+            emit(ru.msokolov.onlineshop.network.Resource.success(data = saleUseCase()))
         }
         catch (exception: Exception){
-            emit(Resource.error(data = null, message = exception.message ?: "test"))
+            emit(ru.msokolov.onlineshop.network.Resource.error(data = null, message = exception.message ?: "test"))
         }
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        Resource.loading(data = null)
+        ru.msokolov.onlineshop.network.Resource.loading(data = null)
     )
 
     companion object{
