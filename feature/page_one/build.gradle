@@ -46,6 +46,7 @@ dependencies {
     kapt(Dagger.daggerCompiler)
     kapt(Dagger.daggerProcessor)
 
+    implementation(Network.picasso)
     implementation(Lifecycle.viewModelKtx)
 
     implementation(FragmentKtx.fragmentKtx)
