@@ -3,7 +3,7 @@ package ru.msokolov.onlineshop.page_one.di
 import dagger.Component
 import ru.msokolov.onlineshop.dagger.Dependencies
 import ru.msokolov.onlineshop.latest_api.LatestApiService
-import ru.msokolov.onlineshop.page_one.presentation.ui.PageOneCommandProvider
+import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 import ru.msokolov.onlineshop.page_one.presentation.ui.PageOneFragment
 import ru.msokolov.onlineshop.sale_api.SaleApiService
 

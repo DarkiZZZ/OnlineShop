@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.presentation.ui
+package ru.msokolov.onlineshop.network
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object {

@@ -8,7 +8,7 @@ import ru.msokolov.onlineshop.dagger.Dependencies
 import ru.msokolov.onlineshop.dagger.DependenciesKey
 import ru.msokolov.onlineshop.di.AppComponent
 import ru.msokolov.onlineshop.page_one.di.PageOneDependencies
-import ru.msokolov.onlineshop.page_one.presentation.ui.PageOneCommandProvider
+import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 
 @Module
 interface PageOneDepsModule {
