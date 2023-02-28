@@ -11,11 +11,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.latest_api.models.LatestDto
+import ru.msokolov.onlineshop.latest_api.models.LatestResponseDto
 import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.page_one.R
 import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.latest.SaleAdapter
+import ru.msokolov.onlineshop.sale_api.models.SaleResponseDto
 import javax.inject.Inject
 
 class PageOneFragment : Fragment(R.layout.fragment_page_one) {
@@ -51,10 +54,15 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         lifecycleScope.launchWhenStarted {
-            viewModel.getLatestData().collect{
+            viewModel.getData().collect{
                 when(it.status){
-                    Status.SUCCESS -> Log.d("TAGTAGTAG", it.data.toString())
-                    Status.ERROR -> Log.d("TAGTAGTAG", it.message.toString())
+                    Status.SUCCESS -> {
+                        when(it.data){
+                            is LatestResponseDto -> { Log.d("TAGTAGTAG", "latest: ${ it.data.latest }")}
+                            is SaleResponseDto -> {Log.d("TAGTAGTAG", "sale: ${ it.data.flashSale }")}
+                        }
+                    }
+                    Status.ERROR -> Log.d("TAGTAGTAG", "error: ${it.message.toString()}")
                     Status.LOADING -> Log.d("TAGTAGTAG", it.message.toString())
                 }
             }

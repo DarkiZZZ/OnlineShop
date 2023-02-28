@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.data.repository.sale
+package ru.msokolov.onlineshop.page_one.domain.repository
 
 import ru.msokolov.onlineshop.sale_api.models.SaleResponseDto
 

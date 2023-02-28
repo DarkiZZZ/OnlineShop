@@ -3,23 +3,21 @@ package ru.msokolov.onlineshop.page_one.presentation.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.stateIn
-import ru.msokolov.onlineshop.page_one.data.repository.latest.LatestApiRepository
-import ru.msokolov.onlineshop.page_one.data.repository.sale.SaleApiRepository
+import kotlinx.coroutines.flow.*
+import ru.msokolov.onlineshop.page_one.domain.usecase.GetFlashSaleDataUseCase
+import ru.msokolov.onlineshop.page_one.domain.usecase.GetLatestDataUseCase
 import javax.inject.Inject
 import javax.inject.Provider
-import kotlin.Exception
 
 class PageOneViewModel(
-    private val latestApiRepository: LatestApiRepository,
-    private val saleApiRepository: SaleApiRepository
+    private val latestUseCase: GetLatestDataUseCase,
+    private val saleUseCase: GetFlashSaleDataUseCase
 ) : ViewModel() {
 
-    fun getLatestData() = flow {
+    fun getData() = flow {
         try {
-            emit(Resource.success(data = latestApiRepository.getLatestResponseDto()))
+            emit(Resource.success(data = latestUseCase()))
+            emit(Resource.success(data = saleUseCase()))
         }
         catch (exception: Exception){
             emit(Resource.error(data = null, message = exception.message ?: "test"))
@@ -33,14 +31,14 @@ class PageOneViewModel(
     companion object{
 
         class PageOneViewModelFactory @Inject constructor(
-            private val latestApiRepository: Provider<LatestApiRepository>,
-            private val saleApiRepository: Provider<SaleApiRepository>
+            private val latestUseCase: Provider<GetLatestDataUseCase>,
+            private val saleUseCase: Provider<GetFlashSaleDataUseCase>
         ) : ViewModelProvider.Factory{
 
             @Suppress("UNCHECKED_CAST")
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
                 require(modelClass == PageOneViewModel::class.java)
-                return PageOneViewModel(latestApiRepository.get(), saleApiRepository.get()) as T
+                return PageOneViewModel(latestUseCase.get(), saleUseCase.get()) as T
             }
         }
     }
