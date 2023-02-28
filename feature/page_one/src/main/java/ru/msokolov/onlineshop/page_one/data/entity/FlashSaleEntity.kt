@@ -3,11 +3,11 @@ package ru.msokolov.onlineshop.page_one.data.entity
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem
 
 data class FlashSaleEntity(
-    val category : String,
-    val name     : String,
-    val price    : String,
-    val discount : String,
-    val imageUrl : String
+    val category: String,
+    val name: String,
+    val price: String,
+    val discount: String,
+    val imageUrl: String
 ) : DelegateAdapterItem {
 
     override fun id(): Any {
@@ -19,21 +19,20 @@ data class FlashSaleEntity(
     }
 
     override fun payload(other: Any): DelegateAdapterItem.Payloadable {
-        if (other is FlashSaleEntity){
-            if (price != other.price){
+        if (other is FlashSaleEntity) {
+            if (price != other.price) {
                 return ChangePayload.PriceChanged(other.price)
             }
-            if (discount != other.discount){
+            if (discount != other.discount) {
                 return ChangePayload.DiscountChanged(other.discount)
             }
         }
-        //May be error here
         return DelegateAdapterItem.Payloadable.None
     }
 
-    inner class FlashSaleEntityContent(val price: String, val discount: String){
+    inner class FlashSaleEntityContent(val price: String, val discount: String) {
         override fun equals(other: Any?): Boolean {
-            if (other is FlashSaleEntityContent){
+            if (other is FlashSaleEntityContent) {
                 return price == other.price && discount == other.discount
             }
             return false
@@ -46,8 +45,8 @@ data class FlashSaleEntity(
         }
     }
 
-    sealed class ChangePayload: DelegateAdapterItem.Payloadable{
-        data class DiscountChanged(val discount: String): ChangePayload()
-        data class PriceChanged(val price: String): ChangePayload()
+    sealed class ChangePayload : DelegateAdapterItem.Payloadable {
+        data class DiscountChanged(val discount: String) : ChangePayload()
+        data class PriceChanged(val price: String) : ChangePayload()
     }
 }
