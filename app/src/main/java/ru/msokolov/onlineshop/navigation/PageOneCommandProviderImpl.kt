@@ -1,7 +1,6 @@
-package ru.msokolov.onlineshop
+package ru.msokolov.onlineshop.navigation
 
 import ru.msokolov.onlineshop.R.*
-import ru.msokolov.onlineshop.navigation.NavCommand
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 import javax.inject.Inject
 
