@@ -19,14 +19,23 @@ import ru.msokolov.onlineshop.page_one.data.entity.LatestListEntity
 import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
-import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.BrandDelegateAdapter
-import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.BrandModel
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand.BrandDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand.BrandModel
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.CategoryDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.CategoryModel
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.CompositeAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale.FlashSaleDelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.latest.LatestDelegateAdapter
 import javax.inject.Inject
 
 class PageOneFragment : Fragment(R.layout.fragment_page_one) {
+
+    @Inject
+    lateinit var viewModelFactory: Lazy<PageOneViewModel.Companion.PageOneViewModelFactory>
+    private val viewModel: PageOneViewModel by viewModels { viewModelFactory.get() }
+
+    @Inject
+    lateinit var pageOneCommandProvider: PageOneCommandProvider
 
     private lateinit var binding: FragmentPageOneBinding
 
@@ -45,14 +54,11 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
             .add(BrandDelegateAdapter())
             .build()
     }
-
-
-    @Inject
-    lateinit var viewModelFactory: Lazy<PageOneViewModel.Companion.PageOneViewModelFactory>
-    private val viewModel: PageOneViewModel by viewModels { viewModelFactory.get() }
-
-    @Inject
-    lateinit var pageOneCommandProvider: PageOneCommandProvider
+    private val categoryCompositeAdapter by lazy {
+        CompositeAdapter.Builder()
+            .add(CategoryDelegateAdapter(requireContext()))
+            .build()
+    }
 
     override fun onAttach(context: Context) {
         DaggerPageOneComponent.builder()
@@ -72,16 +78,49 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setupFlashSaleRecyclerView()
+        setupLatestRecyclerView()
+        setupBrandRecyclerView()
+        setupCategoryRecyclerView()
+        setupDataFromViewModel()
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun setupFlashSaleRecyclerView(){
         with(binding.flashSaleItemsRecyclerView) {
             adapter = flashSaleCompositeAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
+    }
+
+    private fun setupCategoryRecyclerView(){
+        with(binding.categoryRecView) {
+            adapter = categoryCompositeAdapter
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+        val categoryList =
+            listOf(
+                CategoryModel(0, R.drawable.ic_phones, "Phones"),
+                CategoryModel(1, R.drawable.ic_headphones, "Headphones"),
+                CategoryModel(2, R.drawable.ic_games, "Games"),
+                CategoryModel(3, R.drawable.ic_cars, "Cars"),
+                CategoryModel(4, R.drawable.ic_furniture, "Furniture"),
+                CategoryModel(5, R.drawable.ic_kids, "Kids")
+            )
+        categoryCompositeAdapter.submitList(categoryList)
+    }
+
+    private fun setupLatestRecyclerView(){
         with(binding.latestItemsRecyclerView) {
             adapter = latestCompositeAdapter
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         }
+    }
+
+    private fun setupBrandRecyclerView(){
         with(binding.brandItemsRecyclerView) {
             adapter = brandCompositeAdapter
             layoutManager =
@@ -96,6 +135,9 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
                 BrandModel(4, "content4"),
             )
         brandCompositeAdapter.submitList(brandList)
+    }
+
+    private fun setupDataFromViewModel(){
         lifecycleScope.launchWhenStarted {
             viewModel.getData().collect {
                 when (it.status) {
@@ -120,7 +162,5 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
                 }
             }
         }
-        super.onViewCreated(view, savedInstanceState)
-
     }
 }
