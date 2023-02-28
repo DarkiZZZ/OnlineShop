@@ -16,6 +16,7 @@
         android:contentDescription="@string/category_icon_desc" />
 
     <TextView
+        android:id="@+id/nameTextView"
         android:layout_width="66dp"
         android:layout_height="10dp"
         android:gravity="center"

@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category
+package ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
