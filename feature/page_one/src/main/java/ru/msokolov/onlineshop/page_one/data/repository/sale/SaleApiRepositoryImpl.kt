@@ -1,14 +1,18 @@
 package ru.msokolov.onlineshop.page_one.data.repository.sale
 
+import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleListEntity
+import ru.msokolov.onlineshop.page_one.data.mapper.FlashSaleMapper
 import ru.msokolov.onlineshop.page_one.domain.repository.SaleApiRepository
 import ru.msokolov.onlineshop.sale_api.SaleApiService
-import ru.msokolov.onlineshop.sale_api.models.SaleResponseDto
 import javax.inject.Inject
 
-class SaleApiRepositoryImpl @Inject constructor(private val apiService: SaleApiService):
+class SaleApiRepositoryImpl @Inject constructor(
+    private val apiService: SaleApiService,
+    private val mapper: FlashSaleMapper
+) :
     SaleApiRepository {
 
-    override suspend fun getSaleResponseDto(): SaleResponseDto {
-        return apiService.getSaleResponseDto()
+    override suspend fun getSaleResponseDto(): FlashSaleListEntity {
+        return mapper(apiService.getSaleResponseDto())
     }
 }
