@@ -47,6 +47,7 @@ dependencies {
     implementation(project(":core:dagger"))
     implementation(project(":core:latest_api_internal"))
     implementation(project(":core:sale_api_internal"))
+    implementation(project(":core:ui"))
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
