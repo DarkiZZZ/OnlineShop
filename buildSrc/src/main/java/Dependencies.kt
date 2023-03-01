@@ -67,3 +67,11 @@ object FragmentKtx{ /*test name*/
     const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
 
 }
+
+object Room {
+    private const val roomVersion = "2.5.0"
+
+    const val roomRuntime = "androidx.room:room-runtime:$roomVersion"
+    const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
+    const val roomKtx = "androidx.room:room-ktx:$roomVersion"
+}
