@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         binding.profileButton.setOnClickListener {
+            setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toProfile.action)
         }
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         context: Context,
         isClickedIndex: Int
     ) {
-        setAllBottomButtonsUnClicked(context = context, isClickedIndex = isClickedIndex)
+        setBottomButtonsState(context = context, isClickedIndex = isClickedIndex)
         if (isVisible) {
             binding.bottomNavigationView.visibility = View.VISIBLE
         } else {
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setAllBottomButtonsUnClicked(context: Context, isClickedIndex: Int) {
+    private fun setBottomButtonsState(context: Context, isClickedIndex: Int) {
         val background = AppCompatResources.getDrawable(context, R.drawable.bottom_item_background)
         val backgroundClicked =
             AppCompatResources.getDrawable(context, R.drawable.bottom_item_clicked_background)

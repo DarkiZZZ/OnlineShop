@@ -26,6 +26,9 @@
             <option value="$PROJECT_DIR$/feature/page_two" />
             <option value="$PROJECT_DIR$/feature/profile" />
             <option value="$PROJECT_DIR$/feature/sign_in" />
+            <option value="$PROJECT_DIR$/storage" />
+            <option value="$PROJECT_DIR$/storage/user_database" />
+            <option value="$PROJECT_DIR$/storage/user_database_api" />
             <option value="$PROJECT_DIR$/utils" />
             <option value="$PROJECT_DIR$/utils/network" />
           </set>
