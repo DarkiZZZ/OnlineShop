@@ -10,9 +10,9 @@ interface UserDao {
     @Insert
     suspend fun insertUser(user: UserDbEntity)
 
-    @Query("DELETE FROM users WHERE is_active = :isActive")
-    suspend fun deleteUser(isActive: Boolean)
+    @Query("DELETE FROM users_table WHERE is_online = :isOnline")
+    suspend fun deleteUser(isOnline: Boolean)
 
-    @Query("SELECT * FROM users WHERE first_name = :firstName")
-    suspend fun isUserExist(firstName: String): Int
+    @Query("SELECT EXISTS (SELECT 1 FROM users_table WHERE first_name = :firstName)")
+    suspend fun isUserExist(firstName: String): Boolean
 }

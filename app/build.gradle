@@ -48,6 +48,7 @@ dependencies {
     implementation(project(":core:latest_api_internal"))
     implementation(project(":core:sale_api_internal"))
     implementation(project(":core:ui"))
+    implementation(project(":storage:user_database"))
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -57,6 +58,10 @@ dependencies {
 
     implementation(Navigation.navUi)
     implementation(Navigation.navFragmentKtx)
+
+    implementation(Room.roomRuntime)
+    implementation(Room.roomKtx)
+    kapt(Room.roomCompiler)
 
     implementation(Dagger.daggerCore)
     kapt(Dagger.daggerCompiler)
