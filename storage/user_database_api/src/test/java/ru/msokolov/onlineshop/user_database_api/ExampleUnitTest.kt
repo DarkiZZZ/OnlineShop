@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.database
+package ru.msokolov.onlineshop.user_database_api
 
 import org.junit.Test
 

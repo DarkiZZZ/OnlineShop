@@ -1,16 +1,15 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "ru.msokolov.onlineshop.database"
-    compileSdk = 33
+    namespace = "ru.msokolov.onlineshop.user_database"
+    compileSdk = 32
 
     defaultConfig {
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 32
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -35,10 +34,6 @@ android {
 }
 
 dependencies {
-
-    implementation(Room.roomRuntime)
-    implementation(Room.roomKtx)
-    kapt(Room.roomCompiler)
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

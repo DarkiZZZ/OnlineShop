@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/dagger" />
-            <option value="$PROJECT_DIR$/core/database" />
             <option value="$PROJECT_DIR$/core/latest_api" />
             <option value="$PROJECT_DIR$/core/latest_api_internal" />
             <option value="$PROJECT_DIR$/core/navigation" />
@@ -27,6 +26,9 @@
             <option value="$PROJECT_DIR$/feature/page_two" />
             <option value="$PROJECT_DIR$/feature/profile" />
             <option value="$PROJECT_DIR$/feature/sign_in" />
+            <option value="$PROJECT_DIR$/storage" />
+            <option value="$PROJECT_DIR$/storage/user_database" />
+            <option value="$PROJECT_DIR$/storage/user_database_api" />
             <option value="$PROJECT_DIR$/utils" />
             <option value="$PROJECT_DIR$/utils/network" />
           </set>
