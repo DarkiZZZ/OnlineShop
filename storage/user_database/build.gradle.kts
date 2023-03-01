@@ -38,7 +38,7 @@ android {
 
 dependencies {
 
-    implementation(project(":storage:user_database_api"))
+    api(project(":storage:user_database_api"))
 
     implementation(Room.roomRuntime)
     implementation(Room.roomKtx)
