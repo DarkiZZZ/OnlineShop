@@ -11,4 +11,8 @@
     <string name="sign_in_with_apple">Sign in with Apple</string>
     <string name="google_logo">Google logo</string>
     <string name="apple_logo">Apple logo</string>
+
+    <string name="field_is_empty">%1$sПоле должно быть заполнено</string>
+    <string name="account_already_exists">Account already exists.</string>
+    <string name="email_is_not_proper">"%1$s - wrong, %1$s@mail.ru - right "</string>
 </resources>

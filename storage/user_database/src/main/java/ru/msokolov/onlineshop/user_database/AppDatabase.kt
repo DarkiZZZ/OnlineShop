@@ -4,7 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import ru.msokolov.onlineshop.user_database_api.UserDao
+import ru.msokolov.onlineshop.user_database_api.LoginUserDao
+import ru.msokolov.onlineshop.user_database_api.ProfileUserDao
+import ru.msokolov.onlineshop.user_database_api.SignInPageUserDao
 import ru.msokolov.onlineshop.user_database_api.UserDbEntity
 
 @Database(entities = [UserDbEntity::class], version = 1, exportSchema = false)
@@ -31,5 +33,7 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }
 
-    abstract fun getUserDao(): UserDao
+    abstract fun getSignInPageUserDao(): SignInPageUserDao
+    abstract fun getLoginUserDao(): LoginUserDao
+    abstract fun getProfileUserDao(): ProfileUserDao
 }

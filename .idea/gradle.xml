@@ -30,6 +30,7 @@
             <option value="$PROJECT_DIR$/storage/user_database" />
             <option value="$PROJECT_DIR$/storage/user_database_api" />
             <option value="$PROJECT_DIR$/utils" />
+            <option value="$PROJECT_DIR$/utils/livedata" />
             <option value="$PROJECT_DIR$/utils/network" />
           </set>
         </option>
