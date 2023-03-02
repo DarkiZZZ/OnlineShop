@@ -8,5 +8,5 @@ import androidx.room.Query
 interface LoginUserDao {
 
     @Query("SELECT EXISTS (SELECT 1 FROM users_table WHERE first_name = :firstName)")
-    suspend fun isUserExist(firstName: String): LiveData<Boolean>
+    fun isUserExist(firstName: String): LiveData<Boolean>
 }
