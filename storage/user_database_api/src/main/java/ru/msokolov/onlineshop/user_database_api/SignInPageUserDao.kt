@@ -9,7 +9,4 @@ interface SignInPageUserDao {
 
     @Insert
     suspend fun insertUser(user: UserDbEntity)
-
-    @Query("SELECT EXISTS (SELECT 1 FROM users_table WHERE first_name = :firstName)")
-    suspend fun isUserExist(firstName: String): Boolean
 }
