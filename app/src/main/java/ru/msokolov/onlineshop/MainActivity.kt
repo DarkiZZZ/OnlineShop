@@ -32,16 +32,25 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-        binding.profileButton.setOnClickListener {
-            setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
-            findNavController(binding.fragmentContainerView.id)
-                .navigate(bottomNavigation.toProfile.action)
-        }
+        setBottomNavigationClickListeners()
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         setupNavControllerClickListener(navController)
         super.onStart()
+    }
+
+    private fun setBottomNavigationClickListeners(){
+        binding.profileButton.setOnClickListener {
+            setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
+            findNavController(binding.fragmentContainerView.id)
+                .navigate(bottomNavigation.toProfile.action)
+        }
+        binding.pageOneButton.setOnClickListener {
+            setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
+            findNavController(binding.fragmentContainerView.id)
+                .navigate(bottomNavigation.toPageOne.action)
+        }
     }
 
     private fun setBottomNavigationVisibility(
