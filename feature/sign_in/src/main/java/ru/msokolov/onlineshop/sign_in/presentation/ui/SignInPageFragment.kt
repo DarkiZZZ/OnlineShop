@@ -2,7 +2,6 @@ package ru.msokolov.onlineshop.sign_in.presentation.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import android.widget.EditText
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.google.android.material.snackbar.Snackbar
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.livedata.observeEvent
@@ -20,6 +18,7 @@ import ru.msokolov.onlineshop.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.sign_in.di.DaggerSignInPageComponent
 import ru.msokolov.onlineshop.sign_in.presentation.navigation.SignInPageCommandProvider
 import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
+import ru.msokolov.onlineshop.ui.showSnackBar
 import javax.inject.Inject
 
 class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
@@ -60,7 +59,6 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
 
     private fun setupClickListeners() {
         binding.loginButton.setOnClickListener {
-            writeToSharedPrefs(getFirstName())
             navigate(signInPageCommandProvider.toLogin)
         }
         binding.signInButton.setOnClickListener {
@@ -84,11 +82,12 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
 
     private fun observeEvents(){
         viewModel.goToPageOne.observeEvent(viewLifecycleOwner){
+            writeToSharedPrefs(getFirstName())
             navigate(signInPageCommandProvider.toPageOne)
 
         }
         viewModel.accountError.observeEvent(viewLifecycleOwner){
-            showSnackBar(getString(R.string.account_already_exists))
+            showSnackBar(binding.root, getString(R.string.account_already_exists))
         }
         viewModel.setSignInButtonActive.observeEvent(viewLifecycleOwner){
             binding.signInButton.isClickable = true
@@ -96,8 +95,8 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
     }
 
     private fun observeDatabaseError(){
-        viewModel.databaseError.observe(viewLifecycleOwner){
-            showSnackBar(it)
+        viewModel.someError.observe(viewLifecycleOwner){
+            showSnackBar(binding.root, it)
         }
     }
 
@@ -112,11 +111,6 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
     private fun getFirstName() = binding.firstNameEditText.text.toString().trim()
     private fun getLastName() = binding.lastNameEditText.text.toString().trim()
     private fun getEmail() = binding.emailEditText.text.toString().trim()
-
-
-    private fun showSnackBar(message: String){
-        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
-    }
 
     private fun writeToSharedPrefs(firstName: String){
         val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return

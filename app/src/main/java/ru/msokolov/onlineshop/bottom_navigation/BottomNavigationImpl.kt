@@ -7,4 +7,5 @@ import javax.inject.Inject
 class BottomNavigationImpl @Inject constructor(): BottomNavigation {
 
     override val toProfile: NavCommand = NavCommand(R.id.action_feature_profile)
+    override val toPageOne: NavCommand = NavCommand(R.id.action_feature_page_one)
 }

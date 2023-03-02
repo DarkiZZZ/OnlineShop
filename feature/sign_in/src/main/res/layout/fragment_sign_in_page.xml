@@ -8,7 +8,7 @@
     tools:context=".presentation.ui.SignInPageFragment">
 
     <TextView
-        android:id="@+id/welcomeBackTextView"
+        android:id="@+id/SignInTextView"
         style="@style/TextAppearance.OnlineShop.SignInLogo"
         android:layout_width="150dp"
         android:layout_height="48dp"
@@ -40,7 +40,7 @@
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/SignInTextView"/>
 
     <EditText
         android:id="@+id/lastNameEditText"
