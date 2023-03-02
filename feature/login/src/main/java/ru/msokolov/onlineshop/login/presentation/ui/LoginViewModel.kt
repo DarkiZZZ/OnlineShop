@@ -33,6 +33,11 @@ class LoginViewModel(private val useCase: CheckIsUserForExistUseCase) : ViewMode
     private val _setSignInButtonActive = MutableUnitLiveEvent()
     val setSignInButtonActive = _setSignInButtonActive.share()
 
+    private val _isPasswordVisible = MutableLiveData(false)
+    val isPasswordVisible = _isPasswordVisible.share()
+
+    private var passwordClickNumber = 0
+
     fun login(firstName: String, password: String) {
         try {
             checkIfUserExists(firstName, password)
@@ -43,6 +48,10 @@ class LoginViewModel(private val useCase: CheckIsUserForExistUseCase) : ViewMode
         }
     }
 
+    fun handlePasswordVisibility(){
+        passwordClickNumber += 1
+        _isPasswordVisible.value = passwordClickNumber%2 == 1
+    }
 
     private fun checkIfUserExists(firstName: String, password: String) {
         checkFieldsForEmpty(firstName, password)
@@ -51,7 +60,7 @@ class LoginViewModel(private val useCase: CheckIsUserForExistUseCase) : ViewMode
                 firstName = firstName
             )
             try {
-                if (useCase(firstNameEntity)) {
+                if (!useCase(firstNameEntity)) {
                     throw AccountAlreadyExistsException()
                 } else {
                     _goToPageOne.publishEvent()
