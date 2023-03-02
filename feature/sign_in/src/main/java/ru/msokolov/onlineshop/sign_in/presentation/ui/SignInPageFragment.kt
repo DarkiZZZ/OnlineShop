@@ -2,7 +2,6 @@ package ru.msokolov.onlineshop.sign_in.presentation.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +18,7 @@ import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.sign_in.di.DaggerSignInPageComponent
 import ru.msokolov.onlineshop.sign_in.presentation.navigation.SignInPageCommandProvider
+import ru.msokolov.onlineshop.ui.R.*
 import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
 import javax.inject.Inject
 
@@ -88,7 +88,7 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
 
         }
         viewModel.accountError.observeEvent(viewLifecycleOwner){
-            showSnackBar(getString(R.string.account_already_exists))
+            showSnackBar(getString(string.account_already_exists))
         }
         viewModel.setSignInButtonActive.observeEvent(viewLifecycleOwner){
             binding.signInButton.isClickable = true
@@ -96,7 +96,7 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
     }
 
     private fun observeDatabaseError(){
-        viewModel.databaseError.observe(viewLifecycleOwner){
+        viewModel.someError.observe(viewLifecycleOwner){
             showSnackBar(it)
         }
     }

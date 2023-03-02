@@ -10,6 +10,7 @@ import ru.msokolov.onlineshop.livedata.share
 import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.domain.model.UserEntity
 import ru.msokolov.onlineshop.sign_in.domain.usecase.AddNewUserUseCase
+import ru.msokolov.onlineshop.ui.R.*
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -20,8 +21,8 @@ class SignInPageViewModel(
     private val _state = MutableLiveData(State())
     val state = _state.share()
 
-    private val _databaseError = MutableLiveData<String>()
-    val databaseError = _databaseError.share()
+    private val _someError = MutableLiveData<String>()
+    val someError = _someError.share()
 
     private val _accountError = MutableUnitLiveEvent()
     val accountError = _accountError.share()
@@ -45,7 +46,7 @@ class SignInPageViewModel(
     }
 
     private fun handleException(exception: java.lang.Exception) {
-        _databaseError.value = exception.message.toString()
+        _someError.value = exception.message.toString()
     }
 
     private fun createUser(firstName: String, lastName: String, email: String) {
@@ -99,15 +100,15 @@ class SignInPageViewModel(
         _state.value = when (exception.field) {
             SignInField.FirstName -> {
                 _state.requireValue()
-                    .copy(firstNameErrorMessageRes = R.string.field_is_empty)
+                    .copy(firstNameErrorMessageRes = string.field_is_empty)
             }
             SignInField.LastName -> {
                 _state.requireValue()
-                    .copy(lastNameErrorMessageRes = R.string.field_is_empty)
+                    .copy(lastNameErrorMessageRes = string.field_is_empty)
             }
             SignInField.Email -> {
                 _state.requireValue()
-                    .copy(emailErrorMessageRes = R.string.field_is_empty)
+                    .copy(emailErrorMessageRes = string.field_is_empty)
             }
         }
         _setSignInButtonActive.publishEvent()
@@ -137,10 +138,6 @@ class SignInPageViewModel(
                 return SignInPageViewModel(addUserUseCase.get()) as T
             }
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
     }
 
     data class State(

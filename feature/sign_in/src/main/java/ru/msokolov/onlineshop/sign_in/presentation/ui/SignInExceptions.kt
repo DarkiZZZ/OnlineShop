@@ -1,6 +1,7 @@
 package ru.msokolov.onlineshop.sign_in.presentation.ui
 
-open class AppException : RuntimeException()
+import ru.msokolov.onlineshop.livedata.AppException
+
 
 class EmptyFieldException(
     val field: SignInField
