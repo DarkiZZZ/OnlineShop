@@ -8,11 +8,12 @@ import ru.msokolov.onlineshop.OnlineShopApplication
 import ru.msokolov.onlineshop.di.api.ApiModules
 import ru.msokolov.onlineshop.di.database.StorageModules
 import ru.msokolov.onlineshop.di.feature.FeatureDepsModule
+import ru.msokolov.onlineshop.login.di.LoginDependencies
 import ru.msokolov.onlineshop.page_one.di.PageOneDependencies
 import ru.msokolov.onlineshop.sign_in.di.SignInPageDependencies
 
 @Component(modules = [AppModule::class, FeatureDepsModule::class, ApiModules::class, StorageModules::class])
-interface AppComponent : PageOneDependencies, SignInPageDependencies, MainActivityDeps {
+interface AppComponent : PageOneDependencies, SignInPageDependencies, LoginDependencies, MainActivityDeps {
 
     fun inject(onlineShopApplication: OnlineShopApplication)
 
