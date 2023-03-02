@@ -6,12 +6,13 @@ import dagger.Component
 import dagger.Module
 import ru.msokolov.onlineshop.OnlineShopApplication
 import ru.msokolov.onlineshop.di.api.ApiModules
-import ru.msokolov.onlineshop.di.database.DatabaseModules
+import ru.msokolov.onlineshop.di.database.StorageModules
 import ru.msokolov.onlineshop.di.feature.FeatureDepsModule
 import ru.msokolov.onlineshop.page_one.di.PageOneDependencies
+import ru.msokolov.onlineshop.sign_in.di.SignInPageDependencies
 
-@Component(modules = [AppModule::class, FeatureDepsModule::class, ApiModules::class, DatabaseModules::class])
-interface AppComponent : PageOneDependencies, MainActivityDeps {
+@Component(modules = [AppModule::class, FeatureDepsModule::class, ApiModules::class, StorageModules::class])
+interface AppComponent : PageOneDependencies, SignInPageDependencies, MainActivityDeps {
 
     fun inject(onlineShopApplication: OnlineShopApplication)
 
