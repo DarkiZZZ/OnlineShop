@@ -47,8 +47,6 @@ dependencies {
     kapt(Dagger.daggerProcessor)
 
     implementation(FragmentKtx.fragmentKtx)
-    implementation(Coroutines.coroutinesAndroid)
-    implementation(Coroutines.coroutinesCore)
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
