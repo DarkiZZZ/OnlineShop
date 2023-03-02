@@ -13,4 +13,5 @@
     <string name="apple_logo">Apple logo</string>
 
     <string name="email_is_not_proper">"%1$s - wrong, %1$s@mail.ru - right "</string>
+    <string name="account_already_exists">Account already exists.</string>
 </resources>
