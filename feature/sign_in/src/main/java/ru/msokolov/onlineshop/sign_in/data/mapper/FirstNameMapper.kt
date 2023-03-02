@@ -6,6 +6,6 @@ import javax.inject.Inject
 class FirstNameMapper @Inject constructor() {
 
     operator fun invoke(firstNameEntity: FirstNameEntity): String{
-        return firstNameEntity.fistName
+        return firstNameEntity.firstName
     }
 }
