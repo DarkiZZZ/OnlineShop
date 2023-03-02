@@ -2,6 +2,7 @@ package ru.msokolov.onlineshop.sign_in.presentation.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +19,7 @@ import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.sign_in.di.DaggerSignInPageComponent
 import ru.msokolov.onlineshop.sign_in.presentation.navigation.SignInPageCommandProvider
+import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
 import javax.inject.Inject
 
 class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
@@ -58,6 +60,7 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
 
     private fun setupClickListeners() {
         binding.loginButton.setOnClickListener {
+            writeToSharedPrefs(getFirstName())
             navigate(signInPageCommandProvider.toLogin)
         }
         binding.signInButton.setOnClickListener {
@@ -82,6 +85,7 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
     private fun observeEvents(){
         viewModel.goToPageOne.observeEvent(viewLifecycleOwner){
             navigate(signInPageCommandProvider.toPageOne)
+
         }
         viewModel.accountError.observeEvent(viewLifecycleOwner){
             showSnackBar(getString(R.string.account_already_exists))
@@ -113,4 +117,18 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
     private fun showSnackBar(message: String){
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
+
+    private fun writeToSharedPrefs(firstName: String){
+        val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPrefs.edit()){
+            putString(getString(shared_prefs_user_name_key), firstName)
+            apply()
+        }
+    }
+
+    /*private fun readFromSharedPrefs(){
+        val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        val firstName = sharedPrefs.getString(getString(shared_prefs_user_name_key), "")
+        Log.d("TAGTAGTAG", firstName.toString())
+    }*/
 }
