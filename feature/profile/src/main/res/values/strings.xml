@@ -9,4 +9,5 @@
     <string name="help">Help</string>
     <string name="restore_purchase">Restore Purchase</string>
     <string name="log_out_text">Log out</string>
+    <string name="payment_method">Payment method</string>
 </resources>

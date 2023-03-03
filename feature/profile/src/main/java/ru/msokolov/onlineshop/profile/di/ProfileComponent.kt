@@ -4,6 +4,7 @@ import dagger.Component
 import ru.msokolov.onlineshop.dagger.Dependencies
 import ru.msokolov.onlineshop.profile.presentation.navigation.ProfileCommandProvider
 import ru.msokolov.onlineshop.profile.presentation.ui.ProfileFragment
+import ru.msokolov.onlineshop.user_database_api.ProfileUserDao
 
 @Component(modules = [ProfileModule::class], dependencies = [ProfileDependencies::class])
 internal interface ProfileComponent {
@@ -19,5 +20,6 @@ internal interface ProfileComponent {
 }
 
 interface ProfileDependencies: Dependencies {
+    val profileUserDao: ProfileUserDao
     val profileCommandProvider: ProfileCommandProvider
 }

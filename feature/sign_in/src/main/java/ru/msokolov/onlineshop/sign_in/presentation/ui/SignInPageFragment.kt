@@ -119,10 +119,4 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
             apply()
         }
     }
-
-    /*private fun readFromSharedPrefs(){
-        val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        val firstName = sharedPrefs.getString(getString(shared_prefs_user_name_key), "")
-        Log.d("TAGTAGTAG", firstName.toString())
-    }*/
 }
