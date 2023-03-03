@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_signInPageFragment_to_pageOneFragment"
             app:destination="@id/pageOneFragment"
-            app:popUpTo="@id/pageOneFragment"
+            app:popUpTo="@id/signInPageFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_signInPageFragment_to_loginFragment"
@@ -27,7 +27,7 @@
         <action
             android:id="@+id/action_loginFragment_to_pageOneFragment"
             app:destination="@id/pageOneFragment"
-            app:popUpTo="@id/pageOneFragment"
+            app:popUpTo="@id/signInPageFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -41,9 +41,7 @@
             app:destination="@id/pageTwoFragment" />
         <action
             android:id="@+id/action_pageOneFragment_to_profileFragment"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/profileFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <action
@@ -53,9 +51,7 @@
         app:popUpToInclusive="true" />
     <action
         android:id="@+id/action_feature_profile"
-        app:destination="@+id/profileFragment"
-        app:popUpTo="@id/profileFragment"
-        app:popUpToInclusive="true" />
+        app:destination="@+id/profileFragment" />
 
     <fragment
         android:id="@+id/pageTwoFragment"
@@ -70,11 +66,6 @@
         <action
             android:id="@+id/action_profileFragment_to_signInPageFragment"
             app:destination="@id/signInPageFragment"
-            app:popUpTo="@id/signInPageFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_profileFragment_to_pageOneFragment"
-            app:destination="@id/pageOneFragment"
             app:popUpTo="@id/pageOneFragment"
             app:popUpToInclusive="true" />
     </fragment>

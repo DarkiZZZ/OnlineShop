@@ -9,4 +9,6 @@
     <string name="help">Help</string>
     <string name="restore_purchase">Restore Purchase</string>
     <string name="log_out_text">Log out</string>
+    <string name="payment_method">Payment method</string>
+    <string name="non_existent_account">You want to log out from non-existent account.</string>
 </resources>

@@ -87,7 +87,7 @@
             android:layout_height="40dp">
 
             <ImageView
-                android:id="@+id/payRelatedImageView"
+                android:id="@+id/tradeStoreImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_card"
@@ -98,23 +98,24 @@
             <TextView
                 android:id="@+id/tradeStoreTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
+                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
                 android:text="@string/trade_store"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
 
             <ImageView
-                android:id="@+id/forwardImageView"
+                android:id="@+id/forward1ImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_forward"
                 android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
+                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView" />
+                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -124,7 +125,7 @@
             android:layout_marginTop="25dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@+id/paymentMethodImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_card"
@@ -135,23 +136,24 @@
             <TextView
                 android:id="@+id/paymentMethodTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
-                android:text="Payment method"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
+                app:layout_constraintStart_toEndOf="@id/paymentMethodImageView"
+                app:layout_constraintTop_toTopOf="@id/paymentMethodImageView"
+                android:text="@string/payment_method"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
 
             <ImageView
-                android:id="@id/forwardImageView"
+                android:id="@+id/forward2ImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_forward"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
+                app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="45dp"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView" />
+                app:layout_constraintTop_toTopOf="@id/paymentMethodImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -161,7 +163,7 @@
             android:layout_marginTop="25dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@+id/tradeStore2ImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_card"
@@ -170,12 +172,13 @@
                 android:layout_marginStart="32dp"/>
 
             <TextView
-                android:id="@+id/balanceTextView"
+                android:id="@+id/tradeStore2TextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+                app:layout_constraintStart_toEndOf="@id/tradeStore2ImageView"
+                app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView"
                 android:text="@string/trade_store"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
@@ -189,9 +192,9 @@
                 android:minWidth="66dp"
                 android:layout_marginEnd="31dp"
                 android:text="@string/balance_value"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
+                app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView" />
+                app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -201,7 +204,7 @@
             android:layout_marginTop="25dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@+id/tradeStore3ImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_card"
@@ -210,25 +213,26 @@
                 android:layout_marginStart="28dp"/>
 
             <TextView
-                android:id="@id/balanceTextView"
+                android:id="@+id/tradeStore3TextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/tradeStore3ImageView"
+                app:layout_constraintStart_toEndOf="@id/tradeStore3ImageView"
+                app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView"
                 android:text="@string/trade_store"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
 
             <ImageView
-                android:id="@id/forwardImageView"
+                android:id="@+id/forward3ImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_forward"
                 android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
+                app:layout_constraintBottom_toBottomOf="@id/tradeStore3ImageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView" />
+                app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -238,7 +242,7 @@
             android:layout_marginTop="20dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@+id/restorePurchaseImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_restore"
@@ -247,25 +251,26 @@
                 android:layout_marginStart="28dp"/>
 
             <TextView
-                android:id="@id/balanceTextView"
+                android:id="@+id/restorePurchaseTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/restorePurchaseImageView"
+                app:layout_constraintStart_toEndOf="@id/restorePurchaseImageView"
+                app:layout_constraintTop_toTopOf="@id/restorePurchaseImageView"
                 android:text="@string/restore_purchase"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
 
             <ImageView
-                android:id="@id/forwardImageView"
+                android:id="@+id/forward4ImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_forward"
                 android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
+                app:layout_constraintBottom_toBottomOf="@id/restorePurchaseTextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView" />
+                app:layout_constraintTop_toTopOf="@id/restorePurchaseTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -275,7 +280,7 @@
             android:layout_marginTop="20dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@+id/helpImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_help"
@@ -284,12 +289,13 @@
                 android:layout_marginStart="28dp"/>
 
             <TextView
-                android:id="@id/balanceTextView"
+                android:id="@+id/helpTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/helpImageView"
+                app:layout_constraintStart_toEndOf="@id/helpImageView"
+                app:layout_constraintTop_toTopOf="@id/helpImageView"
                 android:text="@string/help"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
@@ -302,7 +308,7 @@
             android:layout_marginTop="20dp">
 
             <ImageView
-                android:id="@id/payRelatedImageView"
+                android:id="@id/tradeStoreImageView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_log_out"
@@ -311,12 +317,13 @@
                 android:layout_marginStart="28dp"/>
 
             <TextView
-                android:id="@id/balanceTextView"
+                android:id="@+id/logOutTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                app:layout_constraintBottom_toBottomOf="@+id/payRelatedImageView"
-                app:layout_constraintStart_toEndOf="@id/payRelatedImageView"
-                app:layout_constraintTop_toTopOf="@+id/payRelatedImageView"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
+                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
                 android:text="@string/log_out_text"
                 android:layout_marginStart="6dp"
                 style="@style/TextAppearance.OnlineShop.PayRelated"/>
