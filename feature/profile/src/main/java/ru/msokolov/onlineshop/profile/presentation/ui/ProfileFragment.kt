@@ -8,11 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.Lazy
+import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.livedata.observeEvent
+import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.profile.R
 import ru.msokolov.onlineshop.profile.databinding.FragmentProfileBinding
+import ru.msokolov.onlineshop.profile.di.DaggerProfileComponent
 import ru.msokolov.onlineshop.profile.presentation.navigation.ProfileCommandProvider
-import javax.inject.Inject
 import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
+import ru.msokolov.onlineshop.ui.showSnackBar
+import javax.inject.Inject
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
@@ -26,6 +31,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     lateinit var profileCommandProvider: ProfileCommandProvider
 
     override fun onAttach(context: Context) {
+        DaggerProfileComponent.builder()
+            .profileDependencies(findDependencies())
+            .build()
+            .inject(this)
         super.onAttach(context)
     }
 
@@ -39,7 +48,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        observeEvents()
+        observeSomeError()
         super.onViewCreated(view, savedInstanceState)
+        setupClickListeners()
     }
 
     private fun setupClickListeners(){
@@ -51,5 +63,20 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private fun readFromSharedPrefs(): String? {
         val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return null
         return sharedPrefs.getString(getString(shared_prefs_user_name_key), "")
+    }
+
+    private fun observeEvents(){
+        viewModel.accountError.observeEvent(viewLifecycleOwner){
+            showSnackBar(binding.root, getString(R.string.non_existent_account))
+        }
+        viewModel.goToSignInPage.observeEvent(viewLifecycleOwner){
+            navigate(profileCommandProvider.toSignInPage)
+        }
+    }
+
+    private fun observeSomeError(){
+        viewModel.someError.observe(viewLifecycleOwner){
+            showSnackBar(binding.root, it)
+        }
     }
 }

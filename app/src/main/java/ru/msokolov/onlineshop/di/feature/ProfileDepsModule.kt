@@ -9,6 +9,7 @@ import ru.msokolov.onlineshop.di.AppComponent
 import ru.msokolov.onlineshop.navigation.ProfileCommandProviderImpl
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 import ru.msokolov.onlineshop.profile.di.ProfileDependencies
+import ru.msokolov.onlineshop.profile.presentation.navigation.ProfileCommandProvider
 
 @Module
 interface ProfileDepsModule {
@@ -19,5 +20,5 @@ interface ProfileDepsModule {
     fun bindProfileScreenDeps(appComponent: AppComponent): Dependencies
 
     @Binds
-    fun bindProfileNavCommandProvider(profileCommandProvider: ProfileCommandProviderImpl): PageOneCommandProvider
+    fun bindProfileNavCommandProvider(profileCommandProvider: ProfileCommandProviderImpl): ProfileCommandProvider
 }
