@@ -19,7 +19,9 @@ import ru.msokolov.onlineshop.login.databinding.FragmentLoginBinding
 import ru.msokolov.onlineshop.login.di.DaggerLoginComponent
 import ru.msokolov.onlineshop.login.presentation.navigation.LoginCommandProvider
 import ru.msokolov.onlineshop.navigation.navigate
-import ru.msokolov.onlineshop.ui.R.*
+import ru.msokolov.onlineshop.ui.R.drawable
+import ru.msokolov.onlineshop.ui.R.string
+import ru.msokolov.onlineshop.ui.hideKeyboard
 import ru.msokolov.onlineshop.ui.showSnackBar
 import javax.inject.Inject
 
@@ -65,6 +67,7 @@ class LoginFragment : Fragment() {
             viewModel.handlePasswordVisibility()
         }
         binding.loginButton.setOnClickListener {
+            hideKeyboard()
             viewModel.login(getFirstName(), getPassword())
         }
     }
