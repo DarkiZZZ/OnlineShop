@@ -9,7 +9,7 @@ import ru.msokolov.onlineshop.user_database_api.ProfileUserDao
 import ru.msokolov.onlineshop.user_database_api.SignInPageUserDao
 import ru.msokolov.onlineshop.user_database_api.UserDbEntity
 
-@Database(entities = [UserDbEntity::class], version = 2, exportSchema = false)
+@Database(entities = [UserDbEntity::class], version = 6, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
 

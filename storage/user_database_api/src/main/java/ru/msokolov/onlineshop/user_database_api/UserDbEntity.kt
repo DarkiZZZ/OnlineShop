@@ -10,5 +10,5 @@ data class UserDbEntity(
     @ColumnInfo(name = "first_name") val firstName: String,
     @ColumnInfo(name = "last_name") val lastName: String,
     @ColumnInfo(name = "email") val email: String,
-    @ColumnInfo(name = "avatar_photo_path") val avatarPhotoPath: String = "",
+    @ColumnInfo(name = "avatar_photo", typeAffinity = ColumnInfo.BLOB) val avatarPhotoPath: ByteArray = byteArrayOf()
 )
