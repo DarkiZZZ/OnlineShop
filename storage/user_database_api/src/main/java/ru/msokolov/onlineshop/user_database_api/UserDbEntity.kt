@@ -9,5 +9,6 @@ data class UserDbEntity(
     @PrimaryKey
     @ColumnInfo(name = "first_name") val firstName: String,
     @ColumnInfo(name = "last_name") val lastName: String,
-    @ColumnInfo(name = "email") val email: String
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name = "avatar_photo_path") val avatarPhotoPath: String = "",
 )
