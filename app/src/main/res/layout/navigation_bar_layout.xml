@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#faf9ff">
+
+    <ImageView
+        android:id="@+id/navDrawerButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_nav_drawer_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_back_button"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        tools:text="testText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatarImageView"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="47dp"
+        android:src="@drawable/ic_avatar_example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        style="@style/TextAppearance.OnlineShop.NavBar.Location"
+        android:layout_width="42dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="7dp"
+        android:gravity="center"
+        android:text="@string/location"
+        app:layout_constraintEnd_toEndOf="@+id/avatarImageView"
+        app:layout_constraintTop_toBottomOf="@id/avatarImageView" />
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@id/locationTextView"
+        app:layout_constraintStart_toEndOf="@id/locationTextView"
+        app:layout_constraintTop_toTopOf="@+id/locationTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
