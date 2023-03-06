@@ -29,6 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/labelTextView"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
         tools:text="testText"
@@ -60,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/avatarImageView" />
 
     <ImageView
+        android:id="@+id/spinnerImageView"
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_marginTop="3dp"
