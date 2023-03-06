@@ -23,6 +23,7 @@ import ru.msokolov.onlineshop.ui.R.drawable
 import ru.msokolov.onlineshop.ui.R.string
 import ru.msokolov.onlineshop.ui.hideKeyboard
 import ru.msokolov.onlineshop.ui.showSnackBar
+import ru.msokolov.onlineshop.ui.writeToSharedPrefs
 import javax.inject.Inject
 
 class LoginFragment : Fragment() {
@@ -87,7 +88,7 @@ class LoginFragment : Fragment() {
 
     private fun observeEvents(){
         viewModel.goToPageOne.observeEvent(viewLifecycleOwner){
-            writeToSharedPrefs(getFirstName())
+            writeToSharedPrefs(value = getFirstName(), key = getString(string.shared_prefs_user_name_key))
             navigate(loginCommandProvider.toPageOne)
 
         }
@@ -137,12 +138,4 @@ class LoginFragment : Fragment() {
 
     private fun getFirstName() = binding.firstNameEditText.text.toString().trim()
     private fun getPassword() = binding.passwordEditText.text.toString().trim()
-
-    private fun writeToSharedPrefs(firstName: String){
-        val sharedPrefs = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        with(sharedPrefs.edit()){
-            putString(getString(string.shared_prefs_user_name_key), firstName)
-            apply()
-        }
-    }
 }
