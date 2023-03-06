@@ -1,9 +1,9 @@
-package ru.msokolov.onlineshop.page_two.presentation.ui.data.repository
+package ru.msokolov.onlineshop.page_two.data.repository
 
 import ru.msokolov.detailed_info_api.DetailedInfoApiService
-import ru.msokolov.onlineshop.page_two.presentation.ui.data.entity.DetailedInfoEntity
-import ru.msokolov.onlineshop.page_two.presentation.ui.data.mapper.DetailedInfoMapper
-import ru.msokolov.onlineshop.page_two.presentation.ui.domain.repository.DetailedInfoRepository
+import ru.msokolov.onlineshop.page_two.data.entity.DetailedInfoEntity
+import ru.msokolov.onlineshop.page_two.data.mapper.DetailedInfoMapper
+import ru.msokolov.onlineshop.page_two.domain.repository.DetailedInfoRepository
 import javax.inject.Inject
 
 class DetailedInfoRepositoryImpl @Inject constructor(

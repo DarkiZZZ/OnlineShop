@@ -1,4 +1,4 @@
-package ru.msokolov.onlineshop.page_two.presentation.ui.data.entity
+package ru.msokolov.onlineshop.page_two.data.entity
 
 data class DetailedInfoEntity(
     val name: String,

@@ -1,7 +1,7 @@
-package ru.msokolov.onlineshop.page_two.presentation.ui.data.mapper
+package ru.msokolov.onlineshop.page_two.data.mapper
 
 import ru.msokolov.detailed_info_api.models.DetailedInfoResponseDto
-import ru.msokolov.onlineshop.page_two.presentation.ui.data.entity.DetailedInfoEntity
+import ru.msokolov.onlineshop.page_two.data.entity.DetailedInfoEntity
 import javax.inject.Inject
 
 class DetailedInfoMapper @Inject constructor() {
