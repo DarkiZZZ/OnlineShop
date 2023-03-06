@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/core/latest_api" />
             <option value="$PROJECT_DIR$/core/latest_api_internal" />
             <option value="$PROJECT_DIR$/core/navigation" />
+            <option value="$PROJECT_DIR$/core/page_two_api" />
+            <option value="$PROJECT_DIR$/core/page_two_api_internal" />
             <option value="$PROJECT_DIR$/core/sale_api" />
             <option value="$PROJECT_DIR$/core/sale_api_internal" />
             <option value="$PROJECT_DIR$/core/ui" />
