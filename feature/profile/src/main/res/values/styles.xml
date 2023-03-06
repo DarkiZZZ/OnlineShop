@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextAppearance.OnlineShop.ChangePhoto" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.Text" parent="TextAppearance.OnlineShop">
+        <item name="fontFamily">@font/montserrat</item>
+    </style>
+    <style name="TextAppearance.OnlineShop.ChangePhoto" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">8sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.04</item>
         <item name="android:textColor">#808080</item>
     </style>
-    <style name="TextAppearance.OnlineShop.UserName" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.UserName" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">15sp</item>
         <item name="android:fontFamily">@font/montserrat_700</item>
         <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">#3F3F3F</item>
     </style>
-    <style name="TextAppearance.OnlineShop.UploadItem" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.UploadItem" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_600</item>
         <item name="android:textStyle">bold</item>
@@ -22,7 +25,7 @@
         <item name="android:textColor">#EAEAEA</item>
     </style>
 
-    <style name="TextAppearance.OnlineShop.PayRelated" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.PayRelated" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
         <item name="android:textStyle">bold</item>
@@ -30,7 +33,7 @@
         <item name="android:textColor">#040402</item>
     </style>
 
-    <style name="TextAppearance.OnlineShop.BalanceValue" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.BalanceValue" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
         <item name="android:textStyle">bold</item>

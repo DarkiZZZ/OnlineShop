@@ -1,65 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextAppearance.OnlineShop.ProductName" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.Text" parent="TextAppearance.OnlineShop">
+        <item name="fontFamily">@font/poppins</item>
+    </style>
+    <style name="TextAppearance.OnlineShop.ProductName" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">17sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">#161826</item>
     </style>
-    <style name="TextAppearance.OnlineShop.ProductPrice" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.ProductPrice" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">13sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">#161826</item>
     </style>
-    <style name="TextAppearance.OnlineShop.ProductDescription" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.ProductDescription" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">9sp</item>
         <item name="android:fontFamily">@font/poppins_400</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#808080</item>
     </style>
-    <style name="TextAppearance.OnlineShop.ProductRatingValue" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.ProductRatingValue" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">9sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#161826</item>
     </style>
-    <style name="TextAppearance.OnlineShop.ProductReviewsValue" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.ProductReviewsValue" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">9sp</item>
         <item name="android:fontFamily">@font/poppins_400</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#808080</item>
     </style>
-    <style name="TextAppearance.OnlineShop.ColorText" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.ColorText" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">10sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#737373</item>
     </style>
-    <style name="TextAppearance.OnlineShop.QuantityText" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.QuantityText" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">9sp</item>
         <item name="android:fontFamily">@font/poppins_500</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#808080</item>
     </style>
-    <style name="TextAppearance.OnlineShop.GeneralSum" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.GeneralSum" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">8sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.04</item>
         <item name="android:textColor">#99A0FF</item>
     </style>
-    <style name="TextAppearance.OnlineShop.AddToChartText" parent="TextAppearance.OnlineShop">
+    <style name="TextAppearance.OnlineShop.AddToChartText" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">8sp</item>
         <item name="android:fontFamily">@font/poppins_600</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:letterSpacing">-0.04</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>

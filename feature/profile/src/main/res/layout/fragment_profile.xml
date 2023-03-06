@@ -1,336 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.ui.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/avatarImageView"
-        android:layout_width="61dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="19dp"
-        android:background="@drawable/ic_avatar_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/changePhotoButton"
-        style="@style/TextAppearance.OnlineShop.ChangePhoto"
-        android:layout_width="69dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="6dp"
-        android:gravity="center"
-        android:text="@string/change_photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/avatarImageView" />
-
-    <TextView
-        android:id="@+id/userNameTextView"
-        style="@style/TextAppearance.OnlineShop.UserName"
-        android:layout_width="168dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="17dp"
-        android:gravity="center_horizontal"
-        android:text="@string/user_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/changePhotoButton" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/uploadItemViewContainer"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userNameTextView">
-
-        <TextView
-            android:id="@+id/uploadItemTextView"
-            style="@style/TextAppearance.OnlineShop.UploadItem"
-            android:layout_width="132dp"
-            android:layout_height="18dp"
-            android:gravity="center_horizontal"
-            android:text="@string/upload_item"
-            app:layout_constraintBottom_toBottomOf="@id/uploadItemViewContainer"
-            app:layout_constraintEnd_toEndOf="@id/uploadItemViewContainer"
-            app:layout_constraintStart_toStartOf="@id/uploadItemViewContainer"
-            app:layout_constraintTop_toTopOf="@id/uploadItemViewContainer" />
-
-        <ImageView
-            android:id="@+id/uploadItemImageView"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/ic_upload"
-            android:layout_marginEnd="14dp"
-            app:layout_constraintBottom_toBottomOf="@+id/uploadItemTextView"
-            app:layout_constraintEnd_toStartOf="@+id/uploadItemTextView"
-            app:layout_constraintTop_toTopOf="@+id/uploadItemTextView" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/payRelatedContainerView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/uploadItemViewContainer">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp">
-
+            android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/tradeStoreImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_card"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="32dp"/>
-
-            <TextView
-                android:id="@+id/tradeStoreTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
-                app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
-                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
-                android:text="@string/trade_store"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-            <ImageView
-                android:id="@+id/forward1ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_forward"
-                android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                android:id="@+id/avatarImageView"
+                android:layout_width="61dp"
+                android:layout_height="61dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/ic_avatar_background"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/paymentMethodImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_card"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="32dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/paymentMethodTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:id="@+id/changePhotoButton"
+                style="@style/TextAppearance.OnlineShop.ChangePhoto"
+                android:layout_width="69dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="6dp"
                 android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
-                app:layout_constraintStart_toEndOf="@id/paymentMethodImageView"
-                app:layout_constraintTop_toTopOf="@id/paymentMethodImageView"
-                android:text="@string/payment_method"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-            <ImageView
-                android:id="@+id/forward2ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_forward"
-                app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
+                android:text="@string/change_photo"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="45dp"
-                app:layout_constraintTop_toTopOf="@id/paymentMethodImageView" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/tradeStore2ImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_card"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="32dp"/>
+                app:layout_constraintTop_toBottomOf="@id/avatarImageView" />
 
             <TextView
-                android:id="@+id/tradeStore2TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
-                app:layout_constraintStart_toEndOf="@id/tradeStore2ImageView"
-                app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView"
-                android:text="@string/trade_store"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-            <TextView
-                android:id="@+id/balanceValueTextView"
-                style="@style/TextAppearance.OnlineShop.BalanceValue"
-                android:layout_width="wrap_content"
-                android:layout_height="18dp"
+                android:id="@+id/userNameTextView"
+                style="@style/TextAppearance.OnlineShop.UserName"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
                 android:gravity="center_horizontal"
-                android:minWidth="66dp"
-                android:layout_marginEnd="31dp"
-                android:text="@string/balance_value"
-                app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+                android:text="@string/user_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/tradeStore3ImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_card"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="28dp"/>
+                app:layout_constraintTop_toBottomOf="@id/changePhotoButton" />
 
-            <TextView
-                android:id="@+id/tradeStore3TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@+id/tradeStore3ImageView"
-                app:layout_constraintStart_toEndOf="@id/tradeStore3ImageView"
-                app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView"
-                android:text="@string/trade_store"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/uploadItemViewContainer"
+                android:layout_width="290dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userNameTextView">
 
-            <ImageView
-                android:id="@+id/forward3ImageView"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/uploadItemTextView"
+                    style="@style/TextAppearance.OnlineShop.UploadItem"
+                    android:layout_width="132dp"
+                    android:layout_height="18dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/upload_item"
+                    app:layout_constraintBottom_toBottomOf="@id/uploadItemViewContainer"
+                    app:layout_constraintEnd_toEndOf="@id/uploadItemViewContainer"
+                    app:layout_constraintStart_toStartOf="@id/uploadItemViewContainer"
+                    app:layout_constraintTop_toTopOf="@id/uploadItemViewContainer" />
+
+                <ImageView
+                    android:id="@+id/uploadItemImageView"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_upload"
+                    android:layout_marginEnd="14dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/uploadItemTextView"
+                    app:layout_constraintEnd_toStartOf="@+id/uploadItemTextView"
+                    app:layout_constraintTop_toTopOf="@+id/uploadItemTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/payRelatedContainerView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_forward"
-                android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@id/tradeStore3ImageView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView" />
+                android:layout_marginTop="14dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/uploadItemViewContainer">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/tradeStoreImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="32dp"/>
+
+                    <TextView
+                        android:id="@+id/tradeStoreTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                        app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
+                        app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
+                        android:text="@string/trade_store"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                    <ImageView
+                        android:id="@+id/forward1ImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_forward"
+                        android:layout_marginEnd="45dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:id="@+id/paymentMethodImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="32dp"/>
+
+                    <TextView
+                        android:id="@+id/paymentMethodTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
+                        app:layout_constraintStart_toEndOf="@id/paymentMethodImageView"
+                        app:layout_constraintTop_toTopOf="@id/paymentMethodImageView"
+                        android:text="@string/payment_method"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                    <ImageView
+                        android:id="@+id/forward2ImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_forward"
+                        app:layout_constraintBottom_toBottomOf="@id/paymentMethodImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="45dp"
+                        app:layout_constraintTop_toTopOf="@id/paymentMethodImageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:id="@+id/tradeStore2ImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="32dp"/>
+
+                    <TextView
+                        android:id="@+id/tradeStore2TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+                        app:layout_constraintStart_toEndOf="@id/tradeStore2ImageView"
+                        app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView"
+                        android:text="@string/trade_store"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                    <TextView
+                        android:id="@+id/balanceValueTextView"
+                        style="@style/TextAppearance.OnlineShop.BalanceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:gravity="center_horizontal"
+                        android:minWidth="66dp"
+                        android:layout_marginEnd="31dp"
+                        android:text="@string/balance_value"
+                        app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:id="@+id/tradeStore3ImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_card"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="28dp"/>
+
+                    <TextView
+                        android:id="@+id/tradeStore3TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/tradeStore3ImageView"
+                        app:layout_constraintStart_toEndOf="@id/tradeStore3ImageView"
+                        app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView"
+                        android:text="@string/trade_store"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                    <ImageView
+                        android:id="@+id/forward3ImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_forward"
+                        android:layout_marginEnd="45dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tradeStore3ImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tradeStore3ImageView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/restorePurchaseImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_restore"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="28dp"/>
+
+                    <TextView
+                        android:id="@+id/restorePurchaseTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@id/restorePurchaseImageView"
+                        app:layout_constraintStart_toEndOf="@id/restorePurchaseImageView"
+                        app:layout_constraintTop_toTopOf="@id/restorePurchaseImageView"
+                        android:text="@string/restore_purchase"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                    <ImageView
+                        android:id="@+id/forward4ImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_forward"
+                        android:layout_marginEnd="45dp"
+                        app:layout_constraintBottom_toBottomOf="@id/restorePurchaseTextView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/restorePurchaseTextView" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/helpImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_help"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="28dp"/>
+
+                    <TextView
+                        android:id="@+id/helpTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@id/helpImageView"
+                        app:layout_constraintStart_toEndOf="@id/helpImageView"
+                        app:layout_constraintTop_toTopOf="@id/helpImageView"
+                        android:text="@string/help"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@id/tradeStoreImageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_log_out"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="28dp"/>
+
+                    <TextView
+                        android:id="@+id/logOutTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+                        app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
+                        app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
+                        android:text="@string/log_out_text"
+                        android:layout_marginStart="6dp"
+                        style="@style/TextAppearance.OnlineShop.PayRelated"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp">
-
-            <ImageView
-                android:id="@+id/restorePurchaseImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_restore"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="28dp"/>
-
-            <TextView
-                android:id="@+id/restorePurchaseTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@id/restorePurchaseImageView"
-                app:layout_constraintStart_toEndOf="@id/restorePurchaseImageView"
-                app:layout_constraintTop_toTopOf="@id/restorePurchaseImageView"
-                android:text="@string/restore_purchase"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-            <ImageView
-                android:id="@+id/forward4ImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_forward"
-                android:layout_marginEnd="45dp"
-                app:layout_constraintBottom_toBottomOf="@id/restorePurchaseTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/restorePurchaseTextView" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp">
-
-            <ImageView
-                android:id="@+id/helpImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_help"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="28dp"/>
-
-            <TextView
-                android:id="@+id/helpTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@id/helpImageView"
-                app:layout_constraintStart_toEndOf="@id/helpImageView"
-                app:layout_constraintTop_toTopOf="@id/helpImageView"
-                android:text="@string/help"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp">
-
-            <ImageView
-                android:id="@id/tradeStoreImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_log_out"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="28dp"/>
-
-            <TextView
-                android:id="@+id/logOutTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
-                app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
-                app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
-                android:text="@string/log_out_text"
-                android:layout_marginStart="6dp"
-                style="@style/TextAppearance.OnlineShop.PayRelated"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

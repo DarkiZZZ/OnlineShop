@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/descriptionTextView"
         style="@style/TextAppearance.OnlineShop.ProductDescription"
         android:layout_width="231dp"
         android:layout_height="42dp"
@@ -36,6 +37,7 @@
             style="@style/TextAppearance.OnlineShop.ProductRatingValue"/>
         
         <TextView
+            android:id="@+id/reviewsAmountTextView"
             android:layout_width="wrap_content"
             android:layout_height="12dp"
             app:layout_constraintTop_toTopOf="parent"
