@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/core/sale_api_internal" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/cart" />
             <option value="$PROJECT_DIR$/feature/login" />
             <option value="$PROJECT_DIR$/feature/page_one" />
             <option value="$PROJECT_DIR$/feature/page_two" />
