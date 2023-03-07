@@ -32,9 +32,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-        //
-        disableNavigationBar()
-        //
         setBottomNavigationClickListeners()
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -91,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.signInPageFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         false,
                         baseContext,
@@ -98,6 +96,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.loginFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         false,
                         baseContext,
@@ -105,6 +104,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.pageOneFragment -> {
+                    setupPageOneNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -112,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.pageTwoFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -119,6 +120,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.profileButton -> {
+                    setupProfileNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -130,22 +132,44 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun disableNavigationBar() {
+        hideAllNavigationBarItems()
         binding.navBar.root.visibility = View.GONE
+
     }
 
     private fun enableNavigationBar() {
         binding.navBar.root.visibility = View.VISIBLE
     }
 
+    private fun setupProfileNavigationBar() {
+        hideAllNavigationBarItems()
+        enableNavigationBar()
+        with(binding.navBar){
+            backButton.visibility = View.VISIBLE
+            labelTextView.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupPageOneNavigationBar() {
+        hideAllNavigationBarItems()
+        enableNavigationBar()
+        with(binding.navBar){
+            navDrawerButton.visibility = View.VISIBLE
+            labelTextView.visibility = View.VISIBLE
+            avatarImageView.visibility = View.VISIBLE
+            locationTextView.visibility = View.VISIBLE
+            spinnerImageView.visibility = View.VISIBLE
+        }
+    }
+
     private fun hideAllNavigationBarItems() {
-        with(binding) {
-            navBar.locationTextView.visibility = View.GONE
-            navBar.navDrawerButton.visibility = View.GONE
-            navBar.backButton.visibility = View.GONE
-            navBar.labelTextView.visibility = View.GONE
-            navBar.avatarImageView.visibility = View.GONE
-            navBar.locationTextView.visibility = View.GONE
-            navBar.spinnerImageView.visibility = View.GONE
+        with(binding.navBar) {
+            locationTextView.visibility = View.GONE
+            navDrawerButton.visibility = View.GONE
+            backButton.visibility = View.GONE
+            labelTextView.visibility = View.GONE
+            avatarImageView.visibility = View.GONE
+            spinnerImageView.visibility = View.GONE
         }
     }
 
