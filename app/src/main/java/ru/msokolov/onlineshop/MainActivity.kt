@@ -1,9 +1,9 @@
 package ru.msokolov.onlineshop
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
     }
 
-    private fun setBottomNavigationClickListeners(){
+    private fun setBottomNavigationClickListeners() {
         binding.bottomNavigationView.profileButton.setOnClickListener {
             setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
             findNavController(binding.fragmentContainerView.id)
@@ -82,7 +82,8 @@ class MainActivity : AppCompatActivity() {
         if (isClickedIndex == FRAGMENT_DO_NOT_HAVE_BOTTOM_NAV) {
             return
         } else {
-            binding.bottomNavigationView.root.getChildAt(isClickedIndex).background = backgroundClicked
+            binding.bottomNavigationView.root.getChildAt(isClickedIndex).background =
+                backgroundClicked
         }
     }
 
@@ -128,22 +129,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setNavigationBarItemsVisibility(fragmentId: Int){
-        when(fragmentId){
-
-        }
-    }
-
-    private fun disableNavigationBar(){
+    private fun disableNavigationBar() {
         binding.navBar.root.visibility = View.GONE
     }
 
-    private fun enableNavigationBar(){
+    private fun enableNavigationBar() {
         binding.navBar.root.visibility = View.VISIBLE
     }
 
-    private fun hideAllNavigationBarItems(){
-        with(binding){
+    private fun hideAllNavigationBarItems() {
+        with(binding) {
             navBar.locationTextView.visibility = View.GONE
             navBar.navDrawerButton.visibility = View.GONE
             navBar.backButton.visibility = View.GONE
