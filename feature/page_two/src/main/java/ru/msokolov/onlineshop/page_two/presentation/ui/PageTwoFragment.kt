@@ -1,60 +1,177 @@
 package ru.msokolov.onlineshop.page_two.presentation.ui
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import dagger.Lazy
+import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.livedata.observeEvent
+import ru.msokolov.onlineshop.navigation.navigate
+import ru.msokolov.onlineshop.network.Status
 import ru.msokolov.onlineshop.page_two.R
+import ru.msokolov.onlineshop.page_two.data.entity.DetailedInfoEntity
+import ru.msokolov.onlineshop.page_two.databinding.FragmentPageTwoBinding
+import ru.msokolov.onlineshop.page_two.di.DaggerPageTwoComponent
+import ru.msokolov.onlineshop.page_two.presentation.navigation.PageTwoCommandProvider
+import ru.msokolov.onlineshop.page_two.presentation.ui.gallery.GalleryAdapter
+import ru.msokolov.onlineshop.page_two.presentation.ui.gallery.MainPhotoAdapter
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PageTwoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class PageTwoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
+
+    @Inject
+    lateinit var viewModelFactory: Lazy<PageTwoViewModel.Companion.PageTwoViewModelFactory>
+    private val viewModel: PageTwoViewModel by viewModels { viewModelFactory.get() }
+
+    @Inject
+    lateinit var pageTwoCommandProvider: PageTwoCommandProvider
+
+    private lateinit var binding: FragmentPageTwoBinding
+
+    private var adapterGallery: GalleryAdapter? = null
+    private var adapterMainPhoto: MainPhotoAdapter? = null
+
+    override fun onAttach(context: Context) {
+        DaggerPageTwoComponent.builder()
+            .pageTwoDependencies(findDependencies())
+            .build()
+            .inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        observeDataFromViewModel()
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page_two, container, false)
+    ): View {
+        adapterGallery = GalleryAdapter()
+        adapterMainPhoto = MainPhotoAdapter(requireContext())
+        binding = FragmentPageTwoBinding.inflate(layoutInflater, container, false)
+        observeProductPrice()
+        observeEvent()
+        setupMainPhotoAdapter()
+        setupGalleryAdapter()
+        setupClickListeners()
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        adapterGallery = null
+        adapterMainPhoto = null
+        super.onDestroy()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun observeDataFromViewModel() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.getData().collect {
+                when (it.status) {
+                    Status.SUCCESS -> {
+                        setupData((it.data as DetailedInfoEntity))
+                    }
+                    Status.ERROR -> {}
+                    Status.LOADING -> {}
+                }
+            }
+        }
+    }
+
+    private fun observeProductPrice() {
+        viewModel.currentPriceSum.observe(viewLifecycleOwner) {
+            binding.productSumTextView.text = getString(R.string.general_sum_value, it.toString())
+        }
+    }
+
+    private fun observeEvent() {
+        viewModel.ableGoToCartEvent.observeEvent(viewLifecycleOwner) {
+            navigate(pageTwoCommandProvider.toCart)
+        }
+    }
+
+    private fun setupMainPhotoAdapter() {
+        with(binding.mainPhotoRecyclerView) {
+            PagerSnapHelper().attachToRecyclerView(this)
+            adapter = adapterMainPhoto
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        }
+    }
+
+    private fun setupGalleryAdapter() {
+        with(binding.galleryRecyclerView) {
+            adapter = adapterGallery
+            scrollToPosition(adapterGallery!!.start)
+            setPadding(
+                PADDING_HORIZON_ADAPTER,
+                PADDING_VERTICAL_ADAPTER,
+                PADDING_HORIZON_ADAPTER,
+                PADDING_VERTICAL_ADAPTER
+            )
+            clipToPadding = false
+        }
+    }
+
+
+    private fun setupData(detailedInfo: DetailedInfoEntity) {
+        viewModel.setupProductPrice(detailedInfo.price)
+        with(binding) {
+            with(nameAndPriceLayout) {
+                productNameTextView.text = detailedInfo.name
+                priceTextView.text = getString(R.string.product_price, detailedInfo.price.toString())
+            }
+            with(descriptionAndRatingLayout){
+                descriptionTextView.text = detailedInfo.description
+                ratingValueTextView.text = getString(R.string.rating_value, detailedInfo.rating)
+                reviewsAmountTextView.text = getString(R.string.reviews_value, detailedInfo.numberOfReviews.toString())
+            }
+            setupColors(colors = detailedInfo.colorList)
+            adapterMainPhoto!!.setData(detailedInfo.imageUrlList)
+            adapterGallery!!.setData(detailedInfo.imageUrlList)
+        }
+    }
+
+
+    private fun setupColors(colors: List<String>) {
+        with(binding.colorsLayout) {
+            colorOne.setBackgroundColor(colors[0].toColorInt())
+            colorTwo.setBackgroundColor(colors[1].toColorInt())
+            colorThree.setBackgroundColor(colors[2].toColorInt())
+        }
+    }
+
+    private fun setupClickListeners() {
+        binding.addToCartTextView.setOnClickListener {
+            viewModel.goToChart()
+        }
+        binding.plusButton.setOnClickListener {
+            viewModel.increaseProductAmount()
+        }
+        binding.minusButton.setOnClickListener {
+            viewModel.decreaseProductAmount()
+        }
+        binding.goBackButton.setOnClickListener {
+            navigate(pageTwoCommandProvider.toPageOne)
+        }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PageTwoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PageTwoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        private const val TAG = "PAGE_TWO_TAG"
+        private const val PADDING_HORIZON_ADAPTER = 100
+        private const val PADDING_VERTICAL_ADAPTER = 50
     }
+
 }

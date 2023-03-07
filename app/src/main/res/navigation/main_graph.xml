@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/signInPageFragment">
+    app:startDestination="@id/pageOneFragment">
 
     <fragment
         android:id="@+id/signInPageFragment"
@@ -38,7 +38,8 @@
 
         <action
             android:id="@+id/action_pageOneFragment_to_pageTwoFragment"
-            app:destination="@id/pageTwoFragment" />
+            app:destination="@id/pageTwoFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_pageOneFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -57,7 +58,16 @@
         android:id="@+id/pageTwoFragment"
         android:name="ru.msokolov.onlineshop.page_two.presentation.ui.PageTwoFragment"
         android:label="PageTwoFragment"
-        tools:layout="@layout/fragment_page_two"/>
+        tools:layout="@layout/fragment_page_two">
+        <action
+            android:id="@+id/action_pageTwoFragment_to_pageOneFragment"
+            app:destination="@id/pageOneFragment"
+            app:popUpTo="@id/pageOneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_pageTwoFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="ru.msokolov.onlineshop.profile.presentation.ui.ProfileFragment"
@@ -69,4 +79,9 @@
             app:popUpTo="@id/pageOneFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="ru.msokolov.onlineshop.cart.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
 </navigation>

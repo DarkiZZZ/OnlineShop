@@ -14,6 +14,8 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/dagger" />
+            <option value="$PROJECT_DIR$/core/detailed_info_api" />
+            <option value="$PROJECT_DIR$/core/detailed_info_api_internal" />
             <option value="$PROJECT_DIR$/core/latest_api" />
             <option value="$PROJECT_DIR$/core/latest_api_internal" />
             <option value="$PROJECT_DIR$/core/navigation" />
@@ -21,6 +23,7 @@
             <option value="$PROJECT_DIR$/core/sale_api_internal" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/cart" />
             <option value="$PROJECT_DIR$/feature/login" />
             <option value="$PROJECT_DIR$/feature/page_one" />
             <option value="$PROJECT_DIR$/feature/page_two" />

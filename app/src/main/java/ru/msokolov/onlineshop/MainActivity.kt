@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
+        //
+        disableNavigationBar()
+        //
         setBottomNavigationClickListeners()
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -41,12 +44,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBottomNavigationClickListeners(){
-        binding.profileButton.setOnClickListener {
+        binding.bottomNavigationView.profileButton.setOnClickListener {
             setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toProfile.action)
         }
-        binding.pageOneButton.setOnClickListener {
+        binding.bottomNavigationView.pageOneButton.setOnClickListener {
             setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toPageOne.action)
@@ -60,9 +63,9 @@ class MainActivity : AppCompatActivity() {
     ) {
         setBottomButtonsState(context = context, isClickedIndex = isClickedIndex)
         if (isVisible) {
-            binding.bottomNavigationView.visibility = View.VISIBLE
+            binding.bottomNavigationView.root.visibility = View.VISIBLE
         } else {
-            binding.bottomNavigationView.visibility = View.GONE
+            binding.bottomNavigationView.root.visibility = View.GONE
         }
     }
 
@@ -70,16 +73,16 @@ class MainActivity : AppCompatActivity() {
         val background = AppCompatResources.getDrawable(context, R.drawable.bottom_item_background)
         val backgroundClicked =
             AppCompatResources.getDrawable(context, R.drawable.bottom_item_clicked_background)
-        binding.bottomNavigationView.getChildAt(PAGE_ONE_BOTTOM_NAV_CLICKED).background = background
-        binding.bottomNavigationView.getChildAt(FAVOURITES_BOTTOM_NAV_CLICKED).background = background
-        binding.bottomNavigationView.getChildAt(CART_BOTTOM_NAV_CLICKED).background = background
-        binding.bottomNavigationView.getChildAt(CHAT_BOTTOM_NAV_CLICKED).background = background
-        binding.bottomNavigationView.getChildAt(PROFILE_BOTTOM_NAV_CLICKED).background = background
+        binding.bottomNavigationView.pageOneButton.background = background
+        binding.bottomNavigationView.favouritesButton.background = background
+        binding.bottomNavigationView.cartButton.background = background
+        binding.bottomNavigationView.chatButton.background = background
+        binding.bottomNavigationView.profileButton.background = background
 
         if (isClickedIndex == FRAGMENT_DO_NOT_HAVE_BOTTOM_NAV) {
             return
         } else {
-            binding.bottomNavigationView.getChildAt(isClickedIndex).background = backgroundClicked
+            binding.bottomNavigationView.root.getChildAt(isClickedIndex).background = backgroundClicked
         }
     }
 
@@ -124,6 +127,33 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun setNavigationBarItemsVisibility(fragmentId: Int){
+        when(fragmentId){
+
+        }
+    }
+
+    private fun disableNavigationBar(){
+        binding.navBar.root.visibility = View.GONE
+    }
+
+    private fun enableNavigationBar(){
+        binding.navBar.root.visibility = View.VISIBLE
+    }
+
+    private fun hideAllNavigationBarItems(){
+        with(binding){
+            navBar.locationTextView.visibility = View.GONE
+            navBar.navDrawerButton.visibility = View.GONE
+            navBar.backButton.visibility = View.GONE
+            navBar.labelTextView.visibility = View.GONE
+            navBar.avatarImageView.visibility = View.GONE
+            navBar.locationTextView.visibility = View.GONE
+            navBar.spinnerImageView.visibility = View.GONE
+        }
+    }
+
 
     companion object {
         private const val PAGE_ONE_BOTTOM_NAV_CLICKED = 0
