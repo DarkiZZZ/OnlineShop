@@ -2,10 +2,10 @@ package ru.msokolov.onlineshop.page_two.presentation.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.livedata.observeEvent
+import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.network.Status
 import ru.msokolov.onlineshop.page_two.R
 import ru.msokolov.onlineshop.page_two.data.entity.DetailedInfoEntity
@@ -31,7 +33,7 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
     private val viewModel: PageTwoViewModel by viewModels { viewModelFactory.get() }
 
     @Inject
-    lateinit var pageOneCommandProvider: PageTwoCommandProvider
+    lateinit var pageTwoCommandProvider: PageTwoCommandProvider
 
     private lateinit var binding: FragmentPageTwoBinding
 
@@ -48,7 +50,7 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        observeViewModel()
+        observeDataFromViewModel()
     }
 
     override fun onCreateView(
@@ -59,8 +61,11 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
         adapterGallery = GalleryAdapter()
         adapterMainPhoto = MainPhotoAdapter(requireContext())
         binding = FragmentPageTwoBinding.inflate(layoutInflater, container, false)
+        observeProductPrice()
+        observeEvent()
         setupMainPhotoAdapter()
         setupGalleryAdapter()
+        setupClickListeners()
         return binding.root
     }
 
@@ -70,23 +75,30 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
         super.onDestroy()
     }
 
-    private fun observeViewModel() {
+    @Suppress("DEPRECATION")
+    private fun observeDataFromViewModel() {
         lifecycleScope.launchWhenStarted {
             viewModel.getData().collect {
                 when (it.status) {
                     Status.SUCCESS -> {
                         setupData((it.data as DetailedInfoEntity))
                     }
-                    Status.ERROR -> Log.d(
-                        TAG,
-                        "error: ${it.message.toString()}"
-                    )
-                    Status.LOADING -> Log.d(
-                        TAG,
-                        it.message.toString()
-                    )
+                    Status.ERROR -> {}
+                    Status.LOADING -> {}
                 }
             }
+        }
+    }
+
+    private fun observeProductPrice() {
+        viewModel.currentPriceSum.observe(viewLifecycleOwner) {
+            binding.productSumTextView.text = getString(R.string.general_sum_value, it.toString())
+        }
+    }
+
+    private fun observeEvent() {
+        viewModel.ableGoToCartEvent.observeEvent(viewLifecycleOwner) {
+            navigate(pageTwoCommandProvider.toCart)
         }
     }
 
@@ -115,23 +127,45 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
 
 
     private fun setupData(detailedInfo: DetailedInfoEntity) {
+        viewModel.setupProductPrice(detailedInfo.price)
         with(binding) {
-            nameAndPriceLayout.productNameTextView.text = detailedInfo.name
-            nameAndPriceLayout.priceTextView.text =
-                getString(R.string.product_price, detailedInfo.price.toString())
-            descriptionAndRatingLayout.descriptionTextView.text = detailedInfo.description
-            Log.d("TAGRATING", "${detailedInfo.rating}")
-            descriptionAndRatingLayout.ratingValueTextView.text =
-                getString(R.string.rating_value, detailedInfo.rating)
-            descriptionAndRatingLayout.reviewsAmountTextView.text =
-                getString(R.string.reviews_value, detailedInfo.numberOfReviews.toString())
-
+            with(nameAndPriceLayout) {
+                productNameTextView.text = detailedInfo.name
+                priceTextView.text = getString(R.string.product_price, detailedInfo.price.toString())
+            }
+            with(descriptionAndRatingLayout){
+                descriptionTextView.text = detailedInfo.description
+                ratingValueTextView.text = getString(R.string.rating_value, detailedInfo.rating)
+                reviewsAmountTextView.text = getString(R.string.reviews_value, detailedInfo.numberOfReviews.toString())
+            }
+            setupColors(colors = detailedInfo.colorList)
             adapterMainPhoto!!.setData(detailedInfo.imageUrlList)
             adapterGallery!!.setData(detailedInfo.imageUrlList)
         }
     }
 
-    companion object{
+
+    private fun setupColors(colors: List<String>) {
+        with(binding.colorsLayout) {
+            colorOne.setBackgroundColor(colors[0].toColorInt())
+            colorTwo.setBackgroundColor(colors[1].toColorInt())
+            colorThree.setBackgroundColor(colors[2].toColorInt())
+        }
+    }
+
+    private fun setupClickListeners() {
+        binding.addToCartTextView.setOnClickListener {
+            viewModel.goToChart()
+        }
+        binding.plusButton.setOnClickListener {
+            viewModel.increaseProductAmount()
+        }
+        binding.minusButton.setOnClickListener {
+            viewModel.decreaseProductAmount()
+        }
+    }
+
+    companion object {
         private const val TAG = "PAGE_TWO_TAG"
         private const val PADDING_HORIZON_ADAPTER = 100
         private const val PADDING_VERTICAL_ADAPTER = 50

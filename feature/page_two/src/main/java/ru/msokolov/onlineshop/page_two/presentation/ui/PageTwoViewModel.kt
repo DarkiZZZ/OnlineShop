@@ -1,26 +1,62 @@
 package ru.msokolov.onlineshop.page_two.presentation.ui
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.*
+import ru.msokolov.onlineshop.livedata.MutableLiveEvent
+import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
+import ru.msokolov.onlineshop.livedata.publishEvent
+import ru.msokolov.onlineshop.livedata.share
+import ru.msokolov.onlineshop.network.Resource.Companion.error
+import ru.msokolov.onlineshop.network.Resource.Companion.loading
+import ru.msokolov.onlineshop.network.Resource.Companion.success
 import ru.msokolov.onlineshop.page_two.domain.usecase.GetDetailedInfoUseCase
 import javax.inject.Inject
 import javax.inject.Provider
 
 class PageTwoViewModel(private val useCase: GetDetailedInfoUseCase): ViewModel() {
 
+    private val _currentPriceSum: MutableLiveData<Int> = MutableLiveData()
+    val currentPriceSum = _currentPriceSum.share()
+
+    private val _ableGoToCartEvent = MutableUnitLiveEvent()
+    val ableGoToCartEvent = _ableGoToCartEvent.share()
+
+    private var productPrice: Int = 0
+
+    fun setupProductPrice(price: Int){
+        productPrice = price
+    }
+
+    fun increaseProductAmount(){
+        productPrice +=productPrice
+        _currentPriceSum.value = productPrice
+    }
+
+    fun decreaseProductAmount(){
+        if (productPrice > 0) {
+            productPrice -= productPrice
+        }
+        _currentPriceSum.value = productPrice
+    }
+
+    fun goToChart(){
+        if (productPrice > 0) _ableGoToCartEvent.publishEvent()
+    }
+
     fun getData() = flow {
         try {
-            emit(ru.msokolov.onlineshop.network.Resource.success(data = useCase()))
+            emit(success(data = useCase()))
         }
         catch (exception: Exception){
-            emit(ru.msokolov.onlineshop.network.Resource.error(data = null, message = exception.message ?: "test"))
+            emit(error(data = null, message = exception.message ?: "test"))
         }
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        ru.msokolov.onlineshop.network.Resource.loading(data = null)
+        loading(data = null)
     )
     companion object{
 

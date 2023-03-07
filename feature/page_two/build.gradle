@@ -41,6 +41,7 @@ dependencies {
     implementation(project(":core:dagger"))
     implementation(project(":core:navigation"))
     implementation(project(":utils:network"))
+    implementation(project(":utils:livedata"))
 
     implementation(Dagger.daggerCore)
     kapt(Dagger.daggerCompiler)

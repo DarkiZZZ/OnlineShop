@@ -7,14 +7,14 @@
     android:orientation="horizontal">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/colorWhiteButton"
+        android:id="@+id/colorOne"
         android:layout_width="34dp"
         app:shapeAppearance="@style/roundedCornersImageView"
         android:layout_height="26dp"
         tools:src="@color/black"
         />
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/colorGrayButton"
+        android:id="@+id/colorTwo"
         android:layout_width="34dp"
         android:layout_height="26dp"
         tools:src="@color/black"
@@ -22,7 +22,7 @@
         android:layout_marginStart="14dp"/>
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/colorDarkBlueButton"
+        android:id="@+id/colorThree"
         android:layout_width="34dp"
         tools:src="@color/black"
         app:shapeAppearance="@style/roundedCornersImageView"

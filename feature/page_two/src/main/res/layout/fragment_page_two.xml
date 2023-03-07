@@ -159,7 +159,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/addToCartTextView"
+                android:id="@+id/productSumTextView"
                 style="@style/TextAppearance.OnlineShop.GeneralSum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,10 +170,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/generalSumTextView"
+                android:id="@+id/addToCartTextView"
                 style="@style/TextAppearance.OnlineShop.AddToChartText"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_marginStart="@dimen/cart_text_dimen"
                 android:layout_marginEnd="@dimen/cart_text_to_car_button_dimen"
                 android:text="@string/add_to_chart"
