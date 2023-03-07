@@ -18,12 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/backButton"
+        android:id="@+id/profile_back_button"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="20dp"
         android:src="@drawable/ic_back_button"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

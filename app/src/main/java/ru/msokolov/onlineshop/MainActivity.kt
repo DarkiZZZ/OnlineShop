@@ -1,13 +1,14 @@
 package ru.msokolov.onlineshop
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import ru.msokolov.onlineshop.appbar_navigation.AppBarNavigation
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
 import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.databinding.ActivityMainBinding
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var bottomNavigation: BottomNavigation
 
+    @Inject
+    lateinit var appBarNavigation: AppBarNavigation
+
     override fun onCreate(savedInstanceState: Bundle?) {
         DaggerMainActivityComponent.builder()
             .deps(findDependencies())
@@ -32,9 +36,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onStart() {
-        //
-        disableNavigationBar()
-        //
         setBottomNavigationClickListeners()
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
@@ -43,16 +44,24 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
     }
 
-    private fun setBottomNavigationClickListeners(){
+    private fun setBottomNavigationClickListeners() {
         binding.bottomNavigationView.profileButton.setOnClickListener {
             setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
+            setupProfileNavigationBar()
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toProfile.action)
         }
         binding.bottomNavigationView.pageOneButton.setOnClickListener {
             setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
+            setupPageOneNavigationBar()
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toPageOne.action)
+        }
+        binding.navBar.profileBackButton.setOnClickListener {
+            setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
+            setupPageOneNavigationBar()
+            findNavController(binding.fragmentContainerView.id)
+                .navigate(appBarNavigation.fromProfileToPageOne.action)
         }
     }
 
@@ -82,7 +91,8 @@ class MainActivity : AppCompatActivity() {
         if (isClickedIndex == FRAGMENT_DO_NOT_HAVE_BOTTOM_NAV) {
             return
         } else {
-            binding.bottomNavigationView.root.getChildAt(isClickedIndex).background = backgroundClicked
+            binding.bottomNavigationView.root.getChildAt(isClickedIndex).background =
+                backgroundClicked
         }
     }
 
@@ -90,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.signInPageFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         false,
                         baseContext,
@@ -97,6 +108,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.loginFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         false,
                         baseContext,
@@ -104,6 +116,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.pageOneFragment -> {
+                    setupPageOneNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -111,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.pageTwoFragment -> {
+                    disableNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -118,6 +132,7 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 R.id.profileButton -> {
+                    setupProfileNavigationBar()
                     setBottomNavigationVisibility(
                         true,
                         baseContext,
@@ -128,29 +143,45 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setNavigationBarItemsVisibility(fragmentId: Int){
-        when(fragmentId){
-
-        }
-    }
-
-    private fun disableNavigationBar(){
+    private fun disableNavigationBar() {
+        hideAllNavigationBarItems()
         binding.navBar.root.visibility = View.GONE
+
     }
 
-    private fun enableNavigationBar(){
+    private fun enableNavigationBar() {
         binding.navBar.root.visibility = View.VISIBLE
     }
 
-    private fun hideAllNavigationBarItems(){
-        with(binding){
-            navBar.locationTextView.visibility = View.GONE
-            navBar.navDrawerButton.visibility = View.GONE
-            navBar.backButton.visibility = View.GONE
-            navBar.labelTextView.visibility = View.GONE
-            navBar.avatarImageView.visibility = View.GONE
-            navBar.locationTextView.visibility = View.GONE
-            navBar.spinnerImageView.visibility = View.GONE
+    private fun setupProfileNavigationBar() {
+        enableNavigationBar()
+        hideAllNavigationBarItems()
+        with(binding.navBar){
+            profileBackButton.visibility = View.VISIBLE
+            labelTextView.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupPageOneNavigationBar() {
+        enableNavigationBar()
+        hideAllNavigationBarItems()
+        with(binding.navBar){
+            navDrawerButton.visibility = View.VISIBLE
+            labelTextView.visibility = View.VISIBLE
+            avatarImageView.visibility = View.VISIBLE
+            locationTextView.visibility = View.VISIBLE
+            spinnerImageView.visibility = View.VISIBLE
+        }
+    }
+
+    private fun hideAllNavigationBarItems() {
+        with(binding.navBar) {
+            locationTextView.visibility = View.GONE
+            navDrawerButton.visibility = View.GONE
+            profileBackButton.visibility = View.GONE
+            labelTextView.visibility = View.GONE
+            avatarImageView.visibility = View.GONE
+            spinnerImageView.visibility = View.GONE
         }
     }
 

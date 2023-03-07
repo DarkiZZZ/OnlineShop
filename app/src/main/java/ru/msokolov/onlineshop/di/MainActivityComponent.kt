@@ -2,6 +2,7 @@ package ru.msokolov.onlineshop.di
 
 import dagger.Component
 import ru.msokolov.onlineshop.MainActivity
+import ru.msokolov.onlineshop.appbar_navigation.AppBarNavigation
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
 import ru.msokolov.onlineshop.dagger.Dependencies
 
@@ -22,4 +23,5 @@ interface MainActivityComponent {
 
 interface MainActivityDeps : Dependencies{
     val bottomNavigation: BottomNavigation
+    val appBarNavigation: AppBarNavigation
 }
