@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":feature:page_one"))
     implementation(project(":feature:page_two"))
     implementation(project(":feature:profile"))
+    implementation(project(":feature:cart"))
     implementation(project(":core:navigation"))
     implementation(project(":core:dagger"))
     implementation(project(":core:latest_api_internal"))
