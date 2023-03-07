@@ -163,6 +163,9 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
         binding.minusButton.setOnClickListener {
             viewModel.decreaseProductAmount()
         }
+        binding.goBackButton.setOnClickListener {
+            navigate(pageTwoCommandProvider.toPageOne)
+        }
     }
 
     companion object {

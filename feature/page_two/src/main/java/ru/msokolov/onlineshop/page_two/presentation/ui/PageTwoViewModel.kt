@@ -25,25 +25,26 @@ class PageTwoViewModel(private val useCase: GetDetailedInfoUseCase): ViewModel()
     val ableGoToCartEvent = _ableGoToCartEvent.share()
 
     private var productPrice: Int = 0
+    private var sumProductPrice: Int = 0
 
     fun setupProductPrice(price: Int){
         productPrice = price
     }
 
     fun increaseProductAmount(){
-        productPrice +=productPrice
-        _currentPriceSum.value = productPrice
+        sumProductPrice += productPrice
+        _currentPriceSum.value = sumProductPrice
     }
 
     fun decreaseProductAmount(){
-        if (productPrice > 0) {
-            productPrice -= productPrice
+        if (sumProductPrice > 0) {
+            sumProductPrice -= productPrice
         }
-        _currentPriceSum.value = productPrice
+        _currentPriceSum.value = sumProductPrice
     }
 
     fun goToChart(){
-        if (productPrice > 0) _ableGoToCartEvent.publishEvent()
+        if (sumProductPrice > 0) _ableGoToCartEvent.publishEvent()
     }
 
     fun getData() = flow {

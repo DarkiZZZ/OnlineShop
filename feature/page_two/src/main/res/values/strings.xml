@@ -12,4 +12,5 @@
     <string name="add_to_chart">Add to chart</string>
     <string name="send_to">Send to:</string>
     <string name="share_to">Share to:</string>
+    <string name="start_price_cart">$ 0</string>
 </resources>
