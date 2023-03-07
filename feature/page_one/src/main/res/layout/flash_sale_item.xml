@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="174dp"
-    android:layout_height="221dp"
+    android:layout_width="@dimen/flash_sale_item_parent_width"
+    android:layout_height="@dimen/flash_sale_item_parent_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginStart="@dimen/margin_between_items_dimen">
+    android:layout_marginStart="@dimen/latest_item_margin_start_parent">
 
     <ImageView
         android:id="@+id/backgroundImageView"
@@ -13,52 +13,55 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/flash_sale_item_example"/>
+        android:src="@drawable/flash_sale_item_example"
+        android:contentDescription="@string/background_image_sale_desc" />
 
     <ImageView
         android:id="@+id/addButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="@dimen/flash_sale_item_add_button_width"
+        android:layout_height="@dimen/flash_sale_item_add_button_height"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginEnd="@dimen/flash_sale_item_margin_end_add_button"
+        android:layout_marginBottom="@dimen/flash_sale_item_margin_bottom_add_button"
+        android:contentDescription="@string/ad_button_desc" />
 
     <ImageView
         android:id="@+id/addToFavoritesButton"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="@dimen/flash_sale_item_fav_button_width"
+        android:layout_height="@dimen/flash_sale_item_fav_button_height"
         android:src="@drawable/ic_add_to_favorites"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="@dimen/flash_sale_item_margin_end_fav_button"
+        android:layout_marginBottom="@dimen/flash_sale_item_margin_bottom_fav_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addButton" />
+        app:layout_constraintEnd_toStartOf="@+id/addButton"
+        android:contentDescription="@string/favourites_button_desc" />
 
     <TextView
         android:id="@+id/categoryTextView"
-        android:layout_width="49dp"
-        android:layout_height="17dp"
+        android:layout_width="@dimen/flash_sale_item_categ_text_width"
+        android:layout_height="@dimen/flash_sale_item_categ_text_height"
         android:gravity="center"
         tools:text="Kids"
         style="@style/TextAppearance.OnlineShop.FlashSaleCategoryName"
         android:background="@drawable/latest_item_category_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="83dp"
+        android:layout_marginStart="@dimen/flash_sale_item_margin_start_categ_text"
+        android:layout_marginBottom="@dimen/flash_sale_item_margin_bottom_categ_text"
         android:orientation="horizontal"/>
 
     <TextView
         android:id="@+id/discountTextView"
-        android:layout_width="49dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/flash_sale_item_disc_text_width"
+        android:layout_height="@dimen/flash_sale_item_disc_text_height"
         android:text="@string/sale_value"
         style="@style/TextAppearance.OnlineShop.FlashSaleDiscountValue"
         android:background="@drawable/sale_background"
         android:gravity="center"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="@dimen/flash_sale_item_margin_top_disc_text"
+        android:layout_marginEnd="@dimen/flash_sale_item_margin_end_disc_text"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -66,26 +69,26 @@
     <TextView
         android:id="@+id/itemNameTextView"
         style="@style/TextAppearance.OnlineShop.FlashSaleName"
-        android:layout_width="87dp"
-        android:layout_height="36dp"
+        android:layout_width="@dimen/flash_sale_item_item_name_text_width"
+        android:layout_height="@dimen/flash_sale_item_item_name_text_height"
         android:lines="2"
-        android:minHeight="36dp"
+        android:minHeight="@dimen/flash_sale_item_item_name_text_min_height"
         android:gravity="top|start"
-        android:maxWidth="@dimen/category_background_view_dimen"
+        android:maxWidth="@dimen/latest_item_width_categ_width"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoryTextView"
         tools:text="New balance sneakers"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="6dp"/>
+        android:layout_marginStart="@dimen/flash_sale_item_margin_start_item_name_text"
+        android:layout_marginTop="@dimen/flash_sale_item_margin_top_item_name_text"/>
 
     <TextView
         android:id="@+id/itemCostTextView"
-        style="@style/TextAppearance.OnlineShop.FlashSaleItemCost"
         android:layout_width="wrap_content"
-        android:layout_height="12dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="17dp"
+        android:layout_height="@dimen/flash_sale_item_item_cost_text_height"
+        android:layout_marginStart="@dimen/flash_sale_item_margin_start_item_cost_text"
+        android:layout_marginTop="@dimen/flash_sale_item_margin_top_item_cost_text"
+        android:layout_marginBottom="@dimen/flash_sale_item_margin_bottom_item_cost_text"
+        style="@style/TextAppearance.OnlineShop.FlashSaleItemCost"
         android:text="@string/flash_sale_item_cost"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,12 +96,13 @@
 
     <ImageView
         android:id="@+id/flashSaleIconImageView"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="@dimen/flash_sale_item_icon_width"
+        android:layout_height="@dimen/flash_sale_item_icon_height"
         android:src="@drawable/ic_flash_sale"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="7dp"
-        android:layout_marginStart="7dp"/>
+        android:layout_marginTop="@dimen/flash_sale_item_margin_top_icon"
+        android:layout_marginStart="@dimen/flash_sale_item_margin_start_icon"
+        android:contentDescription="@string/icon_sale_desc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

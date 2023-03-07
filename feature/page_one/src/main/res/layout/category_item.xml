@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="59dp"
+    android:layout_height="@dimen/category_item_parent_height"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="42dp"
-        android:layout_height="38dp"
+        android:layout_width="@dimen/category_item_image_width"
+        android:layout_height="@dimen/category_item_image_height"
         tools:src="@drawable/ic_cars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,8 +17,8 @@
 
     <TextView
         android:id="@+id/nameTextView"
-        android:layout_width="66dp"
-        android:layout_height="10dp"
+        android:layout_width="@dimen/category_item_text_width"
+        android:layout_height="@dimen/category_item_text_height"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

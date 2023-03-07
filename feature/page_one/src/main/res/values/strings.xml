@@ -1,6 +1,4 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_hint">What are you looking for?</string>
     <string name="phones">Phones</string>
     <string name="kids">kids</string>
@@ -15,5 +13,11 @@
     <string name="flash_sale_item_cost">$ 33,00</string>
     <string name="sale_value">30% off</string>
     <string name="brands">Brands</string>
-    <string name="profile_nav_bar_label"></string>
+    <string name="brand_desc">Image of brand</string>
+    <string name="search_icon_desc">Search icon</string>
+    <string name="background_image_sale_desc">Image of product in flash sale</string>
+    <string name="ad_button_desc">Button to add product</string>
+    <string name="favourites_button_desc">Button to add to favourites product</string>
+    <string name="icon_sale_desc">Icon of product in flash sale</string>
+    <string name="background_latest_desc">Image of product in latest</string>
 </resources>

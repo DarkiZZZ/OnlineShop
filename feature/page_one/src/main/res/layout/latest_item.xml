@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="114dp"
-    android:layout_height="149dp"
+    android:layout_width="@dimen/latest_item_width_parent"
+    android:layout_height="@dimen/latest_item_height_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginStart="@dimen/margin_between_items_dimen">
+    android:layout_marginStart="@dimen/latest_item_margin_start_parent">
 
     <ImageView
         android:id="@id/backgroundImageView"
@@ -12,52 +13,54 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/latest_item_example"/>
+        android:src="@drawable/latest_item_example"
+        android:contentDescription="@string/background_latest_desc" />
 
     <ImageView
         android:id="@+id/addButton"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="@dimen/latest_item_width_add_button"
+        android:layout_height="@dimen/latest_item_height_add_button"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/margin_latest_add_button_dimen"
-        android:layout_marginBottom="@dimen/margin_latest_add_button_dimen"/>
+        android:layout_marginEnd="@dimen/latest_item_margin_end_add_button"
+        android:layout_marginBottom="@dimen/latest_item_margin_bottom_add_button"
+        android:contentDescription="@string/ad_button_desc" />
 
     <TextView
         android:id="@id/categoryTextView"
-        android:layout_width="@dimen/category_background_view_dimen"
-        android:layout_height="12dp"
+        android:layout_width="@dimen/latest_item_width_categ_width"
+        android:layout_height="@dimen/latest_item_height_categ_text"
         android:gravity="center"
         tools:text="Games"
         style="@style/TextAppearance.OnlineShop.LatestCategoryName"
         android:background="@drawable/latest_item_category_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="@dimen/margin_cost_value_dimen"
-        android:layout_marginBottom="@dimen/margin_bottom_category_background_dimen"/>
+        android:layout_marginStart="@dimen/latest_item_margin_start_categ_text"
+        android:layout_marginBottom="@dimen/latest_item_margin_bottom_categ_text"/>
 
     <TextView
         android:id="@+id/itemNameTextView"
-        style="@style/TextAppearance.OnlineShop.LatestItemName"
-        android:layout_width="61dp"
-        android:layout_height="26dp"
-        android:maxWidth="@dimen/category_background_view_dimen"
+        android:layout_width="@dimen/latest_item_width_item_name_text"
+        android:layout_height="@dimen/latest_item_height_item_name_text"
+        android:maxWidth="@dimen/latest_item_max_width_item_name_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoryTextView"
+        style="@style/TextAppearance.OnlineShop.LatestItemName"
         tools:text="Play Station 5 console"
-        android:layout_marginStart="@dimen/margin_cost_value_dimen"
-        android:layout_marginTop="@dimen/margin_top_item_name_dimen"/>
+        android:layout_marginStart="@dimen/latest_item_margin_start_item_name_text"
+        android:layout_marginTop="@dimen/latest_item_margin_top_item_name_text"/>
 
     <TextView
         android:id="@+id/itemCostTextView"
         style="@style/TextAppearance.OnlineShop.LatestItemCost"
         android:layout_width="wrap_content"
-        android:layout_height="9dp"
-        android:text="@string/latest_item_cost_value"
-        android:layout_marginTop="@dimen/margin_top_cost_value_dimen"
-        android:layout_marginStart="@dimen/margin_cost_value_dimen"
-        android:layout_marginBottom="@dimen/margin_cost_value_dimen"
+        android:layout_height="@dimen/latest_item_height_item_cost_text"
+        tools:text="@string/latest_item_cost_value"
+        android:layout_marginTop="@dimen/latest_item_margin_top_item_cost_text"
+        android:layout_marginStart="@dimen/latest_item_margin_start_item_cost_text"
+        android:layout_marginBottom="@dimen/latest_item_margin_bottom_item_cost_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemNameTextView" />
 
