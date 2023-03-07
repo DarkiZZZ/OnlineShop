@@ -2,26 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/colorWhiteButton"
         android:layout_width="34dp"
+        app:shapeAppearance="@style/roundedCornersImageView"
         android:layout_height="26dp"
-        android:src="@drawable/color_item_white_clicked"
+        tools:src="@color/black"
         />
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/colorGrayButton"
         android:layout_width="34dp"
         android:layout_height="26dp"
-        android:src="@drawable/color_item_gray"
+        tools:src="@color/black"
+        app:shapeAppearance="@style/roundedCornersImageView"
         android:layout_marginStart="14dp"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/colorDarkBlueButton"
         android:layout_width="34dp"
+        tools:src="@color/black"
+        app:shapeAppearance="@style/roundedCornersImageView"
         android:layout_height="26dp"
-        android:src="@drawable/color_item_dark_blue"
         android:layout_marginStart="14dp"/>
 
 </LinearLayout>
