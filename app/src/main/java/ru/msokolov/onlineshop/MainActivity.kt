@@ -8,6 +8,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import ru.msokolov.onlineshop.appbar_navigation.AppBarNavigation
 import ru.msokolov.onlineshop.bottom_navigation.BottomNavigation
 import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.databinding.ActivityMainBinding
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var bottomNavigation: BottomNavigation
+
+    @Inject
+    lateinit var appBarNavigation: AppBarNavigation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         DaggerMainActivityComponent.builder()
@@ -43,13 +47,21 @@ class MainActivity : AppCompatActivity() {
     private fun setBottomNavigationClickListeners() {
         binding.bottomNavigationView.profileButton.setOnClickListener {
             setBottomButtonsState(baseContext, PROFILE_BOTTOM_NAV_CLICKED)
+            setupProfileNavigationBar()
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toProfile.action)
         }
         binding.bottomNavigationView.pageOneButton.setOnClickListener {
             setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
+            setupPageOneNavigationBar()
             findNavController(binding.fragmentContainerView.id)
                 .navigate(bottomNavigation.toPageOne.action)
+        }
+        binding.navBar.profileBackButton.setOnClickListener {
+            setBottomButtonsState(baseContext, PAGE_ONE_BOTTOM_NAV_CLICKED)
+            setupPageOneNavigationBar()
+            findNavController(binding.fragmentContainerView.id)
+                .navigate(appBarNavigation.fromProfileToPageOne.action)
         }
     }
 
@@ -142,17 +154,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupProfileNavigationBar() {
-        hideAllNavigationBarItems()
         enableNavigationBar()
+        hideAllNavigationBarItems()
         with(binding.navBar){
-            backButton.visibility = View.VISIBLE
+            profileBackButton.visibility = View.VISIBLE
             labelTextView.visibility = View.VISIBLE
         }
     }
 
     private fun setupPageOneNavigationBar() {
-        hideAllNavigationBarItems()
         enableNavigationBar()
+        hideAllNavigationBarItems()
         with(binding.navBar){
             navDrawerButton.visibility = View.VISIBLE
             labelTextView.visibility = View.VISIBLE
@@ -166,7 +178,7 @@ class MainActivity : AppCompatActivity() {
         with(binding.navBar) {
             locationTextView.visibility = View.GONE
             navDrawerButton.visibility = View.GONE
-            backButton.visibility = View.GONE
+            profileBackButton.visibility = View.GONE
             labelTextView.visibility = View.GONE
             avatarImageView.visibility = View.GONE
             spinnerImageView.visibility = View.GONE
