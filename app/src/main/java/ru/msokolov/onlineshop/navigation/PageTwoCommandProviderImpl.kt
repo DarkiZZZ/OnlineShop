@@ -6,5 +6,6 @@ import javax.inject.Inject
 
 class PageTwoCommandProviderImpl @Inject constructor() : PageTwoCommandProvider {
     override val toPageTwo: NavCommand = NavCommand(id.action_pageTwoFragment_to_pageOneFragment)
+    override val toCart: NavCommand = NavCommand(id.action_pageTwoFragment_to_cartFragment)
 
 }

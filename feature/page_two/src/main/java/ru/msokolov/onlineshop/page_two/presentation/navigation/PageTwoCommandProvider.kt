@@ -4,4 +4,5 @@ import ru.msokolov.onlineshop.navigation.NavCommand
 
 interface PageTwoCommandProvider {
     val toPageTwo: NavCommand
+    val toCart: NavCommand
 }
