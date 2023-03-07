@@ -22,19 +22,19 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="287dp"
                 android:layout_marginTop="34dp">
 
-                <include
-                    android:id="@+id/imageSwitcherLayout"
-                    layout="@layout/image_switcher_layout"
-                    android:layout_width="match_parent"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mainPhotoRecyclerView"
+                    tools:listitem="@layout/main_photo_item"
+                    android:layout_width="349dp"
                     android:layout_height="279dp"
                     android:layout_marginTop="6dp"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <ImageView
                     android:id="@+id/goBackButton"
@@ -47,22 +47,25 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="83dp"
+            <ru.msokolov.onlineshop.page_two.presentation.ui.gallery.GalleryRecyclerView
+                android:id="@+id/galleryRecyclerView"
+                android:layout_width="246dp"
+                android:layout_height="90dp"
                 android:layout_marginStart="75dp"
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="75dp"
-                tools:itemCount="1"
-                tools:listitem="@layout/photo_item" />
+                tools:itemCount="3"
+                tools:listitem="@layout/gallery_item" />
 
             <include
+                android:id="@+id/nameAndPriceLayout"
                 layout="@layout/name_and_price_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp" />
 
             <include
+                android:id="@+id/descriptionAndRatingLayout"
                 layout="@layout/description_rating_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

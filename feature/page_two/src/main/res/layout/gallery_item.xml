@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="70dp"
+    android:layout_width="wrap_content"
     android:layout_height="75dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center">
 
     <androidx.cardview.widget.CardView
@@ -9,15 +10,18 @@
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="7dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_gravity="center">
 
         <ImageView
+            android:id="@+id/photoImageView"
             android:layout_width="66dp"
             android:layout_height="38dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/photo_item_example"
+            tools:src="@drawable/photo_item_example"
             android:cropToPadding="true"/>
     </androidx.cardview.widget.CardView>
 
