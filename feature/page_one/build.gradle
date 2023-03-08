@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:latest_api"))
     implementation(project(":core:sale_api"))
+    implementation(project(":core:search_api"))
     implementation(project(":core:dagger"))
     implementation(project(":core:navigation"))
     implementation(project(":utils:network"))

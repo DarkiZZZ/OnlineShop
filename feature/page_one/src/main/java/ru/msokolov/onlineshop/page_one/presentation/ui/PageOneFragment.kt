@@ -14,8 +14,8 @@ import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.page_one.R
-import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleListEntity
-import ru.msokolov.onlineshop.page_one.data.entity.LatestListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestListEntity
 import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider

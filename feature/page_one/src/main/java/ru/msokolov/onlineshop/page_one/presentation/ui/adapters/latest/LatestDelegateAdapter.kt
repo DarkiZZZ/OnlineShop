@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import ru.msokolov.onlineshop.page_one.data.entity.LatestEntity
+import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestEntity
 import ru.msokolov.onlineshop.page_one.databinding.LatestItemBinding
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem

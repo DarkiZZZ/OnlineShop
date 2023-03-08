@@ -1,6 +1,6 @@
 package ru.msokolov.onlineshop.page_one.data.repository.sale
 
-import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
 import ru.msokolov.onlineshop.page_one.data.mapper.FlashSaleMapper
 import ru.msokolov.onlineshop.page_one.domain.repository.SaleApiRepository
 import ru.msokolov.onlineshop.sale_api.SaleApiService

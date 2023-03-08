@@ -1,7 +1,7 @@
 package ru.msokolov.onlineshop.page_one.data.repository.latest
 
 import ru.msokolov.onlineshop.latest_api.LatestApiService
-import ru.msokolov.onlineshop.page_one.data.entity.LatestListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestListEntity
 import ru.msokolov.onlineshop.page_one.data.mapper.LatestMapper
 import ru.msokolov.onlineshop.page_one.domain.repository.LatestApiRepository
 import javax.inject.Inject
