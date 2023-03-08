@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:dagger"))
     implementation(project(":core:navigation"))
     implementation(project(":utils:network"))
+    implementation(project(":utils:livedata"))
 
     implementation(Dagger.daggerCore)
     kapt(Dagger.daggerCompiler)
@@ -50,7 +51,6 @@ dependencies {
 
     implementation(Network.picasso)
     implementation(Lifecycle.viewModelKtx)
-
     implementation(FragmentKtx.fragmentKtx)
 
     implementation 'androidx.core:core-ktx:1.9.0'

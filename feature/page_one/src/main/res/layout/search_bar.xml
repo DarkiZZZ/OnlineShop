@@ -8,7 +8,7 @@
     android:background="@drawable/rectangle_5"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/searchEditText"
         android:layout_width="match_parent"
         android:layout_height="@dimen/search_bar_height_edit_text"

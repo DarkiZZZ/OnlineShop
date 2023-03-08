@@ -14,7 +14,9 @@
         android:layout_marginTop="@dimen/fragment_margin_top_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/search_bar"/>
+        <include
+            android:id="@+id/searchLayout"
+            layout="@layout/search_bar"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoryRecView"

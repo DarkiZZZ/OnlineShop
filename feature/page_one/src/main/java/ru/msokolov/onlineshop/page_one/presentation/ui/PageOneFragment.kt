@@ -13,9 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
 import ru.msokolov.onlineshop.navigation.navigate
+import ru.msokolov.onlineshop.network.Status.*
 import ru.msokolov.onlineshop.page_one.R
-import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
 import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
 import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
@@ -24,8 +25,8 @@ import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand.BrandModel
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.CategoryDelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.CategoryModel
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.CompositeAdapter
-import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale.FlashSaleDelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.latest.LatestDelegateAdapter
+import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale.FlashSaleDelegateAdapter
 import javax.inject.Inject
 
 class PageOneFragment : Fragment(R.layout.fragment_page_one) {
@@ -83,10 +84,11 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         setupBrandRecyclerView()
         setupCategoryRecyclerView()
         setupDataFromViewModel()
+        observeSearchWords()
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun setupFlashSaleRecyclerView(){
+    private fun setupFlashSaleRecyclerView() {
         with(binding.flashSaleItemsRecyclerView) {
             adapter = flashSaleCompositeAdapter
             layoutManager =
@@ -94,7 +96,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    private fun setupCategoryRecyclerView(){
+    private fun setupCategoryRecyclerView() {
         with(binding.categoryRecView) {
             adapter = categoryCompositeAdapter
             layoutManager =
@@ -112,7 +114,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         categoryCompositeAdapter.submitList(categoryList)
     }
 
-    private fun setupLatestRecyclerView(){
+    private fun setupLatestRecyclerView() {
         with(binding.latestItemsRecyclerView) {
             adapter = latestCompositeAdapter
             layoutManager =
@@ -120,7 +122,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    private fun setupBrandRecyclerView(){
+    private fun setupBrandRecyclerView() {
         with(binding.brandItemsRecyclerView) {
             adapter = brandCompositeAdapter
             layoutManager =
@@ -137,11 +139,24 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         brandCompositeAdapter.submitList(brandList)
     }
 
-    private fun setupDataFromViewModel(){
+    private fun observeSearchWords(){
+        viewModel.searchWordsList.observe(viewLifecycleOwner){
+            when(it.status){
+                SUCCESS -> {
+                    Log.d("TATTATAT", it.data.toString())
+                }
+                ERROR -> {}
+                LOADING -> {}
+            }
+        }
+    }
+
+    @Suppress("DEPRECATION")
+    private fun setupDataFromViewModel() {
         lifecycleScope.launchWhenStarted {
             viewModel.getData().collect {
                 when (it.status) {
-                    ru.msokolov.onlineshop.network.Status.SUCCESS -> {
+                    SUCCESS -> {
                         when (it.data) {
                             is LatestListEntity -> {
                                 latestCompositeAdapter.submitList((it.data as LatestListEntity).latestList)
@@ -151,14 +166,8 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
                             }
                         }
                     }
-                    ru.msokolov.onlineshop.network.Status.ERROR -> Log.d(
-                        "TAGTAGTAG",
-                        "error: ${it.message.toString()}"
-                    )
-                    ru.msokolov.onlineshop.network.Status.LOADING -> Log.d(
-                        "TAGTAGTAG",
-                        it.message.toString()
-                    )
+                    ERROR -> {}
+                    LOADING -> {}
                 }
             }
         }

@@ -1,9 +1,14 @@
 package ru.msokolov.onlineshop.page_one.presentation.ui
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+import ru.msokolov.onlineshop.livedata.share
+import ru.msokolov.onlineshop.network.Resource
+import ru.msokolov.onlineshop.network.Resource.Companion.error
+import ru.msokolov.onlineshop.network.Resource.Companion.loading
+import ru.msokolov.onlineshop.network.Resource.Companion.success
+import ru.msokolov.onlineshop.page_one.data.entity.search.SearchWordListEntity
 import ru.msokolov.onlineshop.page_one.domain.usecase.GetFlashSaleDataUseCase
 import ru.msokolov.onlineshop.page_one.domain.usecase.GetLatestDataUseCase
 import ru.msokolov.onlineshop.page_one.domain.usecase.GetSearchWordsUseCase
@@ -16,22 +21,47 @@ class PageOneViewModel(
     private val searchUseCase: GetSearchWordsUseCase
 ) : ViewModel() {
 
+    private var _searchWordsList = MutableLiveData<Resource<SearchWordListEntity>>()
+    val searchWordsList: LiveData<Resource<SearchWordListEntity>> = _searchWordsList.share()
+
+    fun getSearchWords() {
+        viewModelScope.launch {
+            flow { emit(success(data = searchUseCase())) }
+                .catch { exception ->
+                    emit(
+                        error(
+                            data = null,
+                            message = exception.message ?: "null"
+                        )
+                    )
+                }.stateIn(
+                    viewModelScope,
+                    SharingStarted.Lazily,
+                    loading(data = null)
+                )
+                .collect {
+                    _searchWordsList.value = it
+                }
+        }
+    }
+
+
     fun getData() = flow {
         try {
-            emit(ru.msokolov.onlineshop.network.Resource.success(data = latestUseCase()))
-            emit(ru.msokolov.onlineshop.network.Resource.success(data = saleUseCase()))
+            emit(success(data = latestUseCase()))
+            emit(success(data = saleUseCase()))
         } catch (exception: Exception) {
             emit(
-                ru.msokolov.onlineshop.network.Resource.error(
+                error(
                     data = null,
-                    message = exception.message ?: "test"
+                    message = exception.message ?: "null"
                 )
             )
         }
     }.stateIn(
         viewModelScope,
         SharingStarted.Lazily,
-        ru.msokolov.onlineshop.network.Resource.loading(data = null)
+        loading(data = null)
     )
 
     companion object {
