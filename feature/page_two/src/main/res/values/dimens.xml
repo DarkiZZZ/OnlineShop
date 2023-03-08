@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_start_component_dimen">24dp</dimen>
     <dimen name="bottom_cart_layout_margin_start_sum_price">28dp</dimen>
     <dimen name="bottom_cart_layout_margin_end_cart_text">30dp</dimen>
     <dimen name="bottom_cart_layout_height_parent">150dp</dimen>
@@ -18,9 +17,11 @@
     <dimen name="bottom_cart_layout_margin_top_add_cart_container">19dp</dimen>
     <dimen name="bottom_cart_layout_margin_end_add_cart_container">23dp</dimen>
     <dimen name="bottom_cart_layout_margin_start_cart_text">28dp</dimen>
+
     <dimen name="colors_layout_width_item">34dp</dimen>
     <dimen name="colors_layout_height_item">26dp</dimen>
     <dimen name="colors_layout_margin_start_item">14dp</dimen>
+
     <dimen name="desc_rating_layout_width_desc_text">231dp</dimen>
     <dimen name="desc_rating_layout_height_desc_text">42dp</dimen>
     <dimen name="desc_rating_layout_margin_start_desc_text">24dp</dimen>
@@ -38,6 +39,7 @@
     <dimen name="name_price_layout_height_price_text">17dp</dimen>
     <dimen name="name_price_layout_margin_top_price_text">4dp</dimen>
     <dimen name="name_price_layout_margin_end_price_text">23dp</dimen>
+
     <dimen name="main_photo_item_height_parent">279dp</dimen>
     <dimen name="main_photo_item_width_main_photo">328dp</dimen>
     <dimen name="main_photo_item_height_main_photo">279dp</dimen>
@@ -53,6 +55,7 @@
     <dimen name="main_photo_item_margin_bottom_sep_line">48dp</dimen>
     <dimen name="main_photo_item_margin_start_share_button">14dp</dimen>
     <dimen name="main_photo_item_margin_end_share_button">13dp</dimen>
+
     <dimen name="gallery_item_height_parent">75dp</dimen>
     <dimen name="gallery_item_width_container">66dp</dimen>
     <dimen name="gallery_item_height_container">38dp</dimen>
@@ -62,6 +65,7 @@
     <dimen name="gallery_item_margin_end_container">8dp</dimen>
     <dimen name="gallery_item_width_image">66dp</dimen>
     <dimen name="gallery_item_height_image">38dp</dimen>
+
     <dimen name="fragment_height_main_photo_container">287dp</dimen>
     <dimen name="fragment_margin_top_main_photo_container">34dp</dimen>
     <dimen name="fragment_width_main_photo_rec_view">349dp</dimen>
@@ -81,4 +85,5 @@
     <dimen name="fragment_margin_top_color_text">13dp</dimen>
     <dimen name="fragment_margin_top_colors_layout">11dp</dimen>
     <dimen name="fragment_margin_bottom_colors_layout">20dp</dimen>
+    <dimen name="fragment_margin_start_colors_layout">24dp</dimen>
 </resources>
