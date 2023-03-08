@@ -3,4 +3,9 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="location">Location</string>
+    <string name="bottom_nav_icon_desc">Image of bottom navigation view icon</string>
+    <string name="drawer_button_desc">Image of drawer button</string>
+    <string name="back_button_desc">Image of back button to Profile fragment</string>
+    <string name="avatar_desc">Image of avatar</string>
+    <string name="spinner_desc">Image of location spinner</string>
 </resources>
