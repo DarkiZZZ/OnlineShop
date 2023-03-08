@@ -18,7 +18,7 @@
             android:layout_width="@dimen/fragment_width_avatar"
             android:layout_height="@dimen/fragment_height_avatar"
             android:layout_marginTop="@dimen/fragment_margin_top_avatar"
-            android:background="@drawable/ic_avatar_background"
+            android:background="@drawable/ic_avatar_example"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

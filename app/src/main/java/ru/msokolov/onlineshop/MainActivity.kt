@@ -2,6 +2,7 @@ package ru.msokolov.onlineshop
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -82,12 +83,13 @@ class MainActivity : AppCompatActivity() {
         val background = AppCompatResources.getDrawable(context, R.drawable.bottom_item_background)
         val backgroundClicked =
             AppCompatResources.getDrawable(context, R.drawable.bottom_item_clicked_background)
-        binding.bottomNavigationView.pageOneButton.background = background
-        binding.bottomNavigationView.favouritesButton.background = background
-        binding.bottomNavigationView.cartButton.background = background
-        binding.bottomNavigationView.chatButton.background = background
-        binding.bottomNavigationView.profileButton.background = background
-
+        with(binding.bottomNavigationView){
+            pageOneButton.background = background
+            favouritesButton.background = background
+            cartButton.background = background
+            chatButton.background = background
+            profileButton.background = background
+        }
         if (isClickedIndex == FRAGMENT_DO_NOT_HAVE_BOTTOM_NAV) {
             return
         } else {
@@ -158,7 +160,12 @@ class MainActivity : AppCompatActivity() {
         hideAllNavigationBarItems()
         with(binding.navBar){
             profileBackButton.visibility = View.VISIBLE
-            labelTextView.visibility = View.VISIBLE
+            with(labelTextView){
+                visibility = View.VISIBLE
+                val firstWord = "<font color='#000000'>Profile</font>"
+                text = Html.fromHtml(firstWord)
+                setTextAppearance(R.style.TextAppearance_OnlineShop_AppBar_ProfileLabel)
+            }
         }
     }
 
@@ -167,7 +174,13 @@ class MainActivity : AppCompatActivity() {
         hideAllNavigationBarItems()
         with(binding.navBar){
             navDrawerButton.visibility = View.VISIBLE
-            labelTextView.visibility = View.VISIBLE
+            with(labelTextView){
+                visibility = View.VISIBLE
+                val firstWord = "<font color='#000000'>Trade by</font>"
+                val secondWord = "<font color='#4E55D7'> bata</font>"
+                text = Html.fromHtml(firstWord + secondWord)
+                setTextAppearance(R.style.TextAppearance_OnlineShop_AppBar_PageOneLabel)
+            }
             avatarImageView.visibility = View.VISIBLE
             locationTextView.visibility = View.VISIBLE
             spinnerImageView.visibility = View.VISIBLE

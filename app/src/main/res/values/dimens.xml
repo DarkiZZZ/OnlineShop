@@ -10,7 +10,6 @@
     <dimen name="nav_bar_width_back_button">20dp</dimen>
     <dimen name="nav_bar_height_back_button">20dp</dimen>
     <dimen name="nav_bar_margin_start_back_button">20dp</dimen>
-    <dimen name="nav_bar_height_label_text">23dp</dimen>
     <dimen name="nav_bar_width_avatar">32dp</dimen>
     <dimen name="nav_bar_height_avatar">30dp</dimen>
     <dimen name="nav_bar_margin_top_avatar">7dp</dimen>
