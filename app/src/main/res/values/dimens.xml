@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_nav_layout_size_icon">15dp</dimen>
+    <dimen name="bottom_nav_height">65dp</dimen>
+    <dimen name="nav_bar_height">57dp</dimen>
+    <dimen name="nav_bar_width_drawer_button">35dp</dimen>
+    <dimen name="nav_bar_height_drawer_button">35dp</dimen>
+    <dimen name="nav_bar_margin_start_drawer_button">10dp</dimen>
+    <dimen name="nav_bar_margin_top_drawer_button">5dp</dimen>
+    <dimen name="nav_bar_width_back_button">20dp</dimen>
+    <dimen name="nav_bar_height_back_button">20dp</dimen>
+    <dimen name="nav_bar_margin_start_back_button">20dp</dimen>
+    <dimen name="nav_bar_height_label_text">23dp</dimen>
+    <dimen name="nav_bar_width_avatar">32dp</dimen>
+    <dimen name="nav_bar_height_avatar">30dp</dimen>
+    <dimen name="nav_bar_margin_top_avatar">7dp</dimen>
+    <dimen name="nav_bar_margin_end_avatar">47dp</dimen>
+    <dimen name="nav_bar_width_location_text">42dp</dimen>
+    <dimen name="nav_bar_height_location_text">13dp</dimen>
+    <dimen name="nav_bar_margin_top_location_text">7dp</dimen>
+    <dimen name="nav_bar_width_spinner_icon">16dp</dimen>
+    <dimen name="nav_bar_height_spinner_icon">16dp</dimen>
+    <dimen name="nav_bar_margin_top_spinner_icon">3dp</dimen>
+</resources>

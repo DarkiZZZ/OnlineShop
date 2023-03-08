@@ -10,7 +10,7 @@
     tools:context=".presentation.ui.PageTwoFragment">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottomCartPreviewLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,37 +24,38 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="287dp"
-                android:layout_marginTop="34dp">
+                android:layout_height="@dimen/fragment_height_main_photo_container"
+                android:layout_marginTop="@dimen/fragment_margin_top_main_photo_container">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/mainPhotoRecyclerView"
                     tools:listitem="@layout/main_photo_item"
-                    android:layout_width="349dp"
-                    android:layout_height="279dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_width="@dimen/fragment_width_main_photo_rec_view"
+                    android:layout_height="@dimen/fragment_height_main_photo_rec_view"
+                    android:layout_marginTop="@dimen/fragment_margin_top_main_photo_rec_view"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <ImageView
                     android:id="@+id/goBackButton"
-                    android:layout_width="6dp"
-                    android:layout_height="12dp"
-                    android:layout_marginStart="11dp"
+                    android:layout_width="@dimen/fragment_width_back_button"
+                    android:layout_height="@dimen/fragment_height_back_button"
+                    android:layout_marginStart="@dimen/fragment_margin_start_back_button"
                     android:src="@drawable/ic_back"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/go_back_button_desc" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ru.msokolov.onlineshop.page_two.presentation.ui.gallery.GalleryRecyclerView
                 android:id="@+id/galleryRecyclerView"
-                android:layout_width="246dp"
-                android:layout_height="90dp"
-                android:layout_marginStart="75dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="75dp"
+                android:layout_width="@dimen/fragment_width_gallery_rec_view"
+                android:layout_height="@dimen/fragment_height_gallery_rec_view"
+                android:layout_marginStart="@dimen/fragment_margin_start_gallery_rec_view"
+                android:layout_marginTop="@dimen/fragment_margin_top_gallery_rec_view"
+                android:layout_marginEnd="@dimen/fragment_margin_end_gallery_rec_view"
                 tools:itemCount="3"
                 tools:listitem="@layout/gallery_item" />
 
@@ -63,21 +64,21 @@
                 layout="@layout/name_and_price_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="21dp" />
+                android:layout_marginTop="@dimen/fragment_margin_top_name_price_layout" />
 
             <include
                 android:id="@+id/descriptionAndRatingLayout"
                 layout="@layout/description_rating_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="@dimen/fragment_margin_top_desc_rating_layout" />
 
             <TextView
-                style="@style/TextAppearance.OnlineShop.ColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginStart="@dimen/fragment_margin_start_color_text"
+                android:layout_marginTop="@dimen/fragment_margin_top_color_text"
+                style="@style/TextAppearance.OnlineShop.ColorText"
                 android:text="@string/color" />
 
             <include
@@ -85,107 +86,18 @@
                 layout="@layout/colors_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_start_component_dimen"
-                android:layout_marginTop="11dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginStart="@dimen/fragment_margin_start_colors_layout"
+                android:layout_marginTop="@dimen/fragment_margin_top_colors_layout"
+                android:layout_marginBottom="@dimen/fragment_margin_bottom_colors_layout" />
         </LinearLayout>
     </ScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
         android:id="@+id/bottomCartPreviewLayout"
+        layout="@layout/bottom_cart_preview_layout"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/cart_background"
+        android:layout_height="@dimen/bottom_cart_layout_height_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/quantityTextView"
-            style="@style/TextAppearance.OnlineShop.QuantityText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="14dp"
-            android:text="@string/quantity"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/minusButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/product_number_button_background"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/quantityTextView">
-
-            <ImageView
-                android:layout_width="7dp"
-                android:layout_height="1dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_minus" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/plusButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20.79dp"
-            android:background="@drawable/product_number_button_background"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@id/minusButton"
-            app:layout_constraintStart_toEndOf="@+id/minusButton"
-            app:layout_constraintTop_toTopOf="@+id/minusButton">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_plus" />
-        </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/addToCartButton"
-            android:layout_width="170dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="23dp"
-            android:background="@drawable/add_to_cart_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/productSumTextView"
-                style="@style/TextAppearance.OnlineShop.GeneralSum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/cart_text_dimen"
-                android:text="@string/start_price_cart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/addToCartTextView"
-                style="@style/TextAppearance.OnlineShop.AddToChartText"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_marginStart="@dimen/cart_text_dimen"
-                android:layout_marginEnd="@dimen/cart_text_to_car_button_dimen"
-                android:text="@string/add_to_chart"
-                android:textAllCaps="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

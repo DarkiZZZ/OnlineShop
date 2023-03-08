@@ -92,7 +92,8 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
 
     private fun observeProductPrice() {
         viewModel.currentPriceSum.observe(viewLifecycleOwner) {
-            binding.productSumTextView.text = getString(R.string.general_sum_value, it.toString())
+            binding.bottomCartPreviewLayout.productSumTextView.text =
+                getString(R.string.general_sum_value, it.toString())
         }
     }
 
@@ -131,12 +132,14 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
         with(binding) {
             with(nameAndPriceLayout) {
                 productNameTextView.text = detailedInfo.name
-                priceTextView.text = getString(R.string.product_price, detailedInfo.price.toString())
+                priceTextView.text =
+                    getString(R.string.product_price, detailedInfo.price.toString())
             }
-            with(descriptionAndRatingLayout){
+            with(descriptionAndRatingLayout) {
                 descriptionTextView.text = detailedInfo.description
                 ratingValueTextView.text = getString(R.string.rating_value, detailedInfo.rating)
-                reviewsAmountTextView.text = getString(R.string.reviews_value, detailedInfo.numberOfReviews.toString())
+                reviewsAmountTextView.text =
+                    getString(R.string.reviews_value, detailedInfo.numberOfReviews.toString())
             }
             setupColors(colors = detailedInfo.colorList)
             adapterMainPhoto!!.setData(detailedInfo.imageUrlList)
@@ -154,14 +157,16 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
     }
 
     private fun setupClickListeners() {
-        binding.addToCartTextView.setOnClickListener {
-            viewModel.goToChart()
-        }
-        binding.plusButton.setOnClickListener {
-            viewModel.increaseProductAmount()
-        }
-        binding.minusButton.setOnClickListener {
-            viewModel.decreaseProductAmount()
+        with(binding.bottomCartPreviewLayout) {
+            addToCartTextView.setOnClickListener {
+                viewModel.goToChart()
+            }
+            plusButton.setOnClickListener {
+                viewModel.increaseProductAmount()
+            }
+            minusButton.setOnClickListener {
+                viewModel.decreaseProductAmount()
+            }
         }
         binding.goBackButton.setOnClickListener {
             navigate(pageTwoCommandProvider.toPageOne)
@@ -169,7 +174,6 @@ class PageTwoFragment : Fragment(R.layout.fragment_page_two) {
     }
 
     companion object {
-        private const val TAG = "PAGE_TWO_TAG"
         private const val PADDING_HORIZON_ADAPTER = 100
         private const val PADDING_VERTICAL_ADAPTER = 50
     }

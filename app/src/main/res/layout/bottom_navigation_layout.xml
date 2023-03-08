@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="65dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,11 +20,12 @@
         tools:background="@drawable/bottom_item_clicked_background">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/bottom_nav_layout_size_icon"
+            android:layout_height="@dimen/bottom_nav_layout_size_icon"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_home" />
+            android:src="@drawable/ic_home"
+            android:contentDescription="@string/bottom_nav_icon_desc" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,11 +41,12 @@
         tools:background="@drawable/bottom_item_background">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/bottom_nav_layout_size_icon"
+            android:layout_height="@dimen/bottom_nav_layout_size_icon"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_favourites" />
+            android:src="@drawable/ic_favourites"
+            android:contentDescription="@string/bottom_nav_icon_desc"  />
     </LinearLayout>
 
     <LinearLayout
@@ -59,11 +62,12 @@
         tools:background="@drawable/bottom_item_background">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/bottom_nav_layout_size_icon"
+            android:layout_height="@dimen/bottom_nav_layout_size_icon"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_cart" />
+            android:src="@drawable/ic_cart"
+            android:contentDescription="@string/bottom_nav_icon_desc"  />
     </LinearLayout>
 
     <LinearLayout
@@ -79,11 +83,12 @@
         tools:background="@drawable/bottom_item_background">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/bottom_nav_layout_size_icon"
+            android:layout_height="@dimen/bottom_nav_layout_size_icon"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_chat" />
+            android:src="@drawable/ic_chat"
+            android:contentDescription="@string/bottom_nav_icon_desc"  />
     </LinearLayout>
 
     <LinearLayout
@@ -99,11 +104,12 @@
         tools:background="@drawable/bottom_item_background">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="@dimen/bottom_nav_layout_size_icon"
+            android:layout_height="@dimen/bottom_nav_layout_size_icon"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:src="@drawable/ic_profile" />
+            android:src="@drawable/ic_profile"
+            android:contentDescription="@string/bottom_nav_icon_desc"  />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragment_margin_top_parent">57dp</dimen>
+    <dimen name="fragment_margin_bottom_parent">65dp</dimen>
+    <dimen name="fragment_width_avatar">61dp</dimen>
+    <dimen name="fragment_height_avatar">61dp</dimen>
+    <dimen name="fragment_margin_top_avatar">19dp</dimen>
+    <dimen name="fragment_width_change_photo_button">69dp</dimen>
+    <dimen name="fragment_height_change_photo_button">10dp</dimen>
+    <dimen name="fragment_margin_top_change_photo_button">6dp</dimen>
+    <dimen name="fragment_width_user_name_text">168dp</dimen>
+    <dimen name="fragment_margin_top_user_name_text">17dp</dimen>
+    <dimen name="fragment_margin_top_menu_container">14dp</dimen>
+
+    <dimen name="upload_item_layout_width_text">132dp</dimen>
+    <dimen name="upload_item_layout_height_text">18dp</dimen>
+    <dimen name="upload_item_layout_width_icon">15dp</dimen>
+    <dimen name="upload_item_layout_height_icon">15dp</dimen>
+    <dimen name="upload_item_layout_margin_end_icon">14dp</dimen>
+    <dimen name="upload_item_width_parent">290dp</dimen>
+    <dimen name="upload_item_height_parent">40dp</dimen>
+    <dimen name="upload_item_margin_top_parent">36dp</dimen>
+
+    <dimen name="payment_method_layout_margin_top_parent">25dp</dimen>
+    <dimen name="payment_method_layout_height_parent">40dp</dimen>
+    <dimen name="payment_method_layout_width_icon">40dp</dimen>
+    <dimen name="payment_method_layout_height_icon">40dp</dimen>
+    <dimen name="payment_method_layout_margin_start_icon">32dp</dimen>
+    <dimen name="payment_method_layout_margin_start_text">6dp</dimen>
+    <dimen name="payment_method_layout_margin_end_arrow">45dp</dimen>
+
+    <dimen name="trade_store_cash_layout_height_parent">40dp</dimen>
+    <dimen name="trade_store_cash_layout_margin_top_parent">25dp</dimen>
+    <dimen name="trade_store_cash_layout_width_icon">40dp</dimen>
+    <dimen name="trade_store_cash_layout_height_icon">40dp</dimen>
+    <dimen name="trade_store_cash_layout_margin_start_icon">32dp</dimen>
+    <dimen name="trade_store_cash_layout_margin_start_text">6dp</dimen>
+    <dimen name="trade_store_cash_layout_height_cash_text">18dp</dimen>
+    <dimen name="trade_store_cash_layout_margin_end_cash_text">31dp</dimen>
+    <dimen name="trade_store_cash_layout_min_width_cash_text">66dp</dimen>
+
+    <dimen name="trade_store_layout_extra_margin_start">4dp</dimen>
+    <dimen name="trade_store_layout_extra_margin_top">25dp</dimen>
+    <dimen name="trade_store_layout_height_parent">40dp</dimen>
+    <dimen name="trade_store_layout_width_icon">40dp</dimen>
+    <dimen name="trade_store_layout_height_icon">40dp</dimen>
+    <dimen name="trade_store_layout_margin_start_icon">28dp</dimen>
+    <dimen name="trade_store_layout_margin_start_text">6dp</dimen>
+    <dimen name="trade_store_layout_margin_end_arrow_forward">45dp</dimen>
+
+    <dimen name="help_layout_height_parent">40dp</dimen>
+    <dimen name="help_layout_margin_top_parent">20dp</dimen>
+    <dimen name="help_layout_width_icon">40dp</dimen>
+    <dimen name="help_layout_height_icon">40dp</dimen>
+    <dimen name="help_layout_margin_start_icon">28dp</dimen>
+    <dimen name="help_layout_margin_start_text">6dp</dimen>
+
+    <dimen name="logout_layout_height_parent">40dp</dimen>
+    <dimen name="logout_layout_margin_top_parent">20dp</dimen>
+    <dimen name="logout_layout_width_icon">40dp</dimen>
+    <dimen name="logout_layout_height_icon">40dp</dimen>
+    <dimen name="logout_layout_margin_start_icon">28dp</dimen>
+    <dimen name="logout_layout_margin_start_text">6dp</dimen>
+
+    <dimen name="restore_purchase_layout_height_parent">40dp</dimen>
+    <dimen name="restore_purchase_layout_margin_top_parent">20dp</dimen>
+    <dimen name="restore_purchase_layout_width_icon">40dp</dimen>
+    <dimen name="restore_purchase_layout_height_icon">40dp</dimen>
+    <dimen name="restore_purchase_layout_margin_start_icon">28dp</dimen>
+    <dimen name="restore_purchase_layout_margin_start_text">6dp</dimen>
+    <dimen name="restore_purchase_layout_margin_end_arrow_forward">45dp</dimen>
+</resources>

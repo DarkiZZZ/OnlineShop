@@ -11,4 +11,8 @@
     <string name="log_out_text">Log out</string>
     <string name="payment_method">Payment method</string>
     <string name="non_existent_account">You want to log out from non-existent account.</string>
+    <string name="avatar_image_desc">Avatar image</string>
+    <string name="upload_item_desc">Upload item icon</string>
+    <string name="menu_item_desc">Icon of menu item</string>
+    <string name="icon_arrow_forward_desc">Icon of button to go forward</string>
 </resources>

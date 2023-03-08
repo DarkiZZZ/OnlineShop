@@ -1,13 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="category_background_view_dimen">35dp</dimen>
-    <dimen name="margin_cost_value_dimen">7dp</dimen>
-    <dimen name="margin_top_cost_value_dimen">1dp</dimen>
-    <dimen name="margin_top_item_name_dimen">3dp</dimen>
-    <dimen name="margin_bottom_category_background_dimen">46dp</dimen>
-    <dimen name="margin_latest_add_button_dimen">5dp</dimen>
-    <dimen name="margin_from_corners_text_layout_dimen">11dp</dimen>
-    <dimen name="margin_top_latest_text_dimen">20dp</dimen>
-    <dimen name="margin_top_from_latest_item_dimen">8dp</dimen>
-    <dimen name="margin_between_items_dimen">10dp</dimen>
+    <dimen name="flash_sale_item_margin_end_add_button">4dp</dimen>
+    <dimen name="flash_sale_item_margin_bottom_add_button">7dp</dimen>
+    <dimen name="flash_sale_item_margin_end_fav_button">5dp</dimen>
+    <dimen name="flash_sale_item_margin_bottom_fav_button">10dp</dimen>
+    <dimen name="flash_sale_item_margin_start_categ_text">10dp</dimen>
+    <dimen name="flash_sale_item_margin_bottom_categ_text">83dp</dimen>
+    <dimen name="flash_sale_item_margin_top_disc_text">7dp</dimen>
+    <dimen name="flash_sale_item_margin_end_disc_text">8dp</dimen>
+    <dimen name="flash_sale_item_margin_start_item_name_text">9dp</dimen>
+    <dimen name="flash_sale_item_margin_top_item_name_text">6dp</dimen>
+    <dimen name="flash_sale_item_margin_start_item_cost_text">10dp</dimen>
+    <dimen name="flash_sale_item_margin_top_item_cost_text">12dp</dimen>
+    <dimen name="flash_sale_item_margin_bottom_item_cost_text">17dp</dimen>
+    <dimen name="flash_sale_item_margin_top_icon">7dp</dimen>
+    <dimen name="flash_sale_item_margin_start_icon">7dp</dimen>
+    <dimen name="flash_sale_item_parent_width">174dp</dimen>
+    <dimen name="flash_sale_item_parent_height">221dp</dimen>
+    <dimen name="flash_sale_item_add_button_width">35dp</dimen>
+    <dimen name="flash_sale_item_add_button_height">35dp</dimen>
+    <dimen name="flash_sale_item_fav_button_width">28dp</dimen>
+    <dimen name="flash_sale_item_fav_button_height">28dp</dimen>
+    <dimen name="flash_sale_item_categ_text_width">49dp</dimen>
+    <dimen name="flash_sale_item_categ_text_height">17dp</dimen>
+    <dimen name="flash_sale_item_disc_text_width">49dp</dimen>
+    <dimen name="flash_sale_item_disc_text_height">18dp</dimen>
+    <dimen name="flash_sale_item_item_name_text_width">87dp</dimen>
+    <dimen name="flash_sale_item_item_name_text_height">36dp</dimen>
+    <dimen name="flash_sale_item_item_name_text_min_height">36dp</dimen>
+    <dimen name="flash_sale_item_item_cost_text_height">12dp</dimen>
+    <dimen name="flash_sale_item_icon_width">25dp</dimen>
+    <dimen name="flash_sale_item_icon_height">25dp</dimen>
+
+    <dimen name="flash_sale_layout_sale_text_width">82dp</dimen>
+    <dimen name="flash_sale_layout_sale_text_height">18dp</dimen>
+    <dimen name="flash_sale_layout_margin_top_sale_text">17dp</dimen>
+    <dimen name="flash_sale_layout_view_button_width">34dp</dimen>
+    <dimen name="flash_sale_layout_view_button_height">10dp</dimen>
+    <dimen name="flash_sale_layout_margin_end_view_button">11dp</dimen>
+
+    <dimen name="brand_item_margin_start_parent">10dp</dimen>
+    <dimen name="brand_item_parent_width">114dp</dimen>
+    <dimen name="brand_item_parent_height">149dp</dimen>
+
+    <dimen name="brands_layout_margin_top_text">17dp</dimen>
+    <dimen name="brands_layout_margin_end_button">11dp</dimen>
+    <dimen name="brands_layout_sale_text_width">53dp</dimen>
+    <dimen name="brands_layout_sale_text_height">18dp</dimen>
+    <dimen name="brands_layout_view_button_width">34dp</dimen>
+    <dimen name="brands_layout_view_button_height">10dp</dimen>
+
+    <dimen name="category_item_parent_height">59dp</dimen>
+    <dimen name="category_item_image_width">42dp</dimen>
+    <dimen name="category_item_image_height">38dp</dimen>
+    <dimen name="category_item_text_width">66dp</dimen>
+    <dimen name="category_item_text_height">10dp</dimen>
+
+    <dimen name="search_bar_width_parent">262dp</dimen>
+    <dimen name="search_bar_height_parent">24dp</dimen>
+    <dimen name="search_bar_margin_top_parent">9dp</dimen>
+    <dimen name="search_bar_height_edit_text">24dp</dimen>
+    <dimen name="search_bar_width_search_button">12dp</dimen>
+    <dimen name="search_bar_height_search_button">12dp</dimen>
+    <dimen name="search_bar_margin_end_search_bar">16dp</dimen>
+
+    <dimen name="latest_layout_width_latest_text">82dp</dimen>
+    <dimen name="latest_layout_height_latest_text">17dp</dimen>
+    <dimen name="latest_layout_width_view_button">34dp</dimen>
+    <dimen name="latest_layout_height_view_button">10dp</dimen>
+    <dimen name="latest_layout_margin_end_view_button">11dp</dimen>
+    <dimen name="latest_layout_margin_top_latest_text">20dp</dimen>
+    <dimen name="latest_layout_margin_start_latest_text">11dp</dimen>
+
+    <dimen name="latest_item_width_parent">114dp</dimen>
+    <dimen name="latest_item_height_parent">149dp</dimen>
+    <dimen name="latest_item_width_add_button">20dp</dimen>
+    <dimen name="latest_item_height_add_button">20dp</dimen>
+    <dimen name="latest_item_margin_bottom_add_button">5dp</dimen>
+    <dimen name="latest_item_height_categ_text">12dp</dimen>
+    <dimen name="latest_item_width_item_name_text">61dp</dimen>
+    <dimen name="latest_item_height_item_name_text">26dp</dimen>
+    <dimen name="latest_item_max_width_item_name_text">35dp</dimen>
+    <dimen name="latest_item_margin_start_item_name_text">7dp</dimen>
+    <dimen name="latest_item_height_item_cost_text">9dp</dimen>
+    <dimen name="latest_item_margin_start_item_cost_text">7dp</dimen>
+    <dimen name="latest_item_margin_bottom_item_cost_text">7dp</dimen>
+    <dimen name="latest_item_margin_start_categ_text">7dp</dimen>
+    <dimen name="latest_item_margin_top_item_cost_text">1dp</dimen>
+    <dimen name="latest_item_margin_top_item_name_text">3dp</dimen>
+    <dimen name="latest_item_margin_bottom_categ_text">46dp</dimen>
+    <dimen name="latest_item_margin_end_add_button">5dp</dimen>
+    <dimen name="latest_item_width_categ_width">35dp</dimen>
+    <dimen name="latest_item_margin_start_parent">10dp</dimen>
+
+
+    <dimen name="fragment_margin_top_parent">57dp</dimen>
+    <dimen name="fragment_height_categ_rec_view">59dp</dimen>
+    <dimen name="fragment_margin_top_categ_rec_view">17dp</dimen>
+    <dimen name="fragment_height_sale_rec_view">221dp</dimen>
+    <dimen name="fragment_margin_top_sale_rec_view">8dp</dimen>
+    <dimen name="fragment_height_brands_rec_view">286dp</dimen>
+    <dimen name="fragment_margin_top_brands_rec_view">8dp</dimen>
+    <dimen name="fragment_margin_top_latest_rec_view">8dp</dimen>
 </resources>

@@ -9,43 +9,44 @@
     <TextView
         android:id="@+id/descriptionTextView"
         style="@style/TextAppearance.OnlineShop.ProductDescription"
-        android:layout_width="231dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="@dimen/desc_rating_layout_width_desc_text"
+        android:layout_height="@dimen/desc_rating_layout_height_desc_text"
+        android:layout_marginStart="@dimen/desc_rating_layout_margin_start_desc_text"
         tools:text="@string/description_text" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="24dp">
+        android:layout_marginStart="@dimen/desc_rating_layout_margin_start_rating_container">
 
         <ImageView
             android:id="@+id/ratingImageView"
-            android:layout_width="10dp"
-            android:layout_height="9.5dp"
+            android:layout_width="@dimen/desc_rating_layout_width_rating_icon"
+            android:layout_height="@dimen/desc_rating_layout_height_rating_icon"
             android:src="@drawable/ic_rating"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/rating_icon_desc" />
 
         <TextView
             android:id="@+id/ratingValueTextView"
-            android:layout_width="13dp"
-            android:layout_height="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/desc_rating_layout_height_rating_text"
             tools:text="@string/rating_value"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/ratingImageView"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="@dimen/desc_rating_layout_margin_start_rating_icon"
             style="@style/TextAppearance.OnlineShop.ProductRatingValue"/>
         
         <TextView
             android:id="@+id/reviewsAmountTextView"
             android:layout_width="wrap_content"
-            android:layout_height="12dp"
+            android:layout_height="@dimen/desc_rating_layout_height_reviews_text"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/ratingValueTextView"
             tools:text="@string/reviews_value"
             style="@style/TextAppearance.OnlineShop.ProductReviewsValue"
-            android:layout_marginStart="2dp"/>
+            android:layout_marginStart="@dimen/desc_rating_layout_margin_start_reviews_text"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

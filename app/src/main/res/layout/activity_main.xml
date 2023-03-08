@@ -23,7 +23,7 @@
         android:id="@+id/bottomNavigationView"
         layout="@layout/bottom_navigation_layout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="@dimen/bottom_nav_height"
         android:background="@drawable/bottom_navigation_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,7 @@
         android:id="@+id/navBar"
         layout="@layout/navigation_bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
+        android:layout_height="@dimen/nav_bar_height"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

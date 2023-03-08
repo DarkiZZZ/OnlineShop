@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/restore_purchase_layout_height_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/restore_purchase_layout_margin_top_parent">
+
+    <ImageView
+        android:id="@+id/restorePurchaseImageView"
+        android:layout_width="@dimen/restore_purchase_layout_width_icon"
+        android:layout_height="@dimen/restore_purchase_layout_height_icon"
+        android:layout_marginStart="@dimen/restore_purchase_layout_margin_start_icon"
+        android:src="@drawable/ic_restore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/menu_item_desc" />
+
+    <TextView
+        android:id="@+id/restorePurchaseTextView"
+        style="@style/TextAppearance.OnlineShop.PayRelated"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/restore_purchase_layout_margin_start_text"
+        android:gravity="center"
+        android:text="@string/restore_purchase"
+        app:layout_constraintBottom_toBottomOf="@id/restorePurchaseImageView"
+        app:layout_constraintStart_toEndOf="@id/restorePurchaseImageView"
+        app:layout_constraintTop_toTopOf="@id/restorePurchaseImageView" />
+
+    <ImageView
+        android:id="@+id/forward4ImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/restore_purchase_layout_margin_end_arrow_forward"
+        android:src="@drawable/ic_forward"
+        app:layout_constraintBottom_toBottomOf="@id/restorePurchaseTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/restorePurchaseTextView"
+        android:contentDescription="@string/icon_arrow_forward_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

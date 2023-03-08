@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margin_start_component_dimen">24dp</dimen>
-    <dimen name="cart_text_dimen">28dp</dimen>
-    <dimen name="cart_text_to_car_button_dimen">30dp</dimen>
+    <dimen name="bottom_cart_layout_margin_start_sum_price">28dp</dimen>
+    <dimen name="bottom_cart_layout_margin_end_cart_text">30dp</dimen>
+    <dimen name="bottom_cart_layout_height_parent">150dp</dimen>
+    <dimen name="bottom_cart_layout_margin_start_quantity_text">24dp</dimen>
+    <dimen name="bottom_cart_layout_margin_top_quantity_text">14dp</dimen>
+    <dimen name="bottom_cart_layout_margin_start_minus_container">24dp</dimen>
+    <dimen name="bottom_cart_layout_margin_top_minus_container">10dp</dimen>
+    <dimen name="bottom_cart_layout_width_icon_minus">7dp</dimen>
+    <dimen name="bottom_cart_layout_height_icon_minus">1dp</dimen>
+    <dimen name="bottom_cart_layout_margin_start_plus_container">21dp</dimen>
+    <dimen name="bottom_cart_layout_width_icon_plus">10dp</dimen>
+    <dimen name="bottom_cart_layout_height_icon_plus">10dp</dimen>
+    <dimen name="bottom_cart_layout_width_add_cart_container">170dp</dimen>
+    <dimen name="bottom_cart_layout_height_add_cart_container">44dp</dimen>
+    <dimen name="bottom_cart_layout_margin_top_add_cart_container">19dp</dimen>
+    <dimen name="bottom_cart_layout_margin_end_add_cart_container">23dp</dimen>
+    <dimen name="bottom_cart_layout_margin_start_cart_text">28dp</dimen>
+
+    <dimen name="colors_layout_width_item">34dp</dimen>
+    <dimen name="colors_layout_height_item">26dp</dimen>
+    <dimen name="colors_layout_margin_start_item">14dp</dimen>
+
+    <dimen name="desc_rating_layout_width_desc_text">231dp</dimen>
+    <dimen name="desc_rating_layout_height_desc_text">42dp</dimen>
+    <dimen name="desc_rating_layout_margin_start_desc_text">24dp</dimen>
+    <dimen name="desc_rating_layout_margin_start_rating_container">24dp</dimen>
+    <dimen name="desc_rating_layout_width_rating_icon">10dp</dimen>
+    <dimen name="desc_rating_layout_height_rating_icon">10dp</dimen>
+    <dimen name="desc_rating_layout_height_rating_text">12dp</dimen>
+    <dimen name="desc_rating_layout_height_reviews_text">12dp</dimen>
+    <dimen name="desc_rating_layout_margin_start_reviews_text">2dp</dimen>
+    <dimen name="desc_rating_layout_margin_start_rating_icon">3dp</dimen>
+
+    <dimen name="name_price_layout_width_product_text">186dp</dimen>
+    <dimen name="name_price_layout_margin_start_product_text">24dp</dimen>
+    <dimen name="name_price_layout_width_price_text">70dp</dimen>
+    <dimen name="name_price_layout_height_price_text">17dp</dimen>
+    <dimen name="name_price_layout_margin_top_price_text">4dp</dimen>
+    <dimen name="name_price_layout_margin_end_price_text">23dp</dimen>
+
+    <dimen name="main_photo_item_height_parent">279dp</dimen>
+    <dimen name="main_photo_item_width_main_photo">328dp</dimen>
+    <dimen name="main_photo_item_height_main_photo">279dp</dimen>
+    <dimen name="main_photo_item_width_buttons_container">42dp</dimen>
+    <dimen name="main_photo_item_height_buttons_container">95dp</dimen>
+    <dimen name="main_photo_item_margin_button_buttons_container">28dp</dimen>
+    <dimen name="main_photo_item_margin_start_fav_button">14dp</dimen>
+    <dimen name="main_photo_item_margin_end_fav_button">13dp</dimen>
+    <dimen name="main_photo_item_height_sep_line">1dp</dimen>
+    <dimen name="main_photo_item_margin_start_sep_line">15dp</dimen>
+    <dimen name="main_photo_item_margin_end_sep_line">15dp</dimen>
+    <dimen name="main_photo_item_margin_top_sep_line">47dp</dimen>
+    <dimen name="main_photo_item_margin_bottom_sep_line">48dp</dimen>
+    <dimen name="main_photo_item_margin_start_share_button">14dp</dimen>
+    <dimen name="main_photo_item_margin_end_share_button">13dp</dimen>
+
+    <dimen name="gallery_item_height_parent">75dp</dimen>
+    <dimen name="gallery_item_width_container">66dp</dimen>
+    <dimen name="gallery_item_height_container">38dp</dimen>
+    <dimen name="gallery_item_margin_top_container">8dp</dimen>
+    <dimen name="gallery_item_margin_bottom_container">7dp</dimen>
+    <dimen name="gallery_item_margin_start_container">8dp</dimen>
+    <dimen name="gallery_item_margin_end_container">8dp</dimen>
+    <dimen name="gallery_item_width_image">66dp</dimen>
+    <dimen name="gallery_item_height_image">38dp</dimen>
+
+    <dimen name="fragment_height_main_photo_container">287dp</dimen>
+    <dimen name="fragment_margin_top_main_photo_container">34dp</dimen>
+    <dimen name="fragment_width_main_photo_rec_view">349dp</dimen>
+    <dimen name="fragment_height_main_photo_rec_view">279dp</dimen>
+    <dimen name="fragment_margin_top_main_photo_rec_view">6dp</dimen>
+    <dimen name="fragment_width_back_button">6dp</dimen>
+    <dimen name="fragment_height_back_button">12dp</dimen>
+    <dimen name="fragment_margin_start_back_button">11dp</dimen>
+    <dimen name="fragment_width_gallery_rec_view">246dp</dimen>
+    <dimen name="fragment_height_gallery_rec_view">90dp</dimen>
+    <dimen name="fragment_margin_start_gallery_rec_view">75dp</dimen>
+    <dimen name="fragment_margin_top_gallery_rec_view">35dp</dimen>
+    <dimen name="fragment_margin_end_gallery_rec_view">75dp</dimen>
+    <dimen name="fragment_margin_top_name_price_layout">21dp</dimen>
+    <dimen name="fragment_margin_top_desc_rating_layout">10dp</dimen>
+    <dimen name="fragment_margin_start_color_text">24dp</dimen>
+    <dimen name="fragment_margin_top_color_text">13dp</dimen>
+    <dimen name="fragment_margin_top_colors_layout">11dp</dimen>
+    <dimen name="fragment_margin_bottom_colors_layout">20dp</dimen>
+    <dimen name="fragment_margin_start_colors_layout">24dp</dimen>
 </resources>

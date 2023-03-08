@@ -4,33 +4,35 @@
     android:layout_height="57dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#faf9ff">
+    android:background="@color/mainColor">
 
     <ImageView
         android:id="@+id/navDrawerButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="@dimen/nav_bar_width_drawer_button"
+        android:layout_height="@dimen/nav_bar_height_drawer_button"
+        android:layout_marginStart="@dimen/nav_bar_margin_start_drawer_button"
+        android:layout_marginTop="@dimen/nav_bar_margin_top_drawer_button"
         android:adjustViewBounds="true"
         android:src="@drawable/ic_nav_drawer_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/drawer_button_desc" />
 
     <ImageView
         android:id="@+id/profile_back_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="@dimen/nav_bar_width_back_button"
+        android:layout_height="@dimen/nav_bar_height_back_button"
+        android:layout_marginStart="@dimen/nav_bar_margin_start_back_button"
         android:src="@drawable/ic_back_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/back_button_desc" />
 
     <TextView
         android:id="@+id/labelTextView"
         android:layout_width="wrap_content"
-        android:layout_height="23dp"
+        android:layout_height="@dimen/nav_bar_height_label_text"
         tools:text="testText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,33 +42,35 @@
 
     <ImageView
         android:id="@+id/avatarImageView"
-        android:layout_width="32dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="47dp"
+        android:layout_width="@dimen/nav_bar_width_avatar"
+        android:layout_height="@dimen/nav_bar_height_avatar"
+        android:layout_marginTop="@dimen/nav_bar_margin_top_avatar"
+        android:layout_marginEnd="@dimen/nav_bar_margin_end_avatar"
         android:src="@drawable/ic_avatar_example"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/avatar_desc" />
 
     <TextView
         android:id="@+id/locationTextView"
-        style="@style/TextAppearance.OnlineShop.NavBar.Location"
-        android:layout_width="42dp"
-        android:layout_height="13dp"
-        android:layout_marginTop="7dp"
+        android:layout_width="@dimen/nav_bar_width_location_text"
+        android:layout_height="@dimen/nav_bar_height_location_text"
+        android:layout_marginTop="@dimen/nav_bar_margin_top_location_text"
         android:gravity="center"
+        style="@style/TextAppearance.OnlineShop.NavBar.Location"
         android:text="@string/location"
         app:layout_constraintEnd_toEndOf="@+id/avatarImageView"
         app:layout_constraintTop_toBottomOf="@id/avatarImageView" />
 
     <ImageView
         android:id="@+id/spinnerImageView"
-        android:layout_width="16dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="3dp"
+        android:layout_width="@dimen/nav_bar_width_spinner_icon"
+        android:layout_height="@dimen/nav_bar_height_spinner_icon"
+        android:layout_marginTop="@dimen/nav_bar_margin_top_spinner_icon"
         android:src="@drawable/ic_arrow_down"
         app:layout_constraintBottom_toBottomOf="@id/locationTextView"
         app:layout_constraintStart_toEndOf="@id/locationTextView"
-        app:layout_constraintTop_toTopOf="@+id/locationTextView" />
+        app:layout_constraintTop_toTopOf="@+id/locationTextView"
+        android:contentDescription="@string/spinner_desc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

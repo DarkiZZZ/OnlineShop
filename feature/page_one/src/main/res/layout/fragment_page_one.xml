@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="@dimen/fragment_margin_top_parent"
         android:orientation="vertical">
 
         <include layout="@layout/search_bar"/>
@@ -20,8 +19,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/categoryRecView"
             android:layout_width="match_parent"
-            android:layout_marginTop="17dp"
-            android:layout_height="59dp"
+            android:layout_height="@dimen/fragment_height_categ_rec_view"
+            android:layout_marginTop="@dimen/fragment_margin_top_categ_rec_view"
             tools:listitem="@layout/category_item"
             tools:itemCount="1" />
 
@@ -33,7 +32,7 @@
             android:id="@+id/latestItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="149dp"
-            android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
+            android:layout_marginTop="@dimen/fragment_margin_top_latest_rec_view"
             tools:listitem="@layout/latest_item"
             tools:itemCount="1"/>
 
@@ -44,8 +43,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/flashSaleItemsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="221dp"
-            android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
+            android:layout_height="@dimen/fragment_height_sale_rec_view"
+            android:layout_marginTop="@dimen/fragment_margin_top_sale_rec_view"
             tools:listitem="@layout/flash_sale_item"
             tools:itemCount="1"/>
 
@@ -56,8 +55,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/brandItemsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="221dp"
-            android:layout_marginTop="@dimen/margin_top_from_latest_item_dimen"
+            android:layout_height="@dimen/fragment_height_brands_rec_view"
+            android:layout_marginTop="@dimen/fragment_margin_top_brands_rec_view"
             tools:listitem="@layout/brand_item"
             tools:itemCount="1"/>
     </LinearLayout>

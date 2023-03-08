@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/trade_store_cash_layout_height_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/trade_store_cash_layout_margin_top_parent">
+
+    <ImageView
+        android:id="@+id/tradeStore2ImageView"
+        android:layout_width="@dimen/trade_store_cash_layout_width_icon"
+        android:layout_height="@dimen/trade_store_cash_layout_height_icon"
+        android:layout_marginStart="@dimen/trade_store_cash_layout_margin_start_icon"
+        android:src="@drawable/ic_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/menu_item_desc" />
+
+    <TextView
+        android:id="@+id/tradeStore2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/trade_store_cash_layout_margin_start_text"
+        android:gravity="center"
+        style="@style/TextAppearance.OnlineShop.PayRelated"
+        android:text="@string/trade_store"
+        app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+        app:layout_constraintStart_toEndOf="@id/tradeStore2ImageView"
+        app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView" />
+
+    <TextView
+        android:id="@+id/balanceValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/trade_store_cash_layout_height_cash_text"
+        android:layout_marginEnd="@dimen/trade_store_cash_layout_margin_end_cash_text"
+        android:gravity="center_horizontal"
+        android:minWidth="@dimen/trade_store_cash_layout_min_width_cash_text"
+        style="@style/TextAppearance.OnlineShop.BalanceValue"
+        android:text="@string/balance_value"
+        app:layout_constraintBottom_toBottomOf="@id/tradeStore2ImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tradeStore2ImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

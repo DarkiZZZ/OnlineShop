@@ -10,13 +10,13 @@
 
     <TextView
         android:id="@+id/welcomeBackTextView"
-        style="@style/TextAppearance.OnlineShop.WelcomeBack"
-        android:layout_width="199dp"
-        android:layout_height="34dp"
+        android:layout_width="@dimen/fragment_width_welcome_text"
+        android:layout_height="@dimen/fragment_height_welcome_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="123dp"
+        android:layout_marginTop="@dimen/fragment_margin_top_welcome_text"
         android:gravity="center_horizontal|top"
+        style="@style/TextAppearance.OnlineShop.WelcomeBack"
         android:text="@string/welcome_back"
         android:textAppearance="@style/TextAppearance.OnlineShop.Login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,8 +25,8 @@
 
     <EditText
         android:id="@+id/firstNameEditText"
-        android:layout_width="289dp"
-        android:layout_height="29dp"
+        android:layout_width="@dimen/fragment_width_first_name_edit_text"
+        android:layout_height="@dimen/fragment_height_first_name_edit_text"
         android:ellipsize="start"
         android:singleLine="true"
         android:gravity="center"
@@ -38,7 +38,7 @@
         android:imeOptions="actionNext"
         android:background="@drawable/rectangle_2"
         android:importantForAutofill="no"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/fragment_margin_top_first_name_edit_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcomeBackTextView"/>
@@ -46,23 +46,23 @@
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/passwordViewContainer"
-        android:layout_width="289dp"
-        android:layout_height="29dp"
+        android:layout_width="@dimen/fragment_width_password_container"
+        android:layout_height="@dimen/fragment_height_password_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/firstNameEditText"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="@dimen/fragment_margin_top_password_container"
         android:background="@drawable/rectangle_2"
         android:orientation="horizontal">
 
         <View
             android:id="@+id/passwordConditionButton"
-            android:layout_width="14.75dp"
-            android:layout_height="14.75dp"
-            android:layout_marginTop="7.62dp"
-            android:layout_marginBottom="7.62dp"
-            android:layout_marginEnd="15.63dp"
-            android:layout_marginStart="9.63dp"
+            android:layout_width="@dimen/fragment_width_password_button"
+            android:layout_height="@dimen/fragment_height_password_button"
+            android:layout_marginTop="@dimen/fragment_margin_top_password_button"
+            android:layout_marginBottom="@dimen/fragment_margin_bottom_password_button"
+            android:layout_marginEnd="@dimen/fragment_margin_end_password_button"
+            android:layout_marginStart="@dimen/fragment_margin_start_password_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,12 +71,12 @@
 
         <EditText
             android:id="@+id/passwordEditText"
-            style="@style/TextAppearance.OnlineShop.Hint"
-            android:layout_width="207dp"
-            android:layout_height="29dp"
+            android:layout_width="@dimen/fragment_width_password_edit_text"
+            android:layout_height="@dimen/fragment_height_password_edit_text"
             android:background="@null"
             android:ellipsize="start"
             android:gravity="center"
+            style="@style/TextAppearance.OnlineShop.Hint"
             android:hint="@string/password_hint"
             android:maxLength="30"
             android:imeOptions="actionDone"
@@ -93,10 +93,10 @@
     
     <LinearLayout
         android:id="@+id/loginViewContainer"
-        android:layout_width="289dp"
-        android:layout_height="46dp"
+        android:layout_width="@dimen/fragment_width_login_container"
+        android:layout_height="@dimen/fragment_height_login_container"
         android:orientation="vertical"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="@dimen/fragment_margin_top_login_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/button"
