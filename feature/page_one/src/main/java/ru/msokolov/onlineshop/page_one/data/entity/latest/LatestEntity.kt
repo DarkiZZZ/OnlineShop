@@ -1,21 +1,21 @@
-package ru.msokolov.onlineshop.page_one.data.entity
+package ru.msokolov.onlineshop.page_one.data.entity.latest
 
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleEntity
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem
 
-data class FlashSaleEntity(
-    val category: String,
-    val name: String,
-    val price: String,
-    val discount: String,
-    val imageUrl: String
-) : DelegateAdapterItem {
+data class LatestEntity(
+    val category : String,
+    val name     : String,
+    val price    : String,
+    val imageUrl : String
+): DelegateAdapterItem {
 
     override fun id(): Any {
         return name
     }
 
     override fun content(): Any {
-        return FlashSaleEntityContent(price = price, discount = discount)
+        return FlashSaleEntityContent(price = price)
     }
 
     override fun payload(other: Any): DelegateAdapterItem.Payloadable {
@@ -23,17 +23,14 @@ data class FlashSaleEntity(
             if (price != other.price) {
                 return ChangePayload.PriceChanged(other.price)
             }
-            if (discount != other.discount) {
-                return ChangePayload.DiscountChanged(other.discount)
-            }
         }
         return DelegateAdapterItem.Payloadable.None
     }
 
-    inner class FlashSaleEntityContent(val price: String, val discount: String) {
+    inner class FlashSaleEntityContent(val price: String) {
         override fun equals(other: Any?): Boolean {
             if (other is FlashSaleEntityContent) {
-                return price == other.price && discount == other.discount
+                return price == other.price
             }
             return false
         }
@@ -46,7 +43,6 @@ data class FlashSaleEntity(
     }
 
     sealed class ChangePayload : DelegateAdapterItem.Payloadable {
-        data class DiscountChanged(val discount: String) : ChangePayload()
         data class PriceChanged(val price: String) : ChangePayload()
     }
 }

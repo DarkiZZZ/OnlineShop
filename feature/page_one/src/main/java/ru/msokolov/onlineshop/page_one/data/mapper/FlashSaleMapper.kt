@@ -1,13 +1,13 @@
 package ru.msokolov.onlineshop.page_one.data.mapper
 
-import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleEntity
-import ru.msokolov.onlineshop.page_one.data.entity.FlashSaleListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleEntity
+import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
 import ru.msokolov.onlineshop.sale_api.models.SaleResponseDto
 import javax.inject.Inject
 
 class FlashSaleMapper @Inject constructor() {
 
-    operator fun invoke(response: SaleResponseDto) : FlashSaleListEntity{
+    operator fun invoke(response: SaleResponseDto) : FlashSaleListEntity {
         return FlashSaleListEntity(
             flashSaleList = response.flashSale.map {
                 FlashSaleEntity(

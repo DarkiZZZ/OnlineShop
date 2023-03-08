@@ -21,6 +21,8 @@
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/sale_api" />
             <option value="$PROJECT_DIR$/core/sale_api_internal" />
+            <option value="$PROJECT_DIR$/core/search_api" />
+            <option value="$PROJECT_DIR$/core/search_api_internal" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/cart" />

@@ -1,13 +1,13 @@
 package ru.msokolov.onlineshop.page_one.data.mapper
 
 import ru.msokolov.onlineshop.latest_api.models.LatestResponseDto
-import ru.msokolov.onlineshop.page_one.data.entity.LatestEntity
-import ru.msokolov.onlineshop.page_one.data.entity.LatestListEntity
+import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestEntity
+import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestListEntity
 import javax.inject.Inject
 
 class LatestMapper @Inject constructor(){
 
-    operator fun invoke(response: LatestResponseDto) : LatestListEntity{
+    operator fun invoke(response: LatestResponseDto) : LatestListEntity {
         return LatestListEntity(
             latestList = response.latest.map {
                 LatestEntity(

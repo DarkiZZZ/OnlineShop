@@ -6,6 +6,8 @@ import ru.msokolov.onlineshop.page_one.domain.repository.LatestApiRepository
 import ru.msokolov.onlineshop.page_one.data.repository.latest.LatestApiRepositoryImpl
 import ru.msokolov.onlineshop.page_one.domain.repository.SaleApiRepository
 import ru.msokolov.onlineshop.page_one.data.repository.sale.SaleApiRepositoryImpl
+import ru.msokolov.onlineshop.page_one.data.repository.search.SearchApiRepositoryImpl
+import ru.msokolov.onlineshop.page_one.domain.repository.SearchApiRepository
 
 @Module
 interface PageOneModule {
@@ -14,5 +16,8 @@ interface PageOneModule {
 
     @Binds
     fun bindSaleApiRepository(saleApiRepository: SaleApiRepositoryImpl): SaleApiRepository
+
+    @Binds
+    fun bindSearchApiRepository(searchApiRepository: SearchApiRepositoryImpl): SearchApiRepository
 
 }
