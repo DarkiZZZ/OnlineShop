@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/trade_store_layout_height_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/tradeStoreImageView"
+        android:layout_width="@dimen/trade_store_layout_width_icon"
+        android:layout_height="@dimen/trade_store_layout_height_icon"
+        android:layout_marginStart="@dimen/trade_store_layout_margin_start_icon"
+        android:src="@drawable/ic_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/menu_item_desc" />
+
+    <TextView
+        android:id="@+id/tradeStoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/trade_store_layout_margin_start_text"
+        android:gravity="center"
+        style="@style/TextAppearance.OnlineShop.PayRelated"
+        android:text="@string/trade_store"
+        app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+        app:layout_constraintStart_toEndOf="@id/tradeStoreImageView"
+        app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView" />
+
+    <ImageView
+        android:id="@id/forwardImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/trade_store_layout_margin_end_arrow_forward"
+        android:src="@drawable/ic_forward"
+        app:layout_constraintBottom_toBottomOf="@+id/tradeStoreImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tradeStoreImageView"
+        android:contentDescription="@string/icon_arrow_forward_desc" />
+</androidx.constraintlayout.widget.ConstraintLayout>

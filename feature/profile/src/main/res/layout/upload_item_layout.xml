@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/button"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/uploadItemTextView"
+        style="@style/TextAppearance.OnlineShop.UploadItem"
+        android:layout_width="@dimen/upload_item_layout_width_text"
+        android:layout_height="@dimen/upload_item_layout_height_text"
+        android:gravity="center_horizontal"
+        android:text="@string/upload_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/uploadItemImageView"
+        android:layout_width="@dimen/upload_item_layout_width_icon"
+        android:layout_height="@dimen/upload_item_layout_height_icon"
+        android:layout_marginEnd="@dimen/upload_item_layout_margin_end_icon"
+        android:src="@drawable/ic_upload"
+        app:layout_constraintBottom_toBottomOf="@+id/uploadItemTextView"
+        app:layout_constraintEnd_toStartOf="@+id/uploadItemTextView"
+        app:layout_constraintTop_toTopOf="@+id/uploadItemTextView"
+        android:contentDescription="@string/upload_item_desc" />
+</androidx.constraintlayout.widget.ConstraintLayout>
