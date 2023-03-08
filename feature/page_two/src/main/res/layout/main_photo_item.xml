@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="279dp"
+    android:layout_height="@dimen/main_photo_item_height_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:gravity="center">
 
     <ImageView
         android:id="@+id/mainPhotoImageView"
-        android:layout_width="328dp"
-        android:layout_height="279dp"
+        android:layout_width="@dimen/main_photo_item_width_main_photo"
+        android:layout_height="@dimen/main_photo_item_height_main_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        tools:src="@drawable/photo_main_example" />
+        tools:src="@drawable/photo_main_example"
+        android:contentDescription="@string/main_photo_desc" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="42dp"
-        android:layout_height="95dp"
+        android:layout_width="@dimen/main_photo_item_width_buttons_container"
+        android:layout_height="@dimen/main_photo_item_height_buttons_container"
         android:orientation="vertical"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="@dimen/main_photo_item_margin_button_buttons_container"
         android:background="@drawable/share_favorites_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/mainPhotoImageView"
@@ -38,22 +40,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="13dp"/>
+            android:layout_marginStart="@dimen/main_photo_item_margin_start_fav_button"
+            android:layout_marginEnd="@dimen/main_photo_item_margin_end_fav_button"
+            android:contentDescription="@string/favourites_button_desc" />
 
         <ImageView
             android:id="@+id/separateLine"
             android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginTop="47dp"
-            android:layout_marginBottom="48dp"
+            android:layout_height="@dimen/main_photo_item_height_sep_line"
+            android:layout_marginStart="@dimen/main_photo_item_margin_start_sep_line"
+            android:layout_marginEnd="@dimen/main_photo_item_margin_end_sep_line"
+            android:layout_marginTop="@dimen/main_photo_item_margin_top_sep_line"
+            android:layout_marginBottom="@dimen/main_photo_item_margin_bottom_sep_line"
             android:src="@drawable/separate_line"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/separate_line_desc" />
 
         <ImageView
             android:id="@+id/shareButton"
@@ -64,8 +68,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/separateLine"
-            android:layout_marginStart="14dp"
-            android:layout_marginEnd="13dp"/>
+            android:layout_marginStart="@dimen/main_photo_item_margin_start_share_button"
+            android:layout_marginEnd="@dimen/main_photo_item_margin_end_share_button"
+            android:contentDescription="@string/share_button_desc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

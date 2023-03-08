@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="75dp"
+    android:layout_height="@dimen/gallery_item_height_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="66dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="@dimen/gallery_item_width_container"
+        android:layout_height="@dimen/gallery_item_height_container"
+        android:layout_marginTop="@dimen/gallery_item_margin_top_container"
+        android:layout_marginBottom="@dimen/gallery_item_margin_bottom_container"
+        android:layout_marginStart="@dimen/gallery_item_margin_start_container"
+        android:layout_marginEnd="@dimen/gallery_item_margin_end_container"
         android:layout_gravity="center">
 
         <ImageView
             android:id="@+id/photoImageView"
-            android:layout_width="66dp"
-            android:layout_height="38dp"
+            android:layout_width="@dimen/gallery_item_width_image"
+            android:layout_height="@dimen/gallery_item_height_image"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             tools:src="@drawable/photo_item_example"
-            android:cropToPadding="true"/>
+            android:cropToPadding="true"
+            android:contentDescription="@string/gallery_photo_desc" />
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -7,20 +7,20 @@
 
     <TextView
         android:id="@+id/productNameTextView"
-        style="@style/TextAppearance.OnlineShop.ProductName"
-        android:layout_width="186dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="@dimen/name_price_layout_width_product_text"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/name_price_layout_margin_start_product_text"
+        style="@style/TextAppearance.OnlineShop.ProductName"
         tools:text="@string/new_balance_sneakers" />
 
     <TextView
         android:id="@+id/priceTextView"
-        style="@style/TextAppearance.OnlineShop.ProductPrice"
-        android:layout_width="70dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="@dimen/name_price_layout_width_price_text"
+        android:layout_height="@dimen/name_price_layout_height_price_text"
+        android:layout_marginTop="@dimen/name_price_layout_margin_top_price_text"
         android:layout_alignParentEnd="true"
         android:gravity="right"
-        android:layout_marginEnd="23dp"
+        android:layout_marginEnd="@dimen/name_price_layout_margin_end_price_text"
+        style="@style/TextAppearance.OnlineShop.ProductPrice"
         tools:text="@string/product_price" />
 </RelativeLayout>

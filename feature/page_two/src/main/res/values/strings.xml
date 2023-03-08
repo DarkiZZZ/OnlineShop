@@ -13,4 +13,14 @@
     <string name="send_to">Send to:</string>
     <string name="share_to">Share to:</string>
     <string name="start_price_cart">$ 0</string>
+    <string name="icon_minus_desc">Icon minus</string>
+    <string name="icon_plus_desc">Icon plus</string>
+    <string name="rating_icon_desc">Icon of rating(star)</string>
+    <string name="product_image_desc">Image of product</string>
+    <string name="go_back_button_desc">Icon of go back button</string>
+    <string name="main_photo_desc">Main image of product</string>
+    <string name="favourites_button_desc">Image of button add to favourites</string>
+    <string name="separate_line_desc">Image of separate line between buttons</string>
+    <string name="share_button_desc">Image of share button</string>
+    <string name="gallery_photo_desc">Gallery Image of product</string>
 </resources>

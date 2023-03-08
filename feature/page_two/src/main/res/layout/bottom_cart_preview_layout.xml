@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_cart_layout_height_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/cart_background">
+
+    <TextView
+        android:id="@+id/quantityTextView"
+        style="@style/TextAppearance.OnlineShop.QuantityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_cart_layout_margin_start_quantity_text"
+        android:layout_marginTop="@dimen/bottom_cart_layout_margin_top_quantity_text"
+        android:text="@string/quantity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/minusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_cart_layout_margin_start_minus_container"
+        android:layout_marginTop="@dimen/bottom_cart_layout_margin_top_minus_container"
+        android:background="@drawable/product_number_button_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quantityTextView">
+
+        <ImageView
+            android:layout_width="@dimen/bottom_cart_layout_width_icon_minus"
+            android:layout_height="@dimen/bottom_cart_layout_height_icon_minus"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_minus"
+            android:contentDescription="@string/icon_minus_desc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/plusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/bottom_cart_layout_margin_start_plus_container"
+        android:background="@drawable/product_number_button_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/minusButton"
+        app:layout_constraintStart_toEndOf="@+id/minusButton"
+        app:layout_constraintTop_toTopOf="@+id/minusButton">
+
+        <ImageView
+            android:layout_width="@dimen/bottom_cart_layout_width_icon_plus"
+            android:layout_height="@dimen/bottom_cart_layout_height_icon_plus"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_plus"
+            android:contentDescription="@string/icon_plus_desc" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addToCartViewContainer"
+        android:layout_width="@dimen/bottom_cart_layout_width_add_cart_container"
+        android:layout_height="@dimen/bottom_cart_layout_height_add_cart_container"
+        android:layout_marginTop="@dimen/bottom_cart_layout_margin_top_add_cart_container"
+        android:layout_marginEnd="@dimen/bottom_cart_layout_margin_end_add_cart_container"
+        android:background="@drawable/add_to_cart_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/productSumTextView"
+            style="@style/TextAppearance.OnlineShop.GeneralSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/bottom_cart_layout_margin_start_sum_price"
+            android:text="@string/start_price_cart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/addToCartTextView"
+            style="@style/TextAppearance.OnlineShop.AddToChartText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/bottom_cart_layout_margin_start_cart_text"
+            android:layout_marginEnd="@dimen/bottom_cart_layout_margin_end_cart_text"
+            android:text="@string/add_to_chart"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
