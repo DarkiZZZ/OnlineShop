@@ -6,6 +6,7 @@ import ru.msokolov.onlineshop.latest_api.LatestApiService
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 import ru.msokolov.onlineshop.page_one.presentation.ui.PageOneFragment
 import ru.msokolov.onlineshop.sale_api.SaleApiService
+import ru.msokolov.onlineshop.search_api.SearchApiService
 
 @Component(modules = [PageOneModule::class], dependencies = [PageOneDependencies::class])
 internal interface PageOneComponent {
@@ -23,5 +24,6 @@ internal interface PageOneComponent {
 interface PageOneDependencies: Dependencies{
     val latestApiService: LatestApiService
     val saleApiService: SaleApiService
+    val searchApiService: SearchApiService
     val pageOneCommandProvider: PageOneCommandProvider
 }
