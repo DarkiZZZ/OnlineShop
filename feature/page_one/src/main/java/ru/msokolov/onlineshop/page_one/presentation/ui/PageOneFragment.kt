@@ -2,10 +2,11 @@ package ru.msokolov.onlineshop.page_one.presentation.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +28,7 @@ import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.category.Categor
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.CompositeAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.latest.LatestDelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.sale.FlashSaleDelegateAdapter
+import java.util.*
 import javax.inject.Inject
 
 class PageOneFragment : Fragment(R.layout.fragment_page_one) {
@@ -39,6 +41,10 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
     lateinit var pageOneCommandProvider: PageOneCommandProvider
 
     private lateinit var binding: FragmentPageOneBinding
+
+    private lateinit var wordsSearchingTimer: Timer
+
+    private var wordsSearchingAdapter: ArrayAdapter<String>? = null
 
     private val flashSaleCompositeAdapter by lazy {
         CompositeAdapter.Builder()
@@ -84,8 +90,14 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         setupBrandRecyclerView()
         setupCategoryRecyclerView()
         setupDataFromViewModel()
+        setupSearchAutoFill()
         observeSearchWords()
         super.onViewCreated(view, savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        wordsSearchingAdapter = null
+        super.onDestroy()
     }
 
     private fun setupFlashSaleRecyclerView() {
@@ -139,11 +151,39 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         brandCompositeAdapter.submitList(brandList)
     }
 
-    private fun observeSearchWords(){
-        viewModel.searchWordsList.observe(viewLifecycleOwner){
-            when(it.status){
+    private fun setupSearchAutoFill() {
+        wordsSearchingTimer = Timer()
+        wordsSearchingAdapter = ArrayAdapter(requireContext(), R.layout.seach_view_hint_item, arrayListOf<String>())
+        with(binding.searchLayout.searchAutoFillTextView){
+            setAdapter(wordsSearchingAdapter)
+            doAfterTextChanged {
+                wordsSearchingTimer.cancel()
+                wordsSearchingTimer = Timer()
+                wordsSearchingTimer.schedule(
+                    object : TimerTask() {
+                        override fun run() {
+                            viewModel.getSearchWords()
+                        }
+                    },
+                    SEARCH_WORDS_DELAY
+                )
+            }
+        }
+    }
+
+    private fun handingWordsSearchingAdapterData(words: List<String>){
+        wordsSearchingAdapter!!.clear()
+        for (word in words){
+            wordsSearchingAdapter!!.add(word)
+        }
+        wordsSearchingAdapter!!.filter.filter(binding.searchLayout.searchAutoFillTextView.text, null)
+    }
+
+    private fun observeSearchWords() {
+        viewModel.searchWordsList.observe(viewLifecycleOwner) {
+            when (it.status) {
                 SUCCESS -> {
-                    Log.d("TATTATAT", it.data.toString())
+                    handingWordsSearchingAdapterData(it.data!!.words)
                 }
                 ERROR -> {}
                 LOADING -> {}
@@ -171,5 +211,9 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
                 }
             }
         }
+    }
+
+    companion object{
+        private const val SEARCH_WORDS_DELAY = 1000L
     }
 }
