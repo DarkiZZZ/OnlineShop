@@ -1,14 +1,14 @@
 <resources>
-    <string name="sign_in">Sign in</string>
-    <string name="last_name_hint">Last name</string>
-    <string name="first_name_hint">First name</string>
-    <string name="email_hint">Email</string>
-    <string name="have_account_text">Already have an account?</string>
-    <string name="log_in">Log in</string>
-    <string name="sign_in_with_google">Sign in with Google</string>
-    <string name="sign_in_with_apple">Sign in with Apple</string>
-    <string name="google_logo">Google logo</string>
-    <string name="apple_logo">Apple logo</string>
+    <string name="sign_in" translatable="false">Sign in</string>
+    <string name="last_name_hint" translatable="false">Last name</string>
+    <string name="first_name_hint" translatable="false">First name</string>
+    <string name="email_hint" translatable="false">Email</string>
+    <string name="have_account_text" translatable="false">Already have an account?</string>
+    <string name="log_in" translatable="false">Log in</string>
+    <string name="sign_in_with_google" translatable="false">Sign in with Google</string>
+    <string name="sign_in_with_apple" translatable="false">Sign in with Apple</string>
+    <string name="google_logo" translatable="false">Google logo</string>
+    <string name="apple_logo" translatable="false">Apple logo</string>
 
     <string name="email_is_not_proper">%1$s - wrong, %1$s@mail.ru - right</string>
     <string name="account_already_exists">Account already exists.</string>
