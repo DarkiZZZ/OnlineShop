@@ -8,8 +8,9 @@ object NameSpaces {
 
     ///   core
     private const val coreNameSpace = "$appNameSpace.core"
+    private const val utilsNameSpace = "$appNameSpace.utils"
 
-    //const val coreUiNameSpace = "$coreNameSpace.ui"
+    const val coreUiNameSpace = "$coreNameSpace.ui"
     const val coreDaggerNameSpace = "$coreNameSpace.dagger"
     //const val coreDaggerAnnotationsNameSpace = "$coreNameSpace.dagger_annotations"
     //const val coreNavigationNameSpace = "$coreNameSpace.navigation"
@@ -28,6 +29,11 @@ object NameSpaces {
 
     const val coreSearchApiNameSpace = "$coreNameSpace.search_api"
     const val coreSearchApiInternalNameSpace = "$coreNameSpace.search_api_internal"
+
+    const val coreNavigationNameSpace = "$coreNameSpace.navigation"
+
+    const val utilsNetworkNameSpace = "$utilsNameSpace.network"
+    const val utilsLiveDataNameSpace = "$utilsNameSpace.livedata"
 
 
     //const val coreProductDetailedApiNameSpace = "$coreNameSpace.product_detailed_api"

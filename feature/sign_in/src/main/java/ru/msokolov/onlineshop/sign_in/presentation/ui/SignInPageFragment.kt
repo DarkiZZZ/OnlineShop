@@ -17,7 +17,6 @@ import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.sign_in.di.DaggerSignInPageComponent
 import ru.msokolov.onlineshop.sign_in.presentation.navigation.SignInPageCommandProvider
-import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
 import ru.msokolov.onlineshop.ui.showSnackBar
 import ru.msokolov.onlineshop.ui.writeToSharedPrefs
 import javax.inject.Inject
@@ -83,7 +82,7 @@ class SignInPageFragment : Fragment(R.layout.fragment_sign_in_page) {
 
     private fun observeEvents(){
         viewModel.goToPageOne.observeEvent(viewLifecycleOwner){
-            writeToSharedPrefs(value = getFirstName(), key = getString(shared_prefs_user_name_key))
+            writeToSharedPrefs(value = getFirstName(), key = getString(R.string.shared_prefs_user_name_key))
             navigate(signInPageCommandProvider.toPageOne)
 
         }

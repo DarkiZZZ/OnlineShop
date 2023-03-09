@@ -24,7 +24,6 @@ import ru.msokolov.onlineshop.profile.R
 import ru.msokolov.onlineshop.profile.databinding.FragmentProfileBinding
 import ru.msokolov.onlineshop.profile.di.DaggerProfileComponent
 import ru.msokolov.onlineshop.profile.presentation.navigation.ProfileCommandProvider
-import ru.msokolov.onlineshop.ui.R.string.shared_prefs_user_name_key
 import ru.msokolov.onlineshop.ui.readFromSharedPrefs
 import ru.msokolov.onlineshop.ui.showSnackBar
 import javax.inject.Inject
@@ -63,7 +62,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.getAvatarPhoto(readFromSharedPrefs(getString(shared_prefs_user_name_key)))
+        viewModel.getAvatarPhoto(readFromSharedPrefs(getString(R.string.shared_prefs_user_name_key)))
         observeAvatarPhoto()
         observeEvents()
         observeSomeError()
@@ -130,7 +129,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun logout(){
-        viewModel.logout(readFromSharedPrefs(key = getString(shared_prefs_user_name_key)))
+        viewModel.logout(readFromSharedPrefs(key = getString(R.string.shared_prefs_user_name_key)))
     }
 
     private fun initAvatarPhoto(photoBlob: ByteArray){
@@ -170,7 +169,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private fun saveAvatarBlob(blob: ByteArray){
         viewModel.saveAvatarPhoto(
-            readFromSharedPrefs(key = getString(shared_prefs_user_name_key)),
+            readFromSharedPrefs(key = getString(R.string.shared_prefs_user_name_key)),
             blob
         )
     }

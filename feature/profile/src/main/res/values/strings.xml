@@ -15,4 +15,6 @@
     <string name="upload_item_desc">Upload item icon</string>
     <string name="menu_item_desc">Icon of menu item</string>
     <string name="icon_arrow_forward_desc">Icon of button to go forward</string>
+
+    <string name="shared_prefs_user_name_key" translatable="false">Shared prefs user key</string>
 </resources>

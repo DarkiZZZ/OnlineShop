@@ -10,9 +10,9 @@ import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
 import ru.msokolov.onlineshop.livedata.publishEvent
 import ru.msokolov.onlineshop.livedata.requireValue
 import ru.msokolov.onlineshop.livedata.share
+import ru.msokolov.onlineshop.login.R
 import ru.msokolov.onlineshop.login.domain.model.FirstNameEntity
 import ru.msokolov.onlineshop.login.domain.usecase.CheckIsUserForExistUseCase
-import ru.msokolov.onlineshop.ui.R.*
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -84,11 +84,11 @@ class LoginViewModel(private val useCase: CheckIsUserForExistUseCase) : ViewMode
         _state.value = when (exception.field) {
             LoginField.FirstName -> {
                 _state.requireValue()
-                    .copy(firstNameErrorMessageRes = string.field_is_empty)
+                    .copy(firstNameErrorMessageRes = R.string.field_is_empty)
             }
             LoginField.Password -> {
                 _state.requireValue()
-                    .copy(passwordErrorMessageRes = string.field_is_empty)
+                    .copy(passwordErrorMessageRes = R.string.field_is_empty)
             }
         }
         _setSignInButtonActive.publishEvent()

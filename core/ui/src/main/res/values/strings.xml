@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="shared_prefs_user_name_key">Shared prefs user key</string>
-
-
-    <string name="field_is_empty">%1$sПоле должно быть заполнено</string>
+    <string name="field_is_empty">%1$sField show be filled</string>
 </resources>
