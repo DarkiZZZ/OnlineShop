@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = NameSpaces.coreCartApiInternalNameSpace
+    namespace = NameSpaces.coreDetailedInfoApiInternalNameSpace
     compileSdk = Config.compileSdkVersion
 
     defaultConfig {

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = NameSpaces.coreDetailedInfoNameSpace
+    namespace = NameSpaces.coreDetailedInfoApiNameSpace
     compileSdk = Config.compileSdkVersion
 
     defaultConfig {
