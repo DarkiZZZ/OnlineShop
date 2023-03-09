@@ -16,6 +16,7 @@ import ru.msokolov.onlineshop.databinding.ActivityMainBinding
 import ru.msokolov.onlineshop.di.DaggerMainActivityComponent
 import javax.inject.Inject
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -162,8 +163,8 @@ class MainActivity : AppCompatActivity() {
             profileBackButton.visibility = View.VISIBLE
             with(labelTextView){
                 visibility = View.VISIBLE
-                val firstWord = "<font color='#000000'>Profile</font>"
-                text = Html.fromHtml(firstWord)
+                val word = getString(R.string.profile_html_text)
+                text = Html.fromHtml(word)
                 setTextAppearance(R.style.TextAppearance_OnlineShop_AppBar_ProfileLabel)
             }
         }
@@ -176,8 +177,8 @@ class MainActivity : AppCompatActivity() {
             navDrawerButton.visibility = View.VISIBLE
             with(labelTextView){
                 visibility = View.VISIBLE
-                val firstWord = "<font color='#000000'>Trade by</font>"
-                val secondWord = "<font color='#4E55D7'> bata</font>"
+                val firstWord = getString(R.string.page_one_html_first_word)
+                val secondWord = getString(R.string.page_one_html_second_word)
                 text = Html.fromHtml(firstWord + secondWord)
                 setTextAppearance(R.style.TextAppearance_OnlineShop_AppBar_PageOneLabel)
             }

@@ -16,7 +16,7 @@ class FlashSaleDelegateAdapter(private val navigateToPageTwo: () -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: FlashSaleEntity) {
-            binding.itemCostTextView.text = "$ ${item.price}"
+            binding.itemCostTextView.text = item.price
             binding.itemNameTextView.text = item.name
             binding.categoryTextView.text = item.category
             binding.discountTextView.text = "${item.discount}% off"

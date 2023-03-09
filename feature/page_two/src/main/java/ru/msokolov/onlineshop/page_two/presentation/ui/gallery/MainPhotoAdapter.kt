@@ -38,7 +38,7 @@ class MainPhotoAdapter(private val context: Context) :
                 val shareIntent = Intent()
                 shareIntent.action = Intent.ACTION_SEND
                 shareIntent.type = "text/plain"
-                shareIntent.putExtra(Intent.EXTRA_TEXT, url);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, url)
                 context.startActivity(
                     Intent.createChooser(
                         shareIntent,

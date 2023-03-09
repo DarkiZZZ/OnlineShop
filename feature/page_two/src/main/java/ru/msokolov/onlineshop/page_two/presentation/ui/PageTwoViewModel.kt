@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.*
-import ru.msokolov.onlineshop.livedata.MutableLiveEvent
 import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
 import ru.msokolov.onlineshop.livedata.publishEvent
 import ru.msokolov.onlineshop.livedata.share

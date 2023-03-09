@@ -16,7 +16,7 @@ class LatestDelegateAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: LatestEntity) {
-            binding.itemCostTextView.text = "$ ${item.price}"
+            binding.itemCostTextView.text = item.price
             binding.itemNameTextView.text = item.name
             binding.categoryTextView.text = item.category
             Picasso.get()
