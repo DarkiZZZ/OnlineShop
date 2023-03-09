@@ -8,6 +8,7 @@
 ###### > Dagger 2
 ###### > MVVM
 ###### > Room
+###### > Retrofit
 ###### > Jetpack navigation
 ###### > Composite delegate adapters
 ###### > Clean architecture
