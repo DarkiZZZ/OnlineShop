@@ -20,8 +20,4 @@
 ###### > Page two: sync photo and gallery recycler views
 ###### > Add nice night theme
 
-![9a4SrD1KfaE](https://user-images.githubusercontent.com/72737016/224146896-94babc5c-e79b-4f89-bf00-5fdf04ea3e63.jpg)
-![qlIYzPKHFK0](https://user-images.githubusercontent.com/72737016/224146902-07d1111e-262f-4244-b83c-e5a2af1975c5.jpg)
-![4j3dmdg0f2c](https://user-images.githubusercontent.com/72737016/224146908-438b5b63-0b61-4da0-bf51-af77774d2525.jpg)
-![l6_WMz2bI2A](https://user-images.githubusercontent.com/72737016/224146910-f003bb79-7f39-4898-a726-60a9f8dcdba7.jpg)
 
