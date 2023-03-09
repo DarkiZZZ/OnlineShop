@@ -12,3 +12,5 @@
 ###### > Composite delegate adapters
 ###### > Clean architecture
 ###### > Multimodularity
+
+#### Test video: 
