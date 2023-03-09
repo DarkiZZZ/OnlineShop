@@ -5,15 +5,15 @@ plugins {
 }
 
 android {
-    namespace 'ru.msokolov.onlineshop'
-    compileSdk 33
+    namespace = Config.appNameSpace
+    compileSdk = Config.compileSdkVersion
 
     defaultConfig {
-        applicationId "ru.msokolov.onlineshop"
-        minSdk 23
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        applicationId = Config.appNameSpace
+        minSdk = Config.minSdkVersion
+        targetSdk = Config.targetSdkVersion
+        versionCode = Config.versionCode
+        versionName = Config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -53,10 +53,10 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":storage:user_database"))
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation(AndroidCore.coreKtx)
+    implementation(AndroidUi.appCompat)
+    implementation(AndroidUi.material)
+    implementation(AndroidUi.constraintLayout)
 
 
     implementation(Navigation.navUi)
@@ -70,7 +70,7 @@ dependencies {
     kapt(Dagger.daggerCompiler)
     kapt(Dagger.daggerProcessor)
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation(TestLibs.jUnit)
+    androidTestImplementation(TestLibs.androidJUnit)
+    androidTestImplementation(TestLibs.espresso)
 }

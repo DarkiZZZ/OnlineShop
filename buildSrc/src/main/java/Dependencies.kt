@@ -68,6 +68,11 @@ object FragmentKtx{ /*test name*/
 
 }
 
+object Kotlin{
+    private const val kotlin_version = "1.7.20"
+    const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
 object Room {
     private const val roomVersion = "2.5.0"
 
