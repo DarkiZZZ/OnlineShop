@@ -14,7 +14,14 @@
 ###### > Multimodularity
 
 #### Test video: https://www.youtube.com/watch?v=55Nk-y536ks
-![Screenshot_1](https://user-images.githubusercontent.com/72737016/224145508-57b037b3-cc35-432d-8483-d4d62b8f585d.png)
-![Screenshot_2](https://user-images.githubusercontent.com/72737016/224145516-ffb254f7-8525-4732-b43a-919c8bde4f6a.png)
-![Screenshot_3](https://user-images.githubusercontent.com/72737016/224145518-af8a918b-8fd3-4fed-bdbe-1b21f6f8c1af.png)
-![Screenshot_4](https://user-images.githubusercontent.com/72737016/224145526-3d1c82f1-9349-4aa5-84c7-55b473eebb69.png)
+
+#### Improve plans:
+###### > Page one: make whole screen as composite adapter(not every recycler view)
+###### > Page two: sync photo and gallery recycler views
+###### > Add nice night theme
+
+![9a4SrD1KfaE](https://user-images.githubusercontent.com/72737016/224146896-94babc5c-e79b-4f89-bf00-5fdf04ea3e63.jpg)
+![qlIYzPKHFK0](https://user-images.githubusercontent.com/72737016/224146902-07d1111e-262f-4244-b83c-e5a2af1975c5.jpg)
+![4j3dmdg0f2c](https://user-images.githubusercontent.com/72737016/224146908-438b5b63-0b61-4da0-bf51-af77774d2525.jpg)
+![l6_WMz2bI2A](https://user-images.githubusercontent.com/72737016/224146910-f003bb79-7f39-4898-a726-60a9f8dcdba7.jpg)
+
