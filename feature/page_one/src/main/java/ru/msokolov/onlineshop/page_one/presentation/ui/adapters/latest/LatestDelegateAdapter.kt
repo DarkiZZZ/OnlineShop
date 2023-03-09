@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import ru.msokolov.onlineshop.feature.page_one.databinding.LatestItemBinding
 import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestEntity
-import ru.msokolov.onlineshop.page_one.databinding.LatestItemBinding
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem
 
@@ -16,7 +16,7 @@ class LatestDelegateAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: LatestEntity) {
-            binding.itemCostTextView.text = "$ ${item.price}"
+            binding.itemCostTextView.text = item.price
             binding.itemNameTextView.text = item.name
             binding.categoryTextView.text = item.category
             Picasso.get()

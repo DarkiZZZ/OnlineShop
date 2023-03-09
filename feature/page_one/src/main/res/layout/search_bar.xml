@@ -21,6 +21,7 @@
         android:hint="@string/search_hint"
         android:ellipsize="start"
         android:singleLine="true"
+        android:focusableInTouchMode="true"
         style="@style/TextAppearance.OnlineShop.SearchHint"
         android:importantForAutofill="no"
         android:inputType="text"/>

@@ -1,7 +1,6 @@
 package ru.msokolov.onlineshop
 
 import android.app.Application
-import ru.msokolov.onlineshop.dagger.Dependencies
 import ru.msokolov.onlineshop.dagger.DependenciesMap
 import ru.msokolov.onlineshop.dagger.HasDependencies
 import ru.msokolov.onlineshop.di.DaggerAppComponent

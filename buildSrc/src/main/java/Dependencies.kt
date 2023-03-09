@@ -12,8 +12,7 @@ object AndroidUi {
 
     const val appCompat = "androidx.appcompat:appcompat:$appCombatVersion"
     const val material = "com.google.android.material:material:$materialVersion"
-    const val constraintLayout =
-        "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     const val recyclerView = "androidx.recyclerview:recyclerview:$recViewVersion"
 }
 
@@ -41,7 +40,6 @@ object Dagger {
     const val daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
     const val daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
     const val daggerProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
-    const val daggerInject = "javax.inject:javax.inject:1"
 }
 
 object Network {
@@ -58,14 +56,18 @@ object Lifecycle {
 
     const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
 }
 
-object FragmentKtx{ /*test name*/
-
+object FragmentKtx {
     private const val fragment_version = "1.6.0-alpha05"
 
     const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
+}
 
+object Kotlin{
+    private const val kotlin_version = "1.7.20"
+    const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 object Room {
@@ -74,11 +76,4 @@ object Room {
     const val roomRuntime = "androidx.room:room-runtime:$roomVersion"
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
     const val roomKtx = "androidx.room:room-ktx:$roomVersion"
-}
-
-object Coroutines {
-    private const val coroutinesVersion = "1.6.1"
-
-    const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
 }

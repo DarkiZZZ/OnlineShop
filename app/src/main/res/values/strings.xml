@@ -8,4 +8,7 @@
     <string name="back_button_desc" translatable="false">Image of back button to Profile fragment</string>
     <string name="avatar_desc" translatable="false">Image of avatar</string>
     <string name="spinner_desc" translatable="false">Image of location spinner</string>
+    <string name="profile_html_text" translatable="false"><![CDATA[<font color=\'#000000\'>Profile</font>]]></string>
+    <string name="page_one_html_first_word" translatable="false"><![CDATA[<font color=\'#000000\'>Trade by</font>]]></string>
+    <string name="page_one_html_second_word" translatable="false"><![CDATA[<font color=\'#4E55D7\'> bata</font>]]></string>
 </resources>

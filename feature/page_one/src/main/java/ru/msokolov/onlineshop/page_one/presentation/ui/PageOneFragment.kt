@@ -13,12 +13,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.page_one.R
+import ru.msokolov.onlineshop.feature.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.network.Status.*
-import ru.msokolov.onlineshop.page_one.R
 import ru.msokolov.onlineshop.page_one.data.entity.latest.LatestListEntity
 import ru.msokolov.onlineshop.page_one.data.entity.sale.FlashSaleListEntity
-import ru.msokolov.onlineshop.page_one.databinding.FragmentPageOneBinding
 import ru.msokolov.onlineshop.page_one.di.DaggerPageOneComponent
 import ru.msokolov.onlineshop.page_one.presentation.navigation.PageOneCommandProvider
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand.BrandDelegateAdapter
@@ -153,8 +153,9 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
 
     private fun setupSearchAutoFill() {
         wordsSearchingTimer = Timer()
-        wordsSearchingAdapter = ArrayAdapter(requireContext(), R.layout.seach_view_hint_item, arrayListOf<String>())
-        with(binding.searchLayout.searchAutoFillTextView){
+        wordsSearchingAdapter =
+            ArrayAdapter(requireContext(), R.layout.seach_view_hint_item, arrayListOf<String>())
+        with(binding.searchLayout.searchAutoFillTextView) {
             setAdapter(wordsSearchingAdapter)
             doAfterTextChanged {
                 wordsSearchingTimer.cancel()
@@ -171,12 +172,15 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    private fun handingWordsSearchingAdapterData(words: List<String>){
+    private fun handingWordsSearchingAdapterData(words: List<String>) {
         wordsSearchingAdapter!!.clear()
-        for (word in words){
+        for (word in words) {
             wordsSearchingAdapter!!.add(word)
         }
-        wordsSearchingAdapter!!.filter.filter(binding.searchLayout.searchAutoFillTextView.text, null)
+        wordsSearchingAdapter!!.filter.filter(
+            binding.searchLayout.searchAutoFillTextView.text,
+            null
+        )
     }
 
     private fun observeSearchWords() {
@@ -213,7 +217,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    companion object{
+    companion object {
         private const val SEARCH_WORDS_DELAY = 1000L
     }
 }

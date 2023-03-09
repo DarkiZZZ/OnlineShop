@@ -35,8 +35,6 @@
     <dimen name="flash_sale_layout_sale_text_width">82dp</dimen>
     <dimen name="flash_sale_layout_sale_text_height">18dp</dimen>
     <dimen name="flash_sale_layout_margin_top_sale_text">17dp</dimen>
-    <dimen name="flash_sale_layout_view_button_width">34dp</dimen>
-    <dimen name="flash_sale_layout_view_button_height">10dp</dimen>
     <dimen name="flash_sale_layout_margin_end_view_button">11dp</dimen>
 
     <dimen name="brand_item_margin_start_parent">10dp</dimen>
@@ -47,8 +45,6 @@
     <dimen name="brands_layout_margin_end_button">11dp</dimen>
     <dimen name="brands_layout_sale_text_width">53dp</dimen>
     <dimen name="brands_layout_sale_text_height">18dp</dimen>
-    <dimen name="brands_layout_view_button_width">34dp</dimen>
-    <dimen name="brands_layout_view_button_height">10dp</dimen>
 
     <dimen name="category_item_parent_height">59dp</dimen>
     <dimen name="category_item_image_width">42dp</dimen>
@@ -66,8 +62,6 @@
 
     <dimen name="latest_layout_width_latest_text">82dp</dimen>
     <dimen name="latest_layout_height_latest_text">17dp</dimen>
-    <dimen name="latest_layout_width_view_button">34dp</dimen>
-    <dimen name="latest_layout_height_view_button">10dp</dimen>
     <dimen name="latest_layout_margin_end_view_button">11dp</dimen>
     <dimen name="latest_layout_margin_top_latest_text">20dp</dimen>
     <dimen name="latest_layout_margin_start_latest_text">11dp</dimen>
@@ -102,4 +96,5 @@
     <dimen name="fragment_height_brands_rec_view">286dp</dimen>
     <dimen name="fragment_margin_top_brands_rec_view">8dp</dimen>
     <dimen name="fragment_margin_top_latest_rec_view">8dp</dimen>
+    <dimen name="category_item_margin_top_text">11dp</dimen>
 </resources>

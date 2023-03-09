@@ -14,9 +14,8 @@
         android:layout_height="@dimen/fragment_height_sign_in_text"
         android:layout_marginTop="@dimen/fragment_margin_top_sign_in_text"
         android:gravity="center_horizontal|top"
-        style="@style/TextAppearance.OnlineShop.SignInLogo"
+        style="@style/TextAppearance.OnlineShop.Text.SignInLogo"
         android:text="@string/sign_in"
-        android:textAppearance="@style/TextAppearance.OnlineShop.SignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +29,7 @@
         android:gravity="center"
         android:maxLength="30"
         android:maxLines="1"
-        style="@style/TextAppearance.OnlineShop.Hint"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
         android:hint="@string/first_name_hint"
         android:inputType="textPersonName"
         android:imeOptions="actionNext"
@@ -48,7 +47,7 @@
         android:layout_marginTop="@dimen/fragment_margin_top_last_name_edit_text"
         android:gravity="center"
         android:hint="@string/last_name_hint"
-        style="@style/TextAppearance.OnlineShop.Hint"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
         android:ellipsize="start"
         android:singleLine="true"
         android:maxLength="30"
@@ -77,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lastNameEditText"
         android:layout_marginTop="@dimen/fragment_margin_top_email_edit_text"
-        style="@style/TextAppearance.OnlineShop.Hint"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
         android:imeOptions="actionDone"
         android:importantForAutofill="no" />
 
@@ -99,7 +98,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/sign_in"
-            style="@style/TextAppearance.OnlineShop.SignIn"/>
+            style="@style/TextAppearance.OnlineShop.Text.SignIn"/>
     </LinearLayout>
 
     <TextView
@@ -108,7 +107,7 @@
         android:layout_height="@dimen/fragment_height_have_acc_text"
         android:layout_marginTop="@dimen/fragment_margin_top_have_acc_text"
         android:text="@string/have_account_text"
-        style="@style/TextAppearance.OnlineShop.HaveAccount"
+        style="@style/TextAppearance.OnlineShop.Text.HaveAccount"
         app:layout_constraintStart_toStartOf="@+id/signInViewContainer"
         app:layout_constraintTop_toBottomOf="@id/signInViewContainer" />
 
@@ -117,7 +116,8 @@
         android:layout_width="@dimen/fragment_width_login_button"
         android:layout_height="@dimen/fragment_height_login_button"
         android:text="@string/log_in"
-        style="@style/TextAppearance.OnlineShop.LogIn"
+        style="@style/TextAppearance.OnlineShop.Text.LogIn"
+        android:layout_marginStart="@dimen/fragment_margin_start_login_button"
         app:layout_constraintBottom_toBottomOf="@+id/haveAccountTextView"
         app:layout_constraintStart_toEndOf="@id/haveAccountTextView"
         app:layout_constraintTop_toTopOf="@+id/haveAccountTextView" />
@@ -137,7 +137,7 @@
         android:id="@+id/signInWithGoogleTextView"
         android:layout_width="@dimen/fragment_width_google_text"
         android:layout_height="@dimen/fragment_height_google_text"
-        style="@style/TextAppearance.OnlineShop.SignInWith"
+        style="@style/TextAppearance.OnlineShop.Text.SignInWith"
         android:text="@string/sign_in_with_google"
         android:layout_marginStart="11dp"
         app:layout_constraintBottom_toBottomOf="@+id/googleImageView"
@@ -157,11 +157,11 @@
 
     <TextView
         android:id="@+id/signInWithAppleTextView"
-        style="@style/TextAppearance.OnlineShop.SignInWith"
         android:layout_width="@dimen/fragment_width_apple_text"
         android:layout_height="@dimen/fragment_height_apple_text"
         android:text="@string/sign_in_with_apple"
         android:layout_marginStart="@dimen/fragment_margin_start_apple_text"
+        style="@style/TextAppearance.OnlineShop.Text.SignInWith"
         app:layout_constraintBottom_toBottomOf="@+id/appleImageView"
         app:layout_constraintStart_toEndOf="@id/appleImageView"
         app:layout_constraintTop_toTopOf="@+id/appleImageView" />

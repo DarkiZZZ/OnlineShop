@@ -13,12 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.page_two.R
+import ru.msokolov.onlineshop.feature.page_two.databinding.FragmentPageTwoBinding
 import ru.msokolov.onlineshop.livedata.observeEvent
 import ru.msokolov.onlineshop.navigation.navigate
 import ru.msokolov.onlineshop.network.Status
-import ru.msokolov.onlineshop.page_two.R
 import ru.msokolov.onlineshop.page_two.data.entity.DetailedInfoEntity
-import ru.msokolov.onlineshop.page_two.databinding.FragmentPageTwoBinding
 import ru.msokolov.onlineshop.page_two.di.DaggerPageTwoComponent
 import ru.msokolov.onlineshop.page_two.presentation.navigation.PageTwoCommandProvider
 import ru.msokolov.onlineshop.page_two.presentation.ui.gallery.GalleryAdapter

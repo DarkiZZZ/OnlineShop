@@ -3,7 +3,7 @@ package ru.msokolov.onlineshop.page_one.presentation.ui.adapters.brand
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.msokolov.onlineshop.page_one.databinding.BrandItemBinding
+import ru.msokolov.onlineshop.feature.page_one.databinding.BrandItemBinding
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem
 

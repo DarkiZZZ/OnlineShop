@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="account_have_not_created_yet">Такой аккаунт еще не был создан</string>
+    <string name="field_is_empty">%1$sПоле должно быть заполнено</string>
 </resources>

@@ -4,4 +4,7 @@
     <string name="password_hint" translatable="false">Password</string>
     <string name="login" translatable="false">Login</string>
     <string name="account_have_not_created_yet">This account have not created yet</string>
+
+    <string name="shared_prefs_user_name_key" translatable="false">Shared prefs user key</string>
+    <string name="field_is_empty">%1$sField show be filled</string>
 </resources>

@@ -13,14 +13,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.login.R
+import ru.msokolov.onlineshop.feature.login.databinding.FragmentLoginBinding
 import ru.msokolov.onlineshop.livedata.observeEvent
-import ru.msokolov.onlineshop.login.R
-import ru.msokolov.onlineshop.login.databinding.FragmentLoginBinding
 import ru.msokolov.onlineshop.login.di.DaggerLoginComponent
 import ru.msokolov.onlineshop.login.presentation.navigation.LoginCommandProvider
 import ru.msokolov.onlineshop.navigation.navigate
-import ru.msokolov.onlineshop.ui.R.drawable
-import ru.msokolov.onlineshop.ui.R.string
 import ru.msokolov.onlineshop.ui.hideKeyboard
 import ru.msokolov.onlineshop.ui.showSnackBar
 import ru.msokolov.onlineshop.ui.writeToSharedPrefs
@@ -88,7 +86,7 @@ class LoginFragment : Fragment() {
 
     private fun observeEvents(){
         viewModel.goToPageOne.observeEvent(viewLifecycleOwner){
-            writeToSharedPrefs(value = getFirstName(), key = getString(string.shared_prefs_user_name_key))
+            writeToSharedPrefs(value = getFirstName(), key = getString(R.string.shared_prefs_user_name_key))
             navigate(loginCommandProvider.toPageOne)
 
         }
@@ -118,7 +116,7 @@ class LoginFragment : Fragment() {
         if (isVisible) {
             binding.passwordConditionButton.background = AppCompatResources.getDrawable(
                 requireContext(),
-                drawable.ic_password_view_disable
+                R.drawable.ic_password_view_disable
             )
             with(binding.passwordEditText) {
                 transformationMethod = null
@@ -127,7 +125,7 @@ class LoginFragment : Fragment() {
         } else {
             binding.passwordConditionButton.background = AppCompatResources.getDrawable(
                 requireContext(),
-                drawable.ic_password_view_enable
+                R.drawable.ic_password_view_enable
             )
             with(binding.passwordEditText) {
                 transformationMethod = PasswordTransformationMethod()

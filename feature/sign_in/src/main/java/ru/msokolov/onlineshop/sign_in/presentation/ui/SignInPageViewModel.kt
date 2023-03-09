@@ -3,14 +3,13 @@ package ru.msokolov.onlineshop.sign_in.presentation.ui
 import androidx.annotation.StringRes
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
+import ru.msokolov.onlineshop.feature.sign_in.R
 import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
 import ru.msokolov.onlineshop.livedata.publishEvent
 import ru.msokolov.onlineshop.livedata.requireValue
 import ru.msokolov.onlineshop.livedata.share
-import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.domain.model.UserEntity
 import ru.msokolov.onlineshop.sign_in.domain.usecase.AddNewUserUseCase
-import ru.msokolov.onlineshop.ui.R.*
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -100,15 +99,15 @@ class SignInPageViewModel(
         _state.value = when (exception.field) {
             SignInField.FirstName -> {
                 _state.requireValue()
-                    .copy(firstNameErrorMessageRes = string.field_is_empty)
+                    .copy(firstNameErrorMessageRes = R.string.field_is_empty)
             }
             SignInField.LastName -> {
                 _state.requireValue()
-                    .copy(lastNameErrorMessageRes = string.field_is_empty)
+                    .copy(lastNameErrorMessageRes = R.string.field_is_empty)
             }
             SignInField.Email -> {
                 _state.requireValue()
-                    .copy(emailErrorMessageRes = string.field_is_empty)
+                    .copy(emailErrorMessageRes = R.string.field_is_empty)
             }
         }
         _setSignInButtonActive.publishEvent()

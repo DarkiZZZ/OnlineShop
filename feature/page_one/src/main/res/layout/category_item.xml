@@ -20,6 +20,7 @@
         android:layout_width="@dimen/category_item_text_width"
         android:layout_height="@dimen/category_item_text_height"
         android:gravity="center"
+        android:layout_marginTop="@dimen/category_item_margin_top_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"

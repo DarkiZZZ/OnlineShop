@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import ru.msokolov.onlineshop.page_two.databinding.GalleryItemBinding
+import ru.msokolov.onlineshop.feature.page_two.databinding.GalleryItemBinding
 
 class GalleryAdapter : RecyclerView.Adapter<GalleryAdapter.GalleryViewHolder>() {
 

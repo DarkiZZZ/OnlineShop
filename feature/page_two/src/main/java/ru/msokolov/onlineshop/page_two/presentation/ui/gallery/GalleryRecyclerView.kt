@@ -28,7 +28,7 @@ class GalleryRecyclerView : RecyclerView {
         layoutManager = linearLayoutManager
         val pagerSnapHelper = PagerSnapHelper()
         pagerSnapHelper.attachToRecyclerView(this)
-        addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        addOnScrollListener(object : OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val first = linearLayoutManager.findFirstVisibleItemPosition()
                 val last = linearLayoutManager.findLastVisibleItemPosition()
