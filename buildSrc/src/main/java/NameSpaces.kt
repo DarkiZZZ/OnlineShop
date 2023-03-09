@@ -9,14 +9,14 @@ object NameSpaces {
     ///   core
     private const val coreNameSpace = "$appNameSpace.core"
     private const val utilsNameSpace = "$appNameSpace.utils"
+    private const val storageNameSpace = "$appNameSpace.storage"
+    private const val featureNameSpace = "$appNameSpace.feature"
 
     const val coreUiNameSpace = "$coreNameSpace.ui"
     const val coreDaggerNameSpace = "$coreNameSpace.dagger"
-    //const val coreDaggerAnnotationsNameSpace = "$coreNameSpace.dagger_annotations"
-    //const val coreNavigationNameSpace = "$coreNameSpace.navigation"
 
-    //const val coreHomeApiNameSpace = "$coreNameSpace.home_api"
-    //const val coreHomeApiInterfaceNameSpace = "$coreNameSpace.home_api_interface"
+    const val storageUserDatabaseNameSpace = "$storageNameSpace.user_database"
+    const val storageUserDatabaseApiNameSpace = "$storageNameSpace.user_database_api"
 
     const val coreDetailedInfoApiNameSpace = "$coreNameSpace.page_two_api"
     const val coreDetailedInfoApiInternalNameSpace = "$coreNameSpace.page_two_api_internal"
