@@ -6,11 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import ru.msokolov.onlineshop.feature.login.R
 import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
 import ru.msokolov.onlineshop.livedata.publishEvent
 import ru.msokolov.onlineshop.livedata.requireValue
 import ru.msokolov.onlineshop.livedata.share
-import ru.msokolov.onlineshop.login.R
 import ru.msokolov.onlineshop.login.domain.model.FirstNameEntity
 import ru.msokolov.onlineshop.login.domain.usecase.CheckIsUserForExistUseCase
 import javax.inject.Inject

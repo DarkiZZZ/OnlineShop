@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import ru.msokolov.onlineshop.page_two.R
-import ru.msokolov.onlineshop.page_two.databinding.MainPhotoItemBinding
+import ru.msokolov.onlineshop.feature.page_two.R
+import ru.msokolov.onlineshop.feature.page_two.databinding.MainPhotoItemBinding
 
 
 class MainPhotoAdapter(private val context: Context) :

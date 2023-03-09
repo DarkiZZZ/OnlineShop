@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'ru.msokolov.onlineshop.login'
+    namespace = NameSpaces.loginFeatureNameSpace
     compileSdk = Config.compileSdkVersion
 
     defaultConfig {

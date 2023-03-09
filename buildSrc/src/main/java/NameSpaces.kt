@@ -2,11 +2,6 @@ object NameSpaces {
     ///////
     private const val appNameSpace = Config.appNameSpace
 
-    ///   utils and others
-
-    //const val networkUtils = "$appNameSpace.network_utils"
-
-    ///   core
     private const val coreNameSpace = "$appNameSpace.core"
     private const val utilsNameSpace = "$appNameSpace.utils"
     private const val storageNameSpace = "$appNameSpace.storage"
@@ -14,6 +9,13 @@ object NameSpaces {
 
     const val coreUiNameSpace = "$coreNameSpace.ui"
     const val coreDaggerNameSpace = "$coreNameSpace.dagger"
+
+    const val cartFeatureNameSpace = "$featureNameSpace.cart"
+    const val loginFeatureNameSpace = "$featureNameSpace.login"
+    const val pageOneFeatureNameSpace = "$featureNameSpace.page_one"
+    const val pageTwoFeatureNameSpace = "$featureNameSpace.page_two"
+    const val signInFeatureNameSpace = "$featureNameSpace.sign_in"
+    const val profileFeatureNameSpace = "$featureNameSpace.profile"
 
     const val storageUserDatabaseNameSpace = "$storageNameSpace.user_database"
     const val storageUserDatabaseApiNameSpace = "$storageNameSpace.user_database_api"
@@ -35,15 +37,4 @@ object NameSpaces {
     const val utilsNetworkNameSpace = "$utilsNameSpace.network"
     const val utilsLiveDataNameSpace = "$utilsNameSpace.livedata"
 
-
-    //const val coreProductDetailedApiNameSpace = "$coreNameSpace.product_detailed_api"
-    //const val coreProductDetailedApiInterfaceNameSpace = "$coreNameSpace.product_detailed_api_interface"
-
-    ///   features
-    //private const val featureNameSpace = "$appNameSpace.feature"
-
-    //const val featureSplashScreenNameSpace = "$featureNameSpace.splashscreen"
-    //const val featureHomeNameSpace = "$featureNameSpace.home"
-    //const val featureCartNameSpace = "$featureNameSpace.cart"
-    //const val featureProductDetailedNameSpace = "$featureNameSpace.product_detailed"
 }

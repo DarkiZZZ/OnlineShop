@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.login.R
+import ru.msokolov.onlineshop.feature.login.databinding.FragmentLoginBinding
 import ru.msokolov.onlineshop.livedata.observeEvent
-import ru.msokolov.onlineshop.login.R
-import ru.msokolov.onlineshop.login.databinding.FragmentLoginBinding
 import ru.msokolov.onlineshop.login.di.DaggerLoginComponent
 import ru.msokolov.onlineshop.login.presentation.navigation.LoginCommandProvider
 import ru.msokolov.onlineshop.navigation.navigate

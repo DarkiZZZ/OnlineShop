@@ -3,11 +3,11 @@ package ru.msokolov.onlineshop.sign_in.presentation.ui
 import androidx.annotation.StringRes
 import androidx.lifecycle.*
 import kotlinx.coroutines.*
+import ru.msokolov.onlineshop.feature.sign_in.R
 import ru.msokolov.onlineshop.livedata.MutableUnitLiveEvent
 import ru.msokolov.onlineshop.livedata.publishEvent
 import ru.msokolov.onlineshop.livedata.requireValue
 import ru.msokolov.onlineshop.livedata.share
-import ru.msokolov.onlineshop.sign_in.R
 import ru.msokolov.onlineshop.sign_in.domain.model.UserEntity
 import ru.msokolov.onlineshop.sign_in.domain.usecase.AddNewUserUseCase
 import javax.inject.Inject

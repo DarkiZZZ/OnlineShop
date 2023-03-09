@@ -18,10 +18,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.profile.R
+import ru.msokolov.onlineshop.feature.profile.databinding.FragmentProfileBinding
 import ru.msokolov.onlineshop.livedata.observeEvent
 import ru.msokolov.onlineshop.navigation.navigate
-import ru.msokolov.onlineshop.profile.R
-import ru.msokolov.onlineshop.profile.databinding.FragmentProfileBinding
 import ru.msokolov.onlineshop.profile.di.DaggerProfileComponent
 import ru.msokolov.onlineshop.profile.presentation.navigation.ProfileCommandProvider
 import ru.msokolov.onlineshop.ui.readFromSharedPrefs

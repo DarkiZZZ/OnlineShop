@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import dagger.Lazy
 import ru.msokolov.onlineshop.dagger.findDependencies
+import ru.msokolov.onlineshop.feature.sign_in.R
+import ru.msokolov.onlineshop.feature.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.livedata.observeEvent
 import ru.msokolov.onlineshop.navigation.navigate
-import ru.msokolov.onlineshop.sign_in.R
-import ru.msokolov.onlineshop.sign_in.databinding.FragmentSignInPageBinding
 import ru.msokolov.onlineshop.sign_in.di.DaggerSignInPageComponent
 import ru.msokolov.onlineshop.sign_in.presentation.navigation.SignInPageCommandProvider
 import ru.msokolov.onlineshop.ui.showSnackBar

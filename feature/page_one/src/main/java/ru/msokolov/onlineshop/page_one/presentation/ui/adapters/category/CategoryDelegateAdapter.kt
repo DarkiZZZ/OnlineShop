@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
-import ru.msokolov.onlineshop.page_one.databinding.CategoryItemBinding
+import ru.msokolov.onlineshop.feature.page_one.databinding.CategoryItemBinding
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapter
 import ru.msokolov.onlineshop.page_one.presentation.ui.adapters.delegate.DelegateAdapterItem
 
