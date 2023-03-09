@@ -33,4 +33,5 @@
     <dimen name="fragment_width_apple_text">117dp</dimen>
     <dimen name="fragment_height_apple_text">16dp</dimen>
     <dimen name="fragment_margin_start_apple_text">11dp</dimen>
+    <dimen name="fragment_margin_start_login_button">6dp</dimen>
 </resources>

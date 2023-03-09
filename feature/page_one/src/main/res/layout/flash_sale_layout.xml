@@ -17,8 +17,8 @@
 
     <TextView
         android:id="@+id/viewAllButton"
-        android:layout_width="@dimen/flash_sale_layout_view_button_width"
-        android:layout_height="@dimen/flash_sale_layout_view_button_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/flash_sale_layout_margin_end_view_button"
         style="@style/TextAppearance.OnlineShop.ViewAll"
         android:text="@string/view_all"

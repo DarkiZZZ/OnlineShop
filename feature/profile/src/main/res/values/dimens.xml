@@ -6,7 +6,6 @@
     <dimen name="fragment_height_avatar">61dp</dimen>
     <dimen name="fragment_margin_top_avatar">19dp</dimen>
     <dimen name="fragment_width_change_photo_button">69dp</dimen>
-    <dimen name="fragment_height_change_photo_button">10dp</dimen>
     <dimen name="fragment_margin_top_change_photo_button">6dp</dimen>
     <dimen name="fragment_width_user_name_text">168dp</dimen>
     <dimen name="fragment_margin_top_user_name_text">17dp</dimen>

@@ -7,14 +7,14 @@
     <style name="TextAppearance.OnlineShop.SearchHint" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">9sp</item>
         <item name="android:fontFamily">@font/poppins_400</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#5B5B5B</item>
     </style>
     <style name="TextAppearance.OnlineShop.CategoryName" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">8sp</item>
         <item name="android:fontFamily">@font/poppins_400</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:letterSpacing">-0.04</item>
         <item name="android:textColor">#A6A7AB</item>
     </style>

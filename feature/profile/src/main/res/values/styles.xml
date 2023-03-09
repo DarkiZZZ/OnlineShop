@@ -6,7 +6,7 @@
     <style name="TextAppearance.OnlineShop.ChangePhoto" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">8sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:letterSpacing">-0.04</item>
         <item name="android:textColor">#808080</item>
     </style>
@@ -28,7 +28,7 @@
     <style name="TextAppearance.OnlineShop.PayRelated" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:letterSpacing">-0.03</item>
         <item name="android:textColor">#040402</item>
     </style>
@@ -36,7 +36,7 @@
     <style name="TextAppearance.OnlineShop.BalanceValue" parent="TextAppearance.OnlineShop.Text">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_500</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:letterSpacing">-0.02</item>
         <item name="android:textColor">#040402</item>
     </style>

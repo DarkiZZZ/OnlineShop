@@ -153,8 +153,9 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
 
     private fun setupSearchAutoFill() {
         wordsSearchingTimer = Timer()
-        wordsSearchingAdapter = ArrayAdapter(requireContext(), R.layout.seach_view_hint_item, arrayListOf<String>())
-        with(binding.searchLayout.searchAutoFillTextView){
+        wordsSearchingAdapter =
+            ArrayAdapter(requireContext(), R.layout.seach_view_hint_item, arrayListOf<String>())
+        with(binding.searchLayout.searchAutoFillTextView) {
             setAdapter(wordsSearchingAdapter)
             doAfterTextChanged {
                 wordsSearchingTimer.cancel()
@@ -171,12 +172,15 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    private fun handingWordsSearchingAdapterData(words: List<String>){
+    private fun handingWordsSearchingAdapterData(words: List<String>) {
         wordsSearchingAdapter!!.clear()
-        for (word in words){
+        for (word in words) {
             wordsSearchingAdapter!!.add(word)
         }
-        wordsSearchingAdapter!!.filter.filter(binding.searchLayout.searchAutoFillTextView.text, null)
+        wordsSearchingAdapter!!.filter.filter(
+            binding.searchLayout.searchAutoFillTextView.text,
+            null
+        )
     }
 
     private fun observeSearchWords() {
@@ -213,7 +217,7 @@ class PageOneFragment : Fragment(R.layout.fragment_page_one) {
         }
     }
 
-    companion object{
+    companion object {
         private const val SEARCH_WORDS_DELAY = 1000L
     }
 }
