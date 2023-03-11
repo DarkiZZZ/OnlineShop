@@ -17,9 +17,9 @@
 #### Test video: https://www.youtube.com/watch?v=55Nk-y536ks
 
 #### Improving plans and problems:
-###### > Page one: make whole screen as composite adapter(not every recycler view)
+###### > Page one: make whole screen as composite adapter(not every recycler view) - so improve performance
 ###### > Page two: sync photo and gallery recycler views
 ###### > Add nice night theme
-###### > Give authorities of managing navigation bar functions to every fragment(not main activity) 
+###### > Give authorities of managing navigation bar functions to every fragment(not main activity)
 
 
