@@ -4,7 +4,7 @@
 
 #### Technology stack:
 ###### > Kotlin
-###### > Coorutines + Flow
+###### > Coroutines + Flow
 ###### > Dagger 2
 ###### > MVVM
 ###### > Room
