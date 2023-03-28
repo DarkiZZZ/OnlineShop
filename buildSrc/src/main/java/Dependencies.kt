@@ -77,3 +77,10 @@ object Room {
     const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
     const val roomKtx = "androidx.room:room-ktx:$roomVersion"
 }
+
+object Firebase {
+    private const val firebaseBomVersion = "31.3.0"
+
+    const val firebaseBom = "com.google.firebase:firebase-bom:$firebaseBomVersion"
+    const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx"
+}
