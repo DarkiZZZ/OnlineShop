@@ -2,16 +2,16 @@
 <resources>
     <dimen name="fragment_width_sign_in_text">150dp</dimen>
     <dimen name="fragment_height_sign_in_text">48dp</dimen>
-    <dimen name="fragment_margin_top_sign_in_text">121dp</dimen>
+    <dimen name="fragment_margin_top_sign_in_text">60dp</dimen>
     <dimen name="fragment_width_first_name_text">289dp</dimen>
     <dimen name="fragment_height_first_name_text">29dp</dimen>
-    <dimen name="fragment_margin_top_first_name">60dp</dimen>
+    <dimen name="fragment_margin_top_first_name">40dp</dimen>
     <dimen name="fragment_width_last_name_edit_text">289dp</dimen>
     <dimen name="fragment_height_last_name_edit_text">29dp</dimen>
-    <dimen name="fragment_margin_top_last_name_edit_text">35dp</dimen>
+    <dimen name="fragment_margin_top_last_name_edit_text">20dp</dimen>
     <dimen name="fragment_width_email_edit_text">289dp</dimen>
     <dimen name="fragment_height_email_edit_text">29dp</dimen>
-    <dimen name="fragment_margin_top_email_edit_text">35dp</dimen>
+    <dimen name="fragment_margin_top_email_edit_text">20dp</dimen>
     <dimen name="fragment_width_sign_in_container">289dp</dimen>
     <dimen name="fragment_height_sign_in_container">46dp</dimen>
     <dimen name="fragment_margin_top_sign_in_container">35dp</dimen>
@@ -23,7 +23,7 @@
     <dimen name="fragment_width_google_icon">26dp</dimen>
     <dimen name="fragment_height_google_icon">26dp</dimen>
     <dimen name="fragment_margin_start_google_icon">99dp</dimen>
-    <dimen name="fragment_margin_top_google_icon">70dp</dimen>
+    <dimen name="fragment_margin_top_google_icon">30dp</dimen>
     <dimen name="fragment_width_google_text">117dp</dimen>
     <dimen name="fragment_height_google_text">16dp</dimen>
     <dimen name="fragment_width_apple_icon">20dp</dimen>

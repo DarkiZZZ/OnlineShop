@@ -3,4 +3,6 @@
     <string name="email_is_not_proper">%1$s - неверно, %1$s@mail.ru - верно</string>
     <string name="account_already_exists">Такой аккаунт уже существует.</string>
     <string name="field_is_empty">%1$sПоле должно быть заполнено</string>
+    <string name="repeat_password_hint">Повтор пароля</string>
+    <string name="password_hint">Пароль</string>
 </resources>
