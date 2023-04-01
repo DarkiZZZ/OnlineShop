@@ -27,7 +27,13 @@ object TestLibs {
     private const val jUnitVersion = "4.13.2"
     private const val androidJUnitVersion = "1.1.5"
     private const val espressoVersion = "3.5.1"
+    private const val mockkVersion = "1.12.4"
+    private const val coroutinesTestVersion = "1.6.1"
+    private const val coreTestingVersion = "2.2.0"
 
+    const val coreTesting = "androidx.arch.core:core-testing:$coreTestingVersion"
+    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+    const val mockK = "io.mockk:mockk:$mockkVersion"
     const val jUnit = "junit:junit:$jUnitVersion"
     const val androidJUnit = "androidx.test.ext:junit:$androidJUnitVersion"
     const val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
