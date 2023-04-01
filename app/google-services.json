@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "291068719034",
+    "project_id": "onlineshop-92172",
+    "storage_bucket": "onlineshop-92172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291068719034:android:d02618b068d1d35ce6b783",
+        "android_client_info": {
+          "package_name": "ru.msokolov.onlineshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291068719034-vdl3055onv8kt0529hbcf1cniprkp5lc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPLttRA5Tqc1unAg5KEOlM6ThdyPXTI_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291068719034-kdum6p1441r4va0ngv44ssiqqagle3jb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,13 +2,13 @@
 <resources>
     <dimen name="fragment_width_welcome_text">199dp</dimen>
     <dimen name="fragment_height_welcome_text">34dp</dimen>
-    <dimen name="fragment_margin_top_welcome_text">123dp</dimen>
+    <dimen name="fragment_margin_top_welcome_text">60dp</dimen>
     <dimen name="fragment_width_first_name_edit_text">289dp</dimen>
     <dimen name="fragment_height_first_name_edit_text">29dp</dimen>
-    <dimen name="fragment_margin_top_first_name_edit_text">60dp</dimen>
+    <dimen name="fragment_margin_top_first_name_edit_text">40dp</dimen>
     <dimen name="fragment_width_password_container">289dp</dimen>
     <dimen name="fragment_height_password_container">29dp</dimen>
-    <dimen name="fragment_margin_top_password_container">35dp</dimen>
+    <dimen name="fragment_margin_top_password_container">20dp</dimen>
     <dimen name="fragment_width_password_button">15dp</dimen>
     <dimen name="fragment_height_password_button">15dp</dimen>
     <dimen name="fragment_margin_top_password_button">7dp</dimen>

@@ -15,4 +15,6 @@
 
     <string name="shared_prefs_user_name_key" translatable="false">Shared prefs user key</string>
     <string name="field_is_empty">%1$sField show be filled</string>
+    <string name="password_hint">Password</string>
+    <string name="repeat_password_hint">Repeat password</string>
 </resources>

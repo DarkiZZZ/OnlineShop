@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/mainColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.SignInPageFragment">
+    tools:context="ru.msokolov.onlineshop.sign_in.presentation.ui.SignInPageFragment">
 
     <TextView
         android:id="@+id/SignInTextView"
@@ -61,6 +61,46 @@
         android:importantForAutofill="no" />
 
     <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="@dimen/fragment_width_last_name_edit_text"
+        android:layout_height="@dimen/fragment_height_last_name_edit_text"
+        android:layout_marginTop="@dimen/fragment_margin_top_last_name_edit_text"
+        android:gravity="center"
+        android:hint="@string/password_hint"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
+        android:ellipsize="start"
+        android:singleLine="true"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastNameEditText"
+        android:inputType="textPassword"
+        android:background="@drawable/rectangle_2"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/repeatPasswordEditText"
+        android:layout_width="@dimen/fragment_width_last_name_edit_text"
+        android:layout_height="@dimen/fragment_height_last_name_edit_text"
+        android:layout_marginTop="@dimen/fragment_margin_top_last_name_edit_text"
+        android:gravity="center"
+        android:hint="@string/repeat_password_hint"
+        android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
+        android:ellipsize="start"
+        android:singleLine="true"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        android:inputType="textPassword"
+        android:background="@drawable/rectangle_2"
+        android:importantForAutofill="no" />
+
+    <EditText
         android:id="@+id/emailEditText"
         android:layout_width="@dimen/fragment_width_email_edit_text"
         android:layout_height="@dimen/fragment_height_email_edit_text"
@@ -74,7 +114,7 @@
         android:background="@drawable/rectangle_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastNameEditText"
+        app:layout_constraintTop_toBottomOf="@id/repeatPasswordEditText"
         android:layout_marginTop="@dimen/fragment_margin_top_email_edit_text"
         android:textAppearance="@style/TextAppearance.OnlineShop.Text.Hint"
         android:imeOptions="actionDone"
